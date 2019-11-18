@@ -9,5 +9,4 @@
 - Answer
 - Test
 - User
-- Admin < User
-- TestResult
+- Category
