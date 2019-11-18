@@ -7,6 +7,13 @@
 # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # Character.create(name: 'Luke', movie: movies.first)
 
+TestResult.destroy_all
+User.destroy_all
+Answer.destroy_all
+Question.destroy_all
+Test.destroy_all
+Category.destroy_all
+
 %w[math english biology].each { |c| Category.create(title: c) }
 
 Test.create(
@@ -48,4 +55,9 @@ User.create(
   last_name: 'Doe',
   email: 'doe@foobar.com',
   password_digest: BCrypt::Password.create('secret')
+)
+
+TestResult.create(
+  test_id: 3,
+  user_id: 1
 )
