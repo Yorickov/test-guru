@@ -10,3 +10,4 @@
 - Test
 - User
 - Category
+- TestResult
