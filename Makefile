@@ -6,3 +6,6 @@ server:
 
 dbm:
 	rails db:migrate
+
+dbs:
+	rails db:seed
