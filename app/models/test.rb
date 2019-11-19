@@ -1,5 +1,10 @@
 class Test < ApplicationRecord
   belongs_to :category
+  belongs_to :user
+  has_many :questions
+
+  has_many :test_results
+  has_many :users, through: :test_results
 
   class << self
     def tests_by_category(category)
