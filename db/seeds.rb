@@ -14,50 +14,76 @@ Question.destroy_all
 Test.destroy_all
 Category.destroy_all
 
-%w[math english biology].each { |c| Category.create(title: c) }
+categories = []
+%w[math english biology].each { |c| categories << Category.create(title: c) }
+cat_mat, cat_en, cat_bio = categories
 
-Test.create(
+test_syn, test_pun, test_add, test_log, test_dna, test_bgn = Test.create(
   [
-    { title: 'syntax', level: 1, category_id: 2 },
-    { title: 'punctuation', level: 2, category_id: 2 },
-    { title: 'addition', category_id: 1 },
-    { title: 'logarithms', level: 3, category_id: 1 },
-    { title: 'DNA', level: 2, category_id: 3 }
+    { title: 'syntax', level: 1, category_id: cat_en.id },
+    { title: 'punctuation', level: 2, category_id: cat_en.id },
+    { title: 'addition', category_id: cat_mat.id },
+    { title: 'logarithms', level: 3, category_id: cat_mat.id },
+    { title: 'DNA', level: 2, category_id: cat_bio.id },
+    { title: 'biogenesis', level: 1, category_id: cat_bio.id }
   ]
 )
 
-Question.create(
+qs1, qs2, qp1, qp2, qa1, qa2, ql1, qd1 = Question.create(
   [
-    { body: 'question 1', test_id: 1 },
-    { body: 'question 1', test_id: 2 },
-    { body: 'question 2', test_id: 2 },
-    { body: 'question 1', test_id: 3 },
-    { body: 'question 2', test_id: 3 },
-    { body: 'question 1', test_id: 4 },
-    { body: 'question 1', test_id: 5 }
+    { body: 'question 1', test_id: test_syn.id },
+    { body: 'question 2', test_id: test_syn.id },
+    { body: 'question 1', test_id: test_pun.id },
+    { body: 'question 2', test_id: test_pun.id },
+    { body: 'question 1', test_id: test_add.id },
+    { body: 'question 2', test_id: test_add.id },
+    { body: 'question 1', test_id: test_log.id },
+    { body: 'question 1', test_id: test_dna.id }
   ]
 )
 
 Answer.create(
   [
-    { body: 'answer 1', question_id: 1, correct: true },
-    { body: 'answer 2', question_id: 1 },
-    { body: 'answer 1', question_id: 2 },
-    { body: 'answer 1', question_id: 3, correct: true },
-    { body: 'answer 2', question_id: 3 },
-    { body: 'answer 3', question_id: 3 },
-    { body: 'answer 1', question_id: 4, correct: true }
+    { body: 'answer 1', question_id: qs1.id, correct: true },
+    { body: 'answer 2', question_id: qs1.id },
+    { body: 'answer 1', question_id: qs2.id },
+    { body: 'answer 2', question_id: qs2.id, correct: true },
+    { body: 'answer 1', question_id: qp1.id },
+    { body: 'answer 2', question_id: qp1.id, correct: true },
+    { body: 'answer 1', question_id: qp2.id },
+    { body: 'answer 2', question_id: qp2.id },
+    { body: 'answer 1', question_id: qa1.id, correct: true },
+    { body: 'answer 2', question_id: qa2.id },
+    { body: 'answer 1', question_id: ql1.id }
   ]
 )
 
-User.create(
-  first_name: 'John',
-  last_name: 'Doe',
-  email: 'doe@foobar.com',
-  password_digest: BCrypt::Password.create('secret')
+john, sarah = User.create(
+  [
+    {
+      first_name: 'John',
+      last_name: 'Doe',
+      email: 'doe@foobar.com',
+      password_digest: BCrypt::Password.create('secret')
+    },
+    {
+      first_name: 'Sarah',
+      last_name: 'Lowson',
+      email: 'lowie@foobar.com',
+      password_digest: BCrypt::Password.create('secret')
+    }
+  ]
 )
 
 TestResult.create(
-  test_id: 3,
-  user_id: 1
+  [
+    {
+      test_id: test_syn.id,
+      user_id: john.id
+    },
+    {
+      test_id: test_pun.id,
+      user_id: sarah.id
+    }
+  ]
 )
