@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class TestTest < ActiveSupport::TestCase
+  def setup
+    @test = tests(:two)
+  end
+
   test 'tests by category' do
     expected = Test.by_category('english')
     assert_equal(%w[syntax punctuation], expected)
@@ -12,8 +16,7 @@ class TestTest < ActiveSupport::TestCase
   end
 
   test 'questions' do
-    test = tests(:two)
-    assert_equal(2, test.questions.size)
+    assert_equal(2, @test.questions.size)
   end
 
   test 'users' do
@@ -22,13 +25,18 @@ class TestTest < ActiveSupport::TestCase
   end
 
   test 'test_results' do
-    test = tests(:two)
-    assert_equal('Lowson', test.users.first.last_name)
+    assert_equal('Lowson', @test.users.first.last_name)
   end
 
   test 'level' do
     assert_equal(1, Test.simple.count)
     assert_equal(2, Test.medium.count)
     assert_equal(1, Test.hard.count)
+  end
+
+  test 'validation title' do
+    assert(@test.valid?)
+    @test.title = ''
+    refute(@test.valid?)
   end
 end

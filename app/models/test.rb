@@ -6,6 +6,8 @@ class Test < ApplicationRecord
   has_many :test_results
   has_many :users, through: :test_results
 
+  validates :title, presence: true
+
   scope :by_category, ->(category) {
     Test
       .unscoped # Rails 6.1: no inherit scoping

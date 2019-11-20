@@ -1,13 +1,22 @@
 require 'test_helper'
 
 class QuestionTest < ActiveSupport::TestCase
+  def setup
+    @question = questions(:one)
+  end
+
   test 'tests' do
-    question = questions(:one)
-    assert_equal('syntax', question.test.title)
+    assert_equal('syntax', @question.test.title)
   end
 
   test 'answers' do
     question = questions(:two)
     assert_equal(1, question.answers.size)
+  end
+
+  test 'validation' do
+    assert(@question.valid?)
+    @question.body = ''
+    refute(@question.valid?)
   end
 end

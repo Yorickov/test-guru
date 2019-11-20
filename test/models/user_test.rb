@@ -17,4 +17,22 @@ class UserTest < ActiveSupport::TestCase
   test 'test_results' do
     assert_equal('syntax', @user.tests.first.title)
   end
+
+  test 'validation first_name' do
+    assert(@user.valid?)
+    @user.first_name = ''
+    refute(@user.valid?)
+  end
+
+  test 'validation last_name' do
+    assert(@user.valid?)
+    @user.last_name = ''
+    refute(@user.valid?)
+  end
+
+  test 'validation email' do
+    assert(@user.valid?)
+    @user.email = ''
+    refute(@user.valid?)
+  end
 end
