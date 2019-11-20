@@ -18,7 +18,7 @@ class TestTest < ActiveSupport::TestCase
 
   test 'users' do
     test = tests(:three)
-    assert_equal('Sarah', test.user.first_name)
+    assert_equal('Sarah', test.author.first_name)
   end
 
   test 'test_results' do

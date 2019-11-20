@@ -4,16 +4,16 @@ one:
   title: syntax
   level: 1
   category: one
-  user: one
+  author: one
 
 two:
   title: punctuation
   level: 2
   category: one
-  user: one
+  author: one
 
 three:
   title: addition
   level: 2
   category: two
-  user: two
+  author: two
