@@ -1,9 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  body: MyText
+  body: Question1
   test: one
 
 two:
-  body: MyText
+  body: Question2
+  test: two
+
+three:
+  body: Question3
   test: two

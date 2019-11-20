@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class AnswerTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'questions' do
+    answer = answers(:one)
+    assert_equal('Question1', answer.question.body)
+  end
 end
