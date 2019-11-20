@@ -8,11 +8,28 @@
 # Character.create(name: 'Luke', movie: movies.first)
 
 TestResult.destroy_all
-User.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Test.destroy_all
+User.destroy_all
 Category.destroy_all
+
+user1, user2 = User.create(
+  [
+    {
+      first_name: 'John',
+      last_name: 'Doe',
+      email: 'doe@foobar.com',
+      password_digest: BCrypt::Password.create('secret')
+    },
+    {
+      first_name: 'Sarah',
+      last_name: 'Lowson',
+      email: 'lowie@foobar.com',
+      password_digest: BCrypt::Password.create('secret')
+    }
+  ]
+)
 
 categories = []
 %w[math english biology].each { |c| categories << Category.create(title: c) }
@@ -20,12 +37,12 @@ cat_mat, cat_en, cat_bio = categories
 
 test_syn, test_pun, test_add, test_log, test_dna, test_bgn = Test.create(
   [
-    { title: 'syntax', level: 1, category_id: cat_en.id },
-    { title: 'punctuation', level: 2, category_id: cat_en.id },
-    { title: 'addition', category_id: cat_mat.id },
-    { title: 'logarithms', level: 3, category_id: cat_mat.id },
-    { title: 'DNA', level: 2, category_id: cat_bio.id },
-    { title: 'biogenesis', level: 1, category_id: cat_bio.id }
+    { title: 'syntax', level: 1, category_id: cat_en.id, user_id: user1.id },
+    { title: 'punctuation', level: 2, category_id: cat_en.id, user_id: user1.id },
+    { title: 'addition', category_id: cat_mat.id, user_id: user1.id },
+    { title: 'logarithms', level: 3, category_id: cat_mat.id, user_id: user2.id },
+    { title: 'DNA', level: 2, category_id: cat_bio.id, user_id: user2.id },
+    { title: 'biogenesis', level: 1, category_id: cat_bio.id, user_id: user2.id }
   ]
 )
 
@@ -58,32 +75,15 @@ Answer.create(
   ]
 )
 
-john, sarah = User.create(
-  [
-    {
-      first_name: 'John',
-      last_name: 'Doe',
-      email: 'doe@foobar.com',
-      password_digest: BCrypt::Password.create('secret')
-    },
-    {
-      first_name: 'Sarah',
-      last_name: 'Lowson',
-      email: 'lowie@foobar.com',
-      password_digest: BCrypt::Password.create('secret')
-    }
-  ]
-)
-
 TestResult.create(
   [
     {
       test_id: test_syn.id,
-      user_id: john.id
+      user_id: user1.id
     },
     {
       test_id: test_pun.id,
-      user_id: sarah.id
+      user_id: user2.id
     }
   ]
 )
