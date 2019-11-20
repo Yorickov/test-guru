@@ -6,9 +6,7 @@ class User < ApplicationRecord
   has_many :test_results
   has_many :tests, through: :test_results
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true
+  validates :first_name, :last_name, :email, presence: true
 
   def tests_by_level(level)
     Test

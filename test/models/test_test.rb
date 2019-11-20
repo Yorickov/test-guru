@@ -37,6 +37,20 @@ class TestTest < ActiveSupport::TestCase
   test 'validation title' do
     assert(@test.valid?)
     @test.title = ''
-    refute(@test.valid?)
+    assert(@test.invalid?)
+  end
+
+  test 'validation level' do
+    assert(@test.valid?)
+    @test.level = -2
+    assert(@test.invalid?)
+    @test.level = 2.5
+    assert(@test.invalid?)
+  end
+
+  test 'uniquness' do
+    test2 = tests(:three)
+    test2.title = @test.title
+    assert(test2.invalid?)
   end
 end

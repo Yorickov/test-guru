@@ -18,6 +18,6 @@ class CategoryTest < ActiveSupport::TestCase
   test 'validation' do
     assert(@category.valid?)
     @category.title = ''
-    refute(@category.valid?)
+    assert(@category.invalid?)
   end
 end

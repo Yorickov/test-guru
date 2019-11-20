@@ -10,12 +10,12 @@ class AnswerTest < ActiveSupport::TestCase
   end
 
   test 'correct' do
-    assert_equal(1, Answer.correct.count)
+    assert_equal(2, Answer.correct.count)
   end
 
   test 'validation' do
     assert(@answer.valid?)
     @answer.body = ''
-    refute(@answer.valid?)
+    assert(@answer.invalid?)
   end
 end

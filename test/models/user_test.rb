@@ -21,18 +21,18 @@ class UserTest < ActiveSupport::TestCase
   test 'validation first_name' do
     assert(@user.valid?)
     @user.first_name = ''
-    refute(@user.valid?)
+    assert(@user.invalid?)
   end
 
   test 'validation last_name' do
     assert(@user.valid?)
     @user.last_name = ''
-    refute(@user.valid?)
+    assert(@user.invalid?)
   end
 
   test 'validation email' do
     assert(@user.valid?)
     @user.email = ''
-    refute(@user.valid?)
+    assert(@user.invalid?)
   end
 end

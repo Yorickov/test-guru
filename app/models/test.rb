@@ -7,14 +7,18 @@ class Test < ApplicationRecord
   has_many :users, through: :test_results
 
   validates :title, presence: true
+  validates :level, numericality: {
+    only_integer: true, greater_than_or_equal_to: 0
+  }
+  validates_uniqueness_of :title, scope: :level
 
   scope :by_category, ->(category) {
     Test
       .unscoped # Rails 6.1: no inherit scoping
-      .joins('INNER JOIN categories ON tests.category_id = categories.id')
-      .where('categories.title = ?', category)
+      .joins(:category)
+      .where(categories: { title: category })
       .order(title: :desc)
-      .pluck(:title)
+      .pluck(:title) # TODO: fluent interface?
   }
 
   scope :simple, -> { where(level: [0, 1]) }
