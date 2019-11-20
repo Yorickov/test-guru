@@ -5,4 +5,8 @@ class AnswerTest < ActiveSupport::TestCase
     answer = answers(:one)
     assert_equal('Question1', answer.question.body)
   end
+
+  test 'correct' do
+    assert_equal(1, Answer.correct.count)
+  end
 end

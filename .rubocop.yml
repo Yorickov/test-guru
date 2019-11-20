@@ -33,3 +33,6 @@ Metrics/AbcSize:
 
 Metrics/MethodLength:
   Max: 15
+
+Style/Lambda:
+  Enabled: false

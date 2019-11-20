@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  body: MyText
+  body: MyText1
   correct: false
   question: one
 
 two:
-  body: MyText
+  body: MyText2
   correct: false
   question: two
+
+three:
+  body: MyText3
+  correct: true
+  question: one

@@ -17,3 +17,9 @@ three:
   level: 2
   category: two
   author: two
+
+four:
+  title: addition
+  level: 6
+  category: three
+  author: two

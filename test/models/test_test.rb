@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class TestTest < ActiveSupport::TestCase
-  test 'tests_by_category' do
-    expected = Test.tests_by_category('english')
+  test 'tests by category' do
+    expected = Test.by_category('english')
     assert_equal(%w[syntax punctuation], expected)
   end
 
@@ -24,5 +24,11 @@ class TestTest < ActiveSupport::TestCase
   test 'test_results' do
     test = tests(:two)
     assert_equal('Lowson', test.users.first.last_name)
+  end
+
+  test 'level' do
+    assert_equal(1, Test.simple.count)
+    assert_equal(2, Test.medium.count)
+    assert_equal(1, Test.hard.count)
   end
 end
