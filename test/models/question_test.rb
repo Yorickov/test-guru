@@ -19,13 +19,4 @@ class QuestionTest < ActiveSupport::TestCase
     @question.body = ''
     assert(@question.invalid?)
   end
-
-  test 'validation assoc' do
-    answer2 = answers(:two)
-    answer5 = answers(:five)
-    answer2.question_id = @question.id
-    answer5.question_id = @question.id
-    @question.answers.push(answer2, answer5)
-    assert(@question.invalid?)
-  end
 end

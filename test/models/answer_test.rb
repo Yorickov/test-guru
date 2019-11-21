@@ -2,11 +2,11 @@ require 'test_helper'
 
 class AnswerTest < ActiveSupport::TestCase
   def setup
-    @answer = answers(:one)
+    @answer = answers(:two)
   end
 
   test 'questions' do
-    assert_equal('Question1', @answer.question.body)
+    assert_equal('Question2', @answer.question.body)
   end
 
   test 'correct' do
@@ -17,5 +17,10 @@ class AnswerTest < ActiveSupport::TestCase
     assert(@answer.valid?)
     @answer.body = ''
     assert(@answer.invalid?)
+  end
+
+  test 'validation assoc' do
+    answer = answers(:one)
+    assert(answer.invalid?)
   end
 end

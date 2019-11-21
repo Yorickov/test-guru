@@ -6,7 +6,7 @@ class TestTest < ActiveSupport::TestCase
   end
 
   test 'tests by category' do
-    expected = Test.by_category('english')
+    expected = Test.tests_by_category('english')
     assert_equal(%w[syntax punctuation], expected)
   end
 
