@@ -5,9 +5,13 @@ class Test < ApplicationRecord
   has_many :test_results
   has_many :users, through: :test_results
 
-  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :title, presence: true, uniqueness: {
+    scope: :level,
+    message: 'has already such combination title - level'
+  }
   validates :level, numericality: {
-    only_integer: true, greater_than_or_equal_to: 0
+    only_integer: true, greater_than_or_equal_to: 0,
+    message: 'should be positive integer or nil'
   }
 
   scope :by_category, ->(category_title) {
@@ -18,7 +22,7 @@ class Test < ApplicationRecord
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
   class << self
-    def tests_by_category(category)
+    def titles_by_category(category)
       by_category(category).order(title: :desc).pluck(:title)
     end
   end
