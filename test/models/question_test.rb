@@ -6,17 +6,17 @@ class QuestionTest < ActiveSupport::TestCase
   end
 
   test 'tests' do
-    assert_equal('syntax', @question.test.title)
+    assert_equal 'syntax', @question.test.title
   end
 
   test 'answers' do
     question = questions(:two)
-    assert_equal(1, question.answers.size)
+    assert_equal 1, question.answers.size
   end
 
   test 'validation' do
     assert(@question.valid?)
     @question.body = ''
-    assert(@question.invalid?)
+    assert @question.invalid?
   end
 end
