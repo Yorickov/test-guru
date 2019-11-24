@@ -21,8 +21,22 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test 'should get show' do
-    @question = questions(:one)
-    get question_url(@question)
+    question = questions(:one)
+    get question_url(question)
     assert_response :success
+  end
+
+  test 'should create' do
+    post "/tests/#{@test.id}/questions", # TODO: :id in params
+         params: { question: { body: 'success' } }
+    assert_response :redirect
+    follow_redirect!
+    assert_select 'li', 'success'
+  end
+
+  test 'should destroyed' do
+    question = questions(:four)
+    delete "/questions/#{question.id}"
+    assert_equal 3, Question.all.length
   end
 end

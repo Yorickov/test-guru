@@ -1,24 +1,27 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index new]
-  before_action :find_question, only: %i[show]
+  before_action :find_test, only: %i[index new create]
+  before_action :find_question, only: %i[show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with:
     :rescue_with_question_not_found
 
-  def index
+  def index; end
+
+  def new; end
+
+  def create
+    @test.questions.create(question_params)
+    redirect_to test_questions_path
   end
 
-  def new
-  end
+  def show; end
 
-  def show
-  end
+  # def edit; end
 
-  def edit; end
-
-  def update; end
+  # def update; end
 
   def destroy
+    @question.destroy
   end
 
   private
@@ -33,5 +36,9 @@ class QuestionsController < ApplicationController
 
   def rescue_with_question_not_found
     render plain: 'No such a question'
+  end
+
+  def question_params
+    params.require(:question).permit(:body)
   end
 end
