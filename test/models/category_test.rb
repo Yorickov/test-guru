@@ -6,18 +6,18 @@ class CategoryTest < ActiveSupport::TestCase
   end
 
   test 'tests' do
-    assert_equal(2, @category.tests.size)
+    assert_equal 2, @category.tests.size
   end
 
   test 'default scope' do
     expected = %w[biology english math]
-    assert_equal(expected, Category.all.pluck(:title))
-    assert_not_equal(expected, Category.unscoped.all.pluck(:title))
+    assert_equal expected, Category.all.pluck(:title)
+    assert_not_equal expected, Category.unscoped.all.pluck(:title)
   end
 
   test 'validation' do
-    assert(@category.valid?)
+    assert @category.valid?
     @category.title = ''
-    assert(@category.invalid?)
+    assert @category.invalid?
   end
 end
