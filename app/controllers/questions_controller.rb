@@ -7,12 +7,15 @@ class QuestionsController < ApplicationController
 
   def index; end
 
-  def new; end
+  def new
+    @question = @test.questions.new
+  end
 
   def create
-    question = @test.questions.build(question_params)
-    if question.save
-      redirect_to test_questions_path
+    @question = @test.questions.new(question_params)
+
+    if @question.save
+      redirect_to @question
     else
       render :new
     end
@@ -26,6 +29,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
+    # redirect_to @test
   end
 
   private

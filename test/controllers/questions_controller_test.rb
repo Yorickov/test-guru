@@ -23,17 +23,17 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
   #   assert_response :success
   # end
 
-  test 'should get show' do
-    get question_url(@question)
-    assert_response :success
-    assert_select 'h1', 'Question' # to system test
-  end
-
   test 'should create' do
     assert_difference('Question.count') do
       post test_questions_url(@test),
            params: { question: { body: 'success' } }
     end
+  end
+
+  test 'should get show' do
+    get question_url(@question)
+    assert_response :success
+    assert_select 'h1', 'Question' # to system test
   end
 
   test 'fail create' do
