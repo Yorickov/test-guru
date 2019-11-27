@@ -58,3 +58,6 @@ gem 'slim-rails', '~> 3.2'
 gem 'rails-i18n', '~> 6.0.0'
 
 gem 'simple_form'
+
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'

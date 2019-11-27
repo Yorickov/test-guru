@@ -1,12 +1,5 @@
 h1 Edit question
 
-form action="/#{@question.id}" method="patch"
-  input type="hidden" name="authenticity_token" value=form_authenticity_token
-
-  p
-    label for="question_body" Body
-    input#question_body type="text" name="question[body]"
-
-  input type="submit" value="Create"
+= render 'form', model: @question
 
 p = link_to 'Back', test_path(@question.test)
