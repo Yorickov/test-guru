@@ -1,2 +1,12 @@
-h1 Questions#edit
-p Find me in app/views/questions/edit.html.slim
+h1 Edit question
+
+form action="/#{@question.id}" method="patch"
+  input type="hidden" name="authenticity_token" value=form_authenticity_token
+
+  p
+    label for="question_body" Body
+    input#question_body type="text" name="question[body]"
+
+  input type="submit" value="Create"
+
+p = link_to 'Back', test_path(@question.test)
