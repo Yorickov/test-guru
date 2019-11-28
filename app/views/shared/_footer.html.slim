@@ -1,12 +1,15 @@
 footer.footer.fixed-bottom.mb-4
   .row.d-flex.flex-column.text-center.align-items-center
     .col-md-8.col-12.my-3
-      = link_to 'Test Guru',
-                github_url('Yorickov', 'test-guru'),
-                target: '_blank',
-                class: 'display-4 text-secondary'
+      = github_url('Yorickov',
+                  'test-guru',
+                  name: 'Test Guru',
+                  class: 'display-4 text-secondary')
     .col-md-8.col-12 Educational project on Ruby on Rails
     .col-md-8.col-12
-      = link_to 'on-line school Thinknetica', 'http://thinknetica.ru', target: '_blank'
+      = link_to 'on-line school Thinknetica',
+                'http://thinknetica.ru',
+                target: '_blank'
 
-  .footer-copyright.text-center.pt-4 © #{current_year} Dzmitry Monich
+  .footer-copyright.text-center.pt-4
+    | © #{current_year} Dzmitry Monich
