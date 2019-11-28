@@ -9,3 +9,6 @@ dbm:
 
 dbs:
 	rails db:seed
+
+rr:
+	rails routes

@@ -1,2 +1,5 @@
-h1 Questions#edit
-p Find me in app/views/questions/edit.html.slim
+h1 = question_header(@question)
+
+= render 'form', model: @question
+
+p = link_to 'Back', test_path(@question.test)

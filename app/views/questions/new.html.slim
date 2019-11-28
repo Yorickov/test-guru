@@ -1,10 +1,5 @@
-h1 Create new question
+h1 = question_header(@question)
 
-form action="/tests/#{@test.id}/questions" method="post"
-  input type="hidden" name="authenticity_token" value=form_authenticity_token
+= render 'form', model: [@test, @question]
 
-  p
-    label for="question_body" Body
-    input#question_body type="text" name="question[body]"
-
-  input type="submit" value="Create"
+p = link_to 'Back', test_path(@test)
