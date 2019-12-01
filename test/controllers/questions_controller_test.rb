@@ -6,16 +6,9 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
     @question = questions(:one)
   end
 
-  # test 'should get index' do
-  #   get test_questions_url(@test)
-  #   assert_response :success
-  #   assert_select 'h1', "Questions in #{@test.title}" # to system test
-  # end
-
   test 'should get new' do
     get new_test_question_url(@test)
     assert_response :success
-    assert_select 'h1', 'Create New syntax Question' # to system test
   end
 
   test 'should create' do
@@ -23,30 +16,31 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
       post test_questions_url(@test),
            params: { question: { body: 'success' } }
     end
+
+    assert_redirected_to question_url(Question.last)
   end
 
   test 'should get show' do
     get question_url(@question)
     assert_response :success
-    assert_select 'h1', 'Question' # to system test
   end
 
   test 'should get edit' do
     get edit_question_url(@question)
     assert_response :success
-    assert_select 'h1', 'Edit syntax Question'
   end
 
   test 'fail create' do
     post test_questions_url(@test),
          params: { question: { body: '' } }
     assert_response :success
-    assert_select 'h1', 'Create New syntax Question'
   end
 
   test 'should destroyed' do
     assert_difference('Question.count', -1) do
       delete question_url(@question)
     end
+
+    assert_redirected_to test_url(@question.test)
   end
 end

@@ -13,6 +13,8 @@ module TestGuru
 
     # use zeitwerk
     config.add_autoload_paths_to_load_path = false
+    # turn off zeitwerk
+    # config.autoloader = :classic
 
     # tz and locale
     config.time_zone = 'Europe/Minsk'
