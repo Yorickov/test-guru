@@ -1,5 +1,9 @@
 h1 Passing the #{@test_passage.test.title} Test
 
-p = @test_passage.inspect
-p = @test_passage.test.questions.first.inspect
-p = @test_passage.current_question
+= form_with url: test_passage_path(@test_passage), local: true, method: :put do |f|
+  = f.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|
+    .form-check
+      = b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input'
+      = b.label class: 'form-check-label'
+
+  p.btn = f.submit 'Next'

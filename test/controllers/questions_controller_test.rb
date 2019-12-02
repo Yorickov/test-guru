@@ -37,10 +37,11 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroyed' do
+    question = questions(:three)
     assert_difference('Question.count', -1) do
-      delete question_url(@question)
+      delete question_url(question)
     end
 
-    assert_redirected_to test_url(@question.test)
+    assert_redirected_to test_url(question.test)
   end
 end
