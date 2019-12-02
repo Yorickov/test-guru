@@ -1,2 +1,7 @@
-h1 TestPassages#result
-p Find me in app/views/test_passages/result.html.slim
+h1 = @test_passage.test.title
+
+p(class="#{class_color(@test_passage)}") = message(@test_passage)
+
+p = result(@test_passage)
+
+p = link_to 'All tests', tests_path

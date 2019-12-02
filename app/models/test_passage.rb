@@ -1,4 +1,6 @@
 class TestPassage < ApplicationRecord
+  CHECK_PASSED = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -13,6 +15,14 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
+  end
+
+  def result
+    (correct_questions.to_f / test.questions.size * 100).to_i
+  end
+
+  def passed?
+    result >= CHECK_PASSED
   end
 
   private
