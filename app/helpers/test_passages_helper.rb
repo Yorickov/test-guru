@@ -1,13 +1,12 @@
 module TestPassagesHelper
-  def message(test_passage)
-    test_passage.passed? ? 'You passed!' : 'You screwed up'
-  end
+  def result_message(test_passage)
+    message =
+      if test_passage.passed?
+        "class='text-success'>You passed!"
+      else
+        "class='text-danger'>You screwed up."
+      end
 
-  def class_color(test_passage)
-    test_passage.passed? ? 'text-success' : 'text-danger'
-  end
-
-  def result(test_passage)
-    "You result is #{test_passage.result}%"
+    "<p #{message} You result is #{test_passage.result}</p>".html_safe
   end
 end

@@ -1,7 +1,5 @@
 h1 = @test_passage.test.title
 
-p(class="#{class_color(@test_passage)}") = message(@test_passage)
-
-p = result(@test_passage)
+= result_message(@test_passage)
 
 p = link_to 'All tests', tests_path
