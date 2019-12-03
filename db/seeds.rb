@@ -7,7 +7,7 @@
 # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # Character.create(name: 'Luke', movie: movies.first)
 
-TestResult.destroy_all
+TestPassage.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Test.destroy_all
@@ -72,18 +72,5 @@ Answer.create(
     { body: 'answer 1', question_id: qa1.id, correct: true },
     { body: 'answer 2', question_id: qa2.id },
     { body: 'answer 1', question_id: ql1.id }
-  ]
-)
-
-TestResult.create(
-  [
-    {
-      test_id: test_syn.id,
-      user_id: user1.id
-    },
-    {
-      test_id: test_pun.id,
-      user_id: user2.id
-    }
   ]
 )

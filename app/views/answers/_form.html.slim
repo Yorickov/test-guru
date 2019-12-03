@@ -1,0 +1,21 @@
+= simple_form_for model, local: true do |f|
+  = f.input :body, label: 'Enter answer body'
+  = f.input :correct, as: :radio_buttons
+  = f.button :submit, class: 'btn-primary'
+
+/ For omparison:
+/ = form_for @answer do |f|
+/   - if @answer.errors.any?
+/     #error_explanation
+/       h2 = "#{pluralize(@answer.errors.count, "error")} prohibited this answer from being saved:"
+/       ul
+/         - @answer.errors.full_messages.each do |message|
+/           li = message
+
+/   .field
+/     = f.label :body
+/     = f.text_area :body
+/   .field
+/     = f.label :correct
+/     = f.check_box :correct
+/   .actions = f.submit
