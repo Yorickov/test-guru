@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  get 'signup', to: 'users#new'
-  resources :users, except: %i[new]
+  get :signup, to: 'users#new'
+  get :signin, to: 'sessions#new'
+
+  resources :users, except: :new
+  resource :session, only: :create
 
   resources :tests do
     resources :questions, shallow: true, except: :index do
