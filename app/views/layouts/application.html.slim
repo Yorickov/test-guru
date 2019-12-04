@@ -10,6 +10,8 @@ html
 
   body
     .container
+      - if signed_in?
+        p "Welcome #{current_user.first_name}"
       = yield
 
     = render 'shared/footer'

@@ -1,12 +1,17 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
-  helper_method :current_user
+  helper_method :current_user, :signed_in?
 
   private
 
   def authenticate_user!
-    redirect_to signin_path unless current_user
+    return if current_user
+
+    redirect_to signin_path, alert: "Are you a Guru? Verify
+      \ your Email and Password please"
+
+    cookies[:email] = current_user&.email
   end
 
   def current_user
