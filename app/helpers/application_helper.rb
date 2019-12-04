@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include AuthManagement
+
   def current_year
     Date.current.in_time_zone.year
   end

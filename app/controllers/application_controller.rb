@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
-  helper_method :current_user, :signed_in?
+  include AuthManagement
 
   private
 
@@ -12,13 +12,5 @@ class ApplicationController < ActionController::Base
       \ your Email and Password please"
 
     cookies[:email] = current_user&.email
-  end
-
-  def current_user
-    @current_user ||= session[:user_id] && User.find_by(id: session[:user_id])
-  end
-
-  def signed_in?
-    current_user.present?
   end
 end

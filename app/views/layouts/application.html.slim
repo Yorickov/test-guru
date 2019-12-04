@@ -9,11 +9,12 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    / = render 'shared/navi'
+    = render 'shared/navi'
 
     .container
       - if signed_in?
-        p "Welcome #{current_user.first_name}"
+        p "Welcome #{current_user.first_name}" Guru
       = yield
 
-    = render 'shared/footer'
+    .container
+      = render 'shared/footer'
