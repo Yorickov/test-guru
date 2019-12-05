@@ -10,6 +10,7 @@ html
 
   body
     = render 'shared/navi'
+    = show_flash unless flash.empty?
 
     .container
       - if signed_in?

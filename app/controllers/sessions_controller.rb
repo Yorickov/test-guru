@@ -8,13 +8,13 @@ class SessionsController < ApplicationController
       sign_in(user)
       redirect_to tests_path
     else
-      flash.now[:alert] = 'Are you a Guru? Verify your Email and Password'
+      flash.now[:info] = 'Are you a Guru? Verify your Email and Password'
       render :new
     end
   end
 
   def destroy
     sign_out
-    redirect_to root_path
+    redirect_to root_path, flash: { info: 'See you later' }
   end
 end
