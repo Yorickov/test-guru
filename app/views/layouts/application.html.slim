@@ -9,7 +9,13 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+    = render 'shared/navi'
+    = show_flash unless flash.empty?
+
     .container
+      - if signed_in?
+        p "Welcome #{current_user.first_name}" Guru
       = yield
 
-    = render 'shared/footer'
+    .container
+      = render 'shared/footer'
