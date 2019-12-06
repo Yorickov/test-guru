@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
     redirect_to signin_path, flash: {
       danger: 'Are you a Guru? Verify your Email and Password please'
     }
-    cookies[:no_auth] = request.url
+    cookies[:initial_url] = request.url
   end
 end

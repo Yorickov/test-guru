@@ -7,9 +7,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:user][:email])
 
     if user&.authenticate(params[:user][:password])
-      sign_in(user)
+      # sign_in(user)
+      session[:user_id] = user.id
 
-      path = cookies[:no_auth] || root_path
+      path = cookies[:initial_url] || root_path
       redirect_to path, flash: { info: "Welcome back, #{current_user}" }
     else
       flash.now[:info] = 'Are you a Guru? Verify your Email and Password'
