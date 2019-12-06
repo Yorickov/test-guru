@@ -4,11 +4,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light.bg-faded.mb-3
     span.navbar-toggler-icon
   .collapse.navbar-collapse#navbarSupportedContent
     ul.navbar-nav.mr-auto
-      - if signed_in?
+      - if user_signed_in?
         li.nav-item.active = link_to 'Tests', tests_path, class: 'nav-link'
     ul.navbar-nav
-      - if signed_in?
-        li.nav-item = link_to 'Sign Out', session_path, method: :delete, class: 'nav-link'
+      - if user_signed_in?
+        li.nav-item = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
       - else
-        li.nav-item = link_to 'Sign in', signin_path, class: 'nav-link'
-        li.nav-item = link_to 'Sign up', signup_path, class: 'nav-link'
+        li.nav-item = link_to 'Sign in', new_user_session_path, class: 'nav-link'
+        li.nav-item = link_to 'Sign up', new_user_registration_path, class: 'nav-link'

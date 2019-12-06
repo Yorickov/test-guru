@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#home'
 
-  get :home, to: 'welcome#home'
-  get :signup, to: 'users#new'
-  get :signin, to: 'sessions#new'
+  devise_for :users, path: :gurus
 
-  resources :users, except: :new
-  resource :session, only: %i[create destroy]
+  get :home, to: 'welcome#home'
 
   resources :tests do
     resources :questions, shallow: true, except: :index do
