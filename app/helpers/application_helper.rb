@@ -13,6 +13,12 @@ module ApplicationHelper
 
   def show_flash
     flash.each do |type, msg|
+      type =
+        if type == 'alert'
+          'danger'
+        elsif type == 'notice'
+          'success'
+        end
       return content_tag :p, msg, class: "alert alert-#{type}", role: 'alert'
     end
   end
