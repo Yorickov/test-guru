@@ -14,22 +14,27 @@ Test.destroy_all
 User.destroy_all
 Category.destroy_all
 
-user1, user2 = User.create(
-  [
-    {
-      first_name: 'John',
-      last_name: 'Doe',
-      email: 'doe@foobar.com',
-      password_digest: BCrypt::Password.create('secret')
-    },
-    {
-      first_name: 'Sarah',
-      last_name: 'Lowson',
-      email: 'lowie@foobar.com',
-      password_digest: BCrypt::Password.create('secret')
-    }
-  ]
+user1 = User.new(
+  first_name: 'John',
+  last_name: 'Doe',
+  email: 'doe@foobar.com',
+  password: 'secret1',
+  password_confirmation: 'secret1'
 )
+
+user1.skip_confirmation!
+user1.save!
+
+user2 = User.new(
+  first_name: 'Sarah',
+  last_name: 'Lowson',
+  email: 'lowie@foobar.com',
+  password: 'secret2',
+  password_confirmation: 'secret2'
+)
+
+user2.skip_confirmation!
+user2.save!
 
 categories = []
 %w[math english biology].each { |c| categories << Category.create(title: c) }
