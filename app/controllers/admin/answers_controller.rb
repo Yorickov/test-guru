@@ -1,4 +1,4 @@
-class AnswersController < ApplicationController
+class Admin::AnswersController < ApplicationController
   before_action :find_question, only: %i[new create]
   before_action :find_answer, only: %i[show edit update destroy]
 
@@ -10,7 +10,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to @answer, flash: {
+      redirect_to admin_answer_path(@answer), flash: {
         success: 'Answer was successfully created'
       }
     else
@@ -24,7 +24,7 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to @answer, flash: {
+      redirect_to admin_answer_path(@answer), flash: {
         success: 'Answer was successfully updated'
       }
     else

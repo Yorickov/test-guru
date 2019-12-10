@@ -1,0 +1,13 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.bg-faded.mb-3
+  = link_to 'Test Guru', root_path, class: 'navbar-brand'
+  button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse#navbarSupportedContent
+    ul.navbar-nav.mr-auto
+      li.nav-item.nav-link.active
+          span TestGuru AdminPanel
+      li.nav-item.active = link_to 'Tests', tests_path, class: 'nav-link'
+    ul.navbar-nav
+      li.nav-item.nav-link.active
+        span Welcome <b>#{current_user.email}</b> Guru
+      li.nav-item.active = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
