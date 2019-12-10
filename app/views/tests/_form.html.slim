@@ -1,6 +1,0 @@
-= simple_form_for model, local: true do |f|
-  = f.input :title, as: :string
-  = f.input :level, as: :string
-  = f.association :category, prompt: true
-  = f.association :author, label_method: :last_name, prompt: true
-  = f.button :submit, class: 'btn btn-primary'

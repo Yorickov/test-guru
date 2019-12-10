@@ -1,11 +1,18 @@
 class User < ApplicationRecord
-  has_secure_password
+  # Include default devise modules. Others available are:
+  # :lockable, :timeoutable, :omniauthable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable,
+         :trackable,
+         :confirmable
 
   has_many :own_tests, class_name: 'Test', inverse_of: 'author'
   has_many :test_passages
   has_many :tests, through: :test_passages
 
-  validates :first_name, :last_name, presence: true
   validates :email, presence: true,
                     uniqueness: true,
                     format: { with: URI::MailTo::EMAIL_REGEXP }
@@ -18,7 +25,11 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
+  def admin?
+    false
+  end
+
   def to_s
-    "#{first_name} #{last_name}"
+    first_name.empty? && last_name.empty? ? email : "#{first_name} #{last_name}"
   end
 end

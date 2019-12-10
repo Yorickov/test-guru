@@ -13,8 +13,6 @@ html
     = show_flash unless flash.empty?
 
     .container
-      - if signed_in?
-        p "Welcome #{current_user.first_name}" Guru
       = yield
 
     .container
