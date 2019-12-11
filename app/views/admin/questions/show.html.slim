@@ -6,7 +6,7 @@ h3 Answers
 
 p = link_to 'Add answer', new_admin_question_answer_path(@question)
 
-table.table
+table.table.table-bordered
   thead
     tr
       th Body
@@ -15,5 +15,4 @@ table.table
     = render @question.answers
 
 p = link_to 'Edit', edit_admin_question_path(@question)
-/ p = link_to 'Back', test_path(@question.test)
 p = link_to 'Back', admin_test_path(@question.test)

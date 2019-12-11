@@ -2,12 +2,12 @@ h1 All tests
 
 p = link_to 'Add test', new_admin_test_path
 
-table.table
+table.table.table-bordered
   thead
     tr
       th Title
       th Level
       th Questions
-      th(colspan="4") Actions
+      th.text-center(colspan="3") Actions
   tbody
     = render @tests

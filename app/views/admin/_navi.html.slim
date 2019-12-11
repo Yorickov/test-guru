@@ -6,5 +6,5 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-primary.bg-faded.mb-3
     ul.navbar-nav.mr-auto
       li.nav-item.active = link_to 'Tests', admin_tests_path, class: 'nav-link'
     ul.navbar-nav
-      li.nav-item.active = link_to "Welcome <b>#{current_user}</b> Guru", edit_user_registration_path, class: 'nav-link'
+      li.nav-item.active = link_to "Welcome, #{current_user} Guru", edit_user_registration_path, class: 'nav-link'
       li.nav-item.active = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
