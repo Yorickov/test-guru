@@ -18,7 +18,7 @@ module TestGuru
 
     # tz and locale
     config.time_zone = 'Europe/Minsk'
-    # config.i18n.default_locale = :'en-GB'
+    config.i18n.default_locale = :ru
 
     # remove active-storage action-mailer action-mailbox from rails routes
     initializer(

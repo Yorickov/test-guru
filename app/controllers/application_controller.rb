@@ -1,7 +1,13 @@
 class ApplicationController < ActionController::Base
-  # protect_from_forgery with: :exception
+  protect_from_forgery with: :exception
+
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
+  before_action :switch_locale
+
+  def default_url_options
+    { lang: I18n.locale }
+  end
 
   protected
 
@@ -15,5 +21,12 @@ class ApplicationController < ActionController::Base
     flash['notice'] = "Hello, #{user}"
     logger.debug flash.inspect
     user.admin? ? admin_tests_path : root_path
+  end
+
+  private
+
+  def switch_locale
+    I18n.locale = I18n.locale_available?(params[:lang]) && params[:lang] ||
+                  I18n.default_locale
   end
 end

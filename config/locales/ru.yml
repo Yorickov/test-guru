@@ -1,0 +1,29 @@
+ru:
+  helpers:
+    submit:
+      test_passage:
+        show: "Следующий"
+    # label:
+    #   test:
+    #     title: "Название"
+    #     level: "Уровень"
+    #     category_id: "Категория"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+
+  admin:
+    tests:
+      create:
+        success: "Тесты успешно созданы"
+      index:
+        header: "Доступные тесты"
+
+  test_mailers:
+    completed_test:
+      subject: 'Вы успешно завершили тест на TestGuru!'
