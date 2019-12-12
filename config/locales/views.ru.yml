@@ -1,0 +1,124 @@
+ru:
+  sign_up: "Зарегистрироваться"
+  sign_in: "Войти"
+  sign_out: "Выйти"
+  welcome: "Добро пожаловать, %{user} Гуру"
+  start: "Старт"
+
+  layouts:
+    application:
+      title: "Тест Гуру"
+    admin:
+      title: "Панель Администратора"
+
+  helpers:
+    submit:
+      test_passage:
+        show: "Следующий"
+    # label:
+    #   test:
+    #     title: "Название"
+    #     level: "Уровень"
+    #     category_id: "Категория"
+
+  shared:
+    footer:
+      project: "Образовательный проект на Runy on Rails"
+      school: "он-лайн школа Thinknetica"
+      author: "Дмитрий Монич"
+      footer_title: "Тест Гуру"
+    navi:
+      tests: "Тесты"
+      title: "Тест Гуру"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросы"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+      all_tests: "Все тесты"
+    show:
+      header: "Прохождение теста %{title}"
+      current_question: "Текущий вопрос: %{question}"
+      questions_count:
+        one: "Тест включает %{count} вопрос"
+        few: "Тест включает %{count} вопроса"
+        many: "Тест включает %{count} вопросов"
+        other: "Тест включает %{count} вопроса"
+
+  admin:
+    tests:
+      create:
+        success: "Тесты успешно созданы"
+      index:
+        header: "Доступные тесты"
+        add: "Добавить тест"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        actions: "Действия"
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      new:
+        back: "Назад"
+      edit:
+        back: "Назад"
+        show: "Показать"
+      show:
+        level: "Уровень: %{level}"
+        questions: "Вопросы"
+        add: "Добавить вопрос"
+        body: "Вопрос"
+        actions: "Действия"
+        edit: "Редактировать"
+        back: "Назад"
+    questions:
+      question:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      show:
+        answers: "Ответы"
+        add: "Добавить ответ"
+        body: "Ответ"
+        actions: "Действия"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        back: "Назад"
+      edit:
+        back: "Назад"
+        show: "Показать"
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      show:
+        correct: "Правильность: %{correct}"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        back: "Назад"
+      edit:
+        show: "Показать"
+        back: "Назад"
+    navi:
+      title: 'Тест Гуру Панель Администратора'
+      tests: "Тесты"
+      sign_out: "Выйти"
+      welcome: "Добро пожаловать, %{user} Гуру"
+
+  test_mailers:
+    completed_test:
+      subject: 'Вы успешно завершили тест на TestGuru!'

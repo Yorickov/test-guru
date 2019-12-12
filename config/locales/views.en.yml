@@ -1,0 +1,122 @@
+en:
+  sign_up: "Sign Up"
+  sign_in: "Sign In"
+  sign_out: "Sign Out"
+  welcome: "Welcome, %{user} Guru"
+  start: "Start"
+
+  layouts:
+    application:
+      title: "Test Guru"
+    admin:
+      title: "Admin Panel"
+
+  helpers:
+    submit:
+      test_passage:
+        show: "Next"
+    # label:
+    #   test:
+    #     title: "Title"
+    #     level: "Level"
+    #     category_id: "Category"
+
+  shared:
+    footer:
+      project: "Educational project on Ruby on Rails"
+      school: "on-line school Thinknetica"
+      author: "Dzmitry Monich"
+      footer_title: "Test Guru"
+    navi:
+      tests: "Tests"
+      title: "Test Guru"
+
+  tests:
+    index:
+      header: "Avalaible tests"
+      title: "Title"
+      level: "Level"
+      question: "Questions"
+
+  test_passages:
+    result:
+      header: "The %{title} test was completed!"
+      all_tests: "All tests"
+    show:
+      header: "Passing the %{title} Test"
+      current_question: "Current question: %{question}"
+      questions_count:
+        one: "Test includes %{count} question"
+        other: "Test includes %{count} questions"
+
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created"
+      index:
+        header: "Avalaible tests"
+        add: "Add test"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      new:
+        back: "Back"
+      edit:
+        back: "Back"
+        show: "Show"
+      show:
+        level: "Level: %{level}"
+        questions: "Questions"
+        add: "Add question"
+        body: "Question"
+        actions: "Actions"
+        edit: "Edit"
+        back: "Back"
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      show:
+        answers: "Answers"
+        add: "Add answer"
+        body: "Answer"
+        actions: "Actions"
+        edit: "Edit"
+        back: "Back"
+      new:
+        back: "Back"
+      edit:
+        show: "Show"
+        back: "Back"
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      show:
+        correct: "Correct: %{correct}"
+        edit: "Edit"
+        back: "Back"
+      new:
+        back: "Back"
+      edit:
+        show: "Show"
+        back: "Back"
+    navi:
+      tests: "Tests"
+      title: 'Test Guru Admin Panel'
+      sign_out: "Sign Out"
+      welcome: "Welcome, %{user} Guru"
+
+  test_mailers:
+    completed_test:
+      subject: 'You just completed the TestGuru test'

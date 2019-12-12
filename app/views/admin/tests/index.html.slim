@@ -1,13 +1,13 @@
 h1 = t('.header')
 
-p = link_to 'Add test', new_admin_test_path
+p = link_to t('.add'), new_admin_test_path
 
 table.table.table-bordered
   thead
     tr
-      th Title
-      th Level
-      th Questions
-      th.text-center(colspan="3") Actions
+      th = t('.title')
+      th = t('.level')
+      th = t('.questions')
+      th.text-center(colspan="3") = t('.actions')
   tbody
     = render @tests

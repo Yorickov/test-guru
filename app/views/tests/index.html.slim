@@ -3,8 +3,8 @@ h1 = t('.header')
 table.table
   thead
     tr
-      th Title
-      th Level
-      th Questions
+      th = t('.title')
+      th = t('.level')
+      th = t('.questions')
   tbody
     = render @tests
