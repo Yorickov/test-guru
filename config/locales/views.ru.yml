@@ -58,8 +58,6 @@ ru:
 
   admin:
     tests:
-      create:
-        success: "Тесты успешно созданы"
       index:
         header: "Доступные тесты"
         add: "Добавить тест"

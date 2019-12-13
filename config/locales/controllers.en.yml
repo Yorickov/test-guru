@@ -1,0 +1,27 @@
+en:
+  admin:
+    tests:
+      index:
+        auth: "You are not authorized to view this page"
+      create:
+        success: "Test was successfully created"
+      update:
+        success: "Test was successfully updated"
+      destroy:
+        success: "Test was successfully deleted"
+    questions:
+      create:
+        success: "Question was successfully created"
+      update:
+        success: "Question was successfully updated"
+      destroy:
+        success: "Question was successfully deleted"
+      show:
+        no_question: "No such a question"
+    answers:
+      create:
+        success: "Answer was successfully created"
+      update:
+        success: "Answer was successfully updated"
+      destroy:
+        success: "Answer was successfully deleted"

@@ -13,9 +13,7 @@ class Admin::QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to admin_question_path(@question), flash: {
-        success: 'Question was successfully created'
-      }
+      redirect_to admin_question_path(@question), notice: t('.success')
     else
       render :new
     end
@@ -27,9 +25,7 @@ class Admin::QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to admin_question_path(@question), flash: {
-        success: 'Question was successfully updated'
-      }
+      redirect_to admin_question_path(@question), notice: t('.success')
     else
       render :edit
     end
@@ -37,9 +33,7 @@ class Admin::QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to @question.test, flash: {
-      success: 'Question was successfully deleted'
-    }
+    redirect_to [:admin, @question.test], notice: t('.success')
   end
 
   private
@@ -53,7 +47,7 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: 'No such a question'
+    render plain: t('.no_question')
   end
 
   def question_params

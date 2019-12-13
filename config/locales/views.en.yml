@@ -56,8 +56,6 @@ en:
 
   admin:
     tests:
-      create:
-        success: "Test was successfully created"
       index:
         header: "Avalaible tests"
         add: "Add test"

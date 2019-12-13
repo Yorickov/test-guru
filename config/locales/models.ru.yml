@@ -34,3 +34,12 @@ ru:
         correct_questions: "Верно отвеченные вопросы"
         current_question_id: "Текущий вопрос"
         current_question: "Текущий вопрос"
+    errors:
+      models:
+        test:
+          attributes:
+            level:
+              greater_than_or_equal_to: "должен быть целым числом и больше нуля"
+              not_an_integer: "должен быть целым числом и больше нуля"
+            title:
+              taken: "уже имеет такое сочетание: название - уровень"

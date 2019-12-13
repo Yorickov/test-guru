@@ -10,9 +10,7 @@ class Admin::AnswersController < ApplicationController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to admin_answer_path(@answer), flash: {
-        success: 'Answer was successfully created'
-      }
+      redirect_to admin_answer_path(@answer), notice: t('.success')
     else
       render :new
     end
@@ -24,9 +22,7 @@ class Admin::AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to admin_answer_path(@answer), flash: {
-        success: 'Answer was successfully updated'
-      }
+      redirect_to admin_answer_path(@answer), notice: t('.success')
     else
       render :edit
     end
@@ -34,9 +30,7 @@ class Admin::AnswersController < ApplicationController
 
   def destroy
     @answer.destroy
-    redirect_to @answer.question, flash: {
-      success: 'Answer was successfully deleted'
-    }
+    redirect_to [:admin, @answer.question], notice: t('.success')
   end
 
   private
