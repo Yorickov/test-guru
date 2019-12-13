@@ -1,0 +1,36 @@
+ru:
+  activerecord:
+    models:
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      category: "Категория"
+      test_passage: "Прохождение теста"
+
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+        category: "Категория"
+        user_id: "Автор"
+        author: "Автор"
+      question:
+        body: "Тело вопроса"
+        test_id: "Тест"
+        test: "Тест"
+      answer:
+        body: "Тело ответа"
+        question_id: "Вопрос"
+        question: "Вопрос"
+        correct: "Верно"
+      category:
+        title: "Название"
+      test_passage:
+        test_id: "Тест"
+        test: "Тест"
+        user_id: "Пользователь"
+        user: "Пользователь"
+        correct_questions: "Верно отвеченные вопросы"
+        current_question_id: "Текущий вопрос"
+        current_question: "Текущий вопрос"

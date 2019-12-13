@@ -4,6 +4,7 @@ ru:
   sign_out: "Выйти"
   welcome: "Добро пожаловать, %{user} Гуру"
   start: "Старт"
+  # admin_panel: "Панель Администратора"
 
   layouts:
     application:
@@ -30,6 +31,7 @@ ru:
     navi:
       tests: "Тесты"
       title: "Тест Гуру"
+      admin_panel: "Панель Администратора"
 
   tests:
     index:
@@ -42,6 +44,9 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
       all_tests: "Все тесты"
+      passed: "Вы прошли!"
+      failed: "Вы облажались"
+      result: "Ваш результат: %{result}"
     show:
       header: "Прохождение теста %{title}"
       current_question: "Текущий вопрос: %{question}"
@@ -68,8 +73,10 @@ ru:
         delete: "Удалить"
         confirm: "Вы уверены?"
       new:
+        header_create: "Создать новый тест"
         back: "Назад"
       edit:
+        header_edit: "Редактировать тест"
         back: "Назад"
         show: "Показать"
       show:
@@ -94,8 +101,10 @@ ru:
         edit: "Редактировать"
         back: "Назад"
       new:
+        header_create: "Создать новый вопрос"
         back: "Назад"
       edit:
+        header_edit: "Редактировать вопрос"
         back: "Назад"
         show: "Показать"
     answers:
@@ -109,8 +118,10 @@ ru:
         edit: "Редактировать"
         back: "Назад"
       new:
+        header_create: "Создать новый ответ"
         back: "Назад"
       edit:
+        header_edit: "Редактировать ответ"
         show: "Показать"
         back: "Назад"
     navi:

@@ -13,6 +13,6 @@ module TestsHelper
   end
 
   def test_header(test)
-    test.persisted? ? 'Edit' : 'Create New'
+    test.persisted? ? t('.header_edit') : t('.header_create')
   end
 end

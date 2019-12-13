@@ -4,6 +4,7 @@ en:
   sign_out: "Sign Out"
   welcome: "Welcome, %{user} Guru"
   start: "Start"
+  # admin_panel: "Admin panel"
 
   layouts:
     application:
@@ -30,6 +31,7 @@ en:
     navi:
       tests: "Tests"
       title: "Test Guru"
+      admin_panel: "Admin panel"
 
   tests:
     index:
@@ -42,6 +44,9 @@ en:
     result:
       header: "The %{title} test was completed!"
       all_tests: "All tests"
+      passed: "You passed!"
+      failed: "You screwed up"
+      result: "You result is %{result}"
     show:
       header: "Passing the %{title} Test"
       current_question: "Current question: %{question}"
@@ -66,8 +71,10 @@ en:
         delete: "Delete"
         confirm: "Are you sure?"
       new:
+        header_create: "Create new test"
         back: "Back"
       edit:
+        header_edit: "Edit test"
         back: "Back"
         show: "Show"
       show:
@@ -92,8 +99,10 @@ en:
         edit: "Edit"
         back: "Back"
       new:
+        header_create: "Create new question"
         back: "Back"
       edit:
+        header_edit: "Edit question"
         show: "Show"
         back: "Back"
     answers:
@@ -107,8 +116,10 @@ en:
         edit: "Edit"
         back: "Back"
       new:
+        header_create: "Create new answer"
         back: "Back"
       edit:
+        header_edit: "Edit answer"
         show: "Show"
         back: "Back"
     navi:
