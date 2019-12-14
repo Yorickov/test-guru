@@ -10,6 +10,13 @@ ru:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Пожалуйста, рассмотрите проблемы ниже:"
+    hints:
+      test:
+        category: "Выбирете категорию из выпадающего списка"
+    # labels:
+    #   user:
+    #     first_name: 'Имя'
+    #     last_name: 'Фамилия'
     # Examples
     # labels:
     #   defaults:

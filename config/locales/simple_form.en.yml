@@ -10,7 +10,10 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
-    # Examples
+    hints:
+      test:
+        category: 'Choose category from combo-box'
+    # Examples§
     # labels:
     #   defaults:
     #     password: 'Password'
