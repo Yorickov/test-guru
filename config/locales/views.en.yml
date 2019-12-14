@@ -4,7 +4,6 @@ en:
   sign_out: "Sign Out"
   welcome: "Welcome, %{user} Guru"
   start: "Start"
-  # admin_panel: "Admin panel"
 
   layouts:
     application:
@@ -21,6 +20,13 @@ en:
     #     title: "Title"
     #     level: "Level"
     #     category_id: "Category"
+
+  links:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    back: "Back"
 
   shared:
     footer:
@@ -63,63 +69,33 @@ en:
         level: "Level"
         questions: "Questions"
         actions: "Actions"
-      test:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
-        confirm: "Are you sure?"
       new:
         header_create: "Create new test"
-        back: "Back"
       edit:
         header_edit: "Edit test"
-        back: "Back"
-        show: "Show"
       show:
         level: "Level: %{level}"
         questions: "Questions"
         add: "Add question"
         body: "Question"
         actions: "Actions"
-        edit: "Edit"
-        back: "Back"
     questions:
-      question:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
-        confirm: "Are you sure?"
       show:
         answers: "Answers"
         add: "Add answer"
         body: "Answer"
         actions: "Actions"
-        edit: "Edit"
-        back: "Back"
       new:
         header_create: "Create new question"
-        back: "Back"
       edit:
         header_edit: "Edit question"
-        show: "Show"
-        back: "Back"
     answers:
-      answer:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
-        confirm: "Are you sure?"
       show:
         correct: "Correct: %{correct}"
-        edit: "Edit"
-        back: "Back"
       new:
         header_create: "Create new answer"
-        back: "Back"
       edit:
         header_edit: "Edit answer"
-        show: "Show"
-        back: "Back"
     navi:
       tests: "Tests"
       title: 'Test Guru Admin Panel'

@@ -4,7 +4,6 @@ ru:
   sign_out: "Выйти"
   welcome: "Добро пожаловать, %{user} Гуру"
   start: "Старт"
-  # admin_panel: "Панель Администратора"
 
   layouts:
     application:
@@ -21,6 +20,13 @@ ru:
     #     title: "Название"
     #     level: "Уровень"
     #     category_id: "Категория"
+
+  links:
+    show: "Показать"
+    edit: "Редактировать"
+    delete: "Удалить"
+    confirm: "Вы уверены?"
+    back: "Назад"
 
   shared:
     footer:
@@ -65,63 +71,33 @@ ru:
         level: "Уровень"
         questions: "Вопросы"
         actions: "Действия"
-      test:
-        show: "Показать"
-        edit: "Редактировать"
-        delete: "Удалить"
-        confirm: "Вы уверены?"
       new:
         header_create: "Создать новый тест"
-        back: "Назад"
       edit:
         header_edit: "Редактировать тест"
-        back: "Назад"
-        show: "Показать"
       show:
         level: "Уровень: %{level}"
         questions: "Вопросы"
         add: "Добавить вопрос"
         body: "Вопрос"
         actions: "Действия"
-        edit: "Редактировать"
-        back: "Назад"
     questions:
-      question:
-        show: "Показать"
-        edit: "Редактировать"
-        delete: "Удалить"
-        confirm: "Вы уверены?"
       show:
         answers: "Ответы"
         add: "Добавить ответ"
         body: "Ответ"
         actions: "Действия"
-        edit: "Редактировать"
-        back: "Назад"
       new:
         header_create: "Создать новый вопрос"
-        back: "Назад"
       edit:
         header_edit: "Редактировать вопрос"
-        back: "Назад"
-        show: "Показать"
     answers:
-      answer:
-        show: "Показать"
-        edit: "Редактировать"
-        delete: "Удалить"
-        confirm: "Вы уверены?"
       show:
         correct: "Правильность: %{correct}"
-        edit: "Редактировать"
-        back: "Назад"
       new:
         header_create: "Создать новый ответ"
-        back: "Назад"
       edit:
         header_edit: "Редактировать ответ"
-        show: "Показать"
-        back: "Назад"
     navi:
       title: 'Тест Гуру Панель Администратора'
       tests: "Тесты"

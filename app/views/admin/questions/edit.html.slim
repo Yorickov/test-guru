@@ -2,5 +2,5 @@ h1 = question_header(@question)
 
 = render 'form', model: [:admin, @question]
 
-p = link_to t('.show'), admin_question_path(@question)
-p = link_to t('.back'), admin_test_path(@question.test)
+p = link_to t('links.show'), admin_question_path(@question)
+p = link_to t('links.back'), admin_test_path(@question.test)

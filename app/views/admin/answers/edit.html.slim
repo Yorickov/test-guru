@@ -4,6 +4,6 @@ p = @answer.question.body
 
 = render 'form', model: [:admin, @answer]
 
-=> link_to t('.show'), admin_answer_path(@answer)
+=> link_to t('links.show'), admin_answer_path(@answer)
 '|
-=< link_to t('.back'), admin_question_path(@answer.question)
+=< link_to t('links.back'), admin_question_path(@answer.question)

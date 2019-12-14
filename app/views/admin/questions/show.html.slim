@@ -14,5 +14,5 @@ table.table.table-bordered
   tbody
     = render @question.answers
 
-p = link_to t('.edit'), edit_admin_question_path(@question)
-p = link_to t('.back'), admin_test_path(@question.test)
+p = link_to t('links.edit'), edit_admin_question_path(@question)
+p = link_to t('links.back'), admin_test_path(@question.test)
