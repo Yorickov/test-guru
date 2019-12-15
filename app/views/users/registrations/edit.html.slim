@@ -6,11 +6,11 @@ h2.text-center = t('.title', resource: resource.model_name.human)
   .form-inputs
     = f.input :first_name, autofocus: true
     = f.input :last_name, autofocus: true
-    = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }
+    = f.input :email, autofocus: true, input_html: { autocomplete: "email" }
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       p = t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email)
-    = f.input :password, hint: t('.leave_blank_if_you_don_t_want_to_change_it'), required: false, input_html: { autocomplete: "new-password" }
-    = f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password" }
+    = f.input :password, hint: t('.leave_blank_if_you_don_t_want_to_change_it'), input_html: { autocomplete: "new-password" }
+    = f.input :password_confirmation, input_html: { autocomplete: "new-password" }
     = f.input :current_password, hint: t('.we_need_your_current_password_to_confirm_your_changes'), required: true, input_html: { autocomplete: "current-password" }
   .form-actions
     = f.button :submit, t('.update'), class: 'btn btn-primary'

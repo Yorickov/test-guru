@@ -2,6 +2,11 @@ doctype html
 html
   head
     title #{t('.title')} | TestGuru
+
+    meta charset='UTF-8'
+    meta name='viewport' content='width=device-width, initial-scale=1 shrink-to-fit=no'
+    meta http-equiv='X-UA-Compatible' content='ie=edge'
+
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -9,8 +14,12 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    = render 'admin/navi'
-    = show_flash unless flash.empty?
+    header
+      = render 'admin/navi'
 
     .container
-      = yield
+      = render 'shared/flash'
+
+    main role='main'
+      .container
+        = yield

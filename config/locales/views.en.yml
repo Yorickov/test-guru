@@ -5,11 +5,11 @@ en:
   welcome: "Welcome, %{user} Guru"
   start: "Start"
 
-  layouts:
-    application:
-      title: "Test Guru"
-    admin:
-      title: "Admin Panel"
+  # layouts:
+  #   application:
+  #     title: "Test Guru"
+  #   admin:
+  #     title: "Admin Panel"
 
   helpers:
     submit:
@@ -97,10 +97,11 @@ en:
       edit:
         header_edit: "Edit answer"
     navi:
+      title: 'Test Guru'
       tests: "Tests"
-      title: 'Test Guru Admin Panel'
       sign_out: "Sign Out"
       welcome: "Welcome, %{user} Guru"
+      admin_panel: "Admin panel"
 
   test_mailers:
     completed_test:

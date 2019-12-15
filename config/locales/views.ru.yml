@@ -5,11 +5,11 @@ ru:
   welcome: "Добро пожаловать, %{user} Гуру"
   start: "Старт"
 
-  layouts:
-    application:
-      title: "Тест Гуру"
-    admin:
-      title: "Панель Администратора"
+  # layouts:
+  #   application:
+  #     title: "Тест Гуру"
+  #   admin:
+  #     title: "Панель Администратора"
 
   helpers:
     submit:
@@ -99,10 +99,11 @@ ru:
       edit:
         header_edit: "Редактировать ответ"
     navi:
-      title: 'Тест Гуру Панель Администратора'
+      title: 'Тест Гуру'
       tests: "Тесты"
       sign_out: "Выйти"
       welcome: "Добро пожаловать, %{user} Гуру"
+      admin_panel: "Панель Администратора"
 
   test_mailers:
     completed_test:

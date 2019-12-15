@@ -1,10 +1,11 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-primary.bg-faded.mb-3
-  = link_to t('.title'), admin_tests_path, class: 'navbar-brand'
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.bg-faded.mb-3.text-light
+  = link_to t('.title'), root_path, class: 'navbar-brand'
   button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
     span.navbar-toggler-icon
   .collapse.navbar-collapse#navbarSupportedContent
     ul.navbar-nav.mr-auto
       li.nav-item.active = link_to t('.tests'), tests_path, class: 'nav-link'
+      li.nav-item.active = link_to t('.admin_panel'), admin_tests_path, class: 'nav-link'
     ul.navbar-nav
       li.nav-item.active = link_to t('welcome', user: current_user), edit_user_registration_path, class: 'nav-link'
       li.nav-item.active = link_to t('sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link'

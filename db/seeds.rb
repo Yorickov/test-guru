@@ -14,7 +14,7 @@ Test.destroy_all
 User.destroy_all
 Category.destroy_all
 
-user1 = User.new(
+admin = Admin.new(
   first_name: 'John',
   last_name: 'Doe',
   email: 'doe@foobar.com',
@@ -22,10 +22,10 @@ user1 = User.new(
   password_confirmation: 'secret1'
 )
 
-user1.skip_confirmation!
-user1.save!
+admin.skip_confirmation!
+admin.save!
 
-user2 = User.new(
+user = User.new(
   first_name: 'Sarah',
   last_name: 'Lowson',
   email: 'lowie@foobar.com',
@@ -33,34 +33,29 @@ user2 = User.new(
   password_confirmation: 'secret2'
 )
 
-user2.skip_confirmation!
-user2.save!
+user.skip_confirmation!
+user.save!
 
 categories = []
 %w[math english biology].each { |c| categories << Category.create(title: c) }
 cat_mat, cat_en, cat_bio = categories
 
-test_syn, test_pun, test_add, test_log, test_dna, test_bgn = Test.create(
+test_syn, test_pun, test_add = Test.create(
   [
-    { title: 'syntax', level: 1, category_id: cat_en.id, user_id: user1.id },
-    { title: 'punctuation', level: 2, category_id: cat_en.id, user_id: user1.id },
-    { title: 'addition', category_id: cat_mat.id, user_id: user1.id },
-    { title: 'logarithms', level: 3, category_id: cat_mat.id, user_id: user2.id },
-    { title: 'DNA', level: 2, category_id: cat_bio.id, user_id: user2.id },
-    { title: 'biogenesis', level: 1, category_id: cat_bio.id, user_id: user2.id }
+    { title: 'syntax', level: 1, category_id: cat_en.id, user_id: admin.id },
+    { title: 'punctuation', level: 2, category_id: cat_en.id, user_id: admin.id },
+    { title: 'addition', category_id: cat_mat.id, user_id: admin.id }
   ]
 )
 
-qs1, qs2, qp1, qp2, qa1, qa2, ql1, qd1 = Question.create(
+qs1, qs2, qp1, qp2, qa1, qa2 = Question.create(
   [
     { body: 'question 1', test_id: test_syn.id },
     { body: 'question 2', test_id: test_syn.id },
     { body: 'question 1', test_id: test_pun.id },
     { body: 'question 2', test_id: test_pun.id },
     { body: 'question 1', test_id: test_add.id },
-    { body: 'question 2', test_id: test_add.id },
-    { body: 'question 1', test_id: test_log.id },
-    { body: 'question 1', test_id: test_dna.id }
+    { body: 'question 2', test_id: test_add.id }
   ]
 )
 
@@ -75,7 +70,6 @@ Answer.create(
     { body: 'answer 1', question_id: qp2.id },
     { body: 'answer 2', question_id: qp2.id },
     { body: 'answer 1', question_id: qa1.id, correct: true },
-    { body: 'answer 2', question_id: qa2.id },
-    { body: 'answer 1', question_id: ql1.id }
+    { body: 'answer 2', question_id: qa2.id }
   ]
 )
