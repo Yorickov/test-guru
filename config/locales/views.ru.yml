@@ -5,11 +5,11 @@ ru:
   welcome: "Добро пожаловать, %{user} Гуру"
   start: "Старт"
 
-  # layouts:
-  #   application:
-  #     title: "Тест Гуру"
-  #   admin:
-  #     title: "Панель Администратора"
+  layouts:
+    application:
+      title: "Тест Гуру"
+    admin:
+      title: "Панель Администратора"
 
   helpers:
     submit:

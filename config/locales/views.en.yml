@@ -5,11 +5,11 @@ en:
   welcome: "Welcome, %{user} Guru"
   start: "Start"
 
-  # layouts:
-  #   application:
-  #     title: "Test Guru"
-  #   admin:
-  #     title: "Admin Panel"
+  layouts:
+    application:
+      title: "Test Guru"
+    admin:
+      title: "Admin Panel"
 
   helpers:
     submit:
