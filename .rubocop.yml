@@ -36,3 +36,6 @@ Metrics/MethodLength:
 
 Style/Lambda:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false

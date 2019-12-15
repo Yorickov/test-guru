@@ -41,6 +41,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
+  gem 'i18n-debug'
 end
 
 group :test do
@@ -61,3 +62,5 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'simple_form'
 
 gem "devise", "~> 4.7"
+
+gem "devise-i18n", "~> 1.9"

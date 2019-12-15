@@ -84,6 +84,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.9.0)
+      devise (>= 4.7.1)
     erubi (1.9.0)
     ffi (1.11.2)
     ffi (1.11.2-java)
@@ -93,6 +95,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
+    i18n-debug (1.2.0)
+      i18n (< 2)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     launchy (2.4.3)
@@ -270,6 +274,8 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise (~> 4.7)
+  devise-i18n (~> 1.9)
+  i18n-debug
   jbuilder (~> 2.7)
   letter_opener
   listen (>= 3.0.5, < 3.2)

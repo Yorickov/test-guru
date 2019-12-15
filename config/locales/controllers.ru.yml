@@ -1,0 +1,27 @@
+ru:
+  admin:
+    tests:
+      index:
+        auth: "У вас нет прав на просмотр этой старницы"
+      create:
+        success: "Тест успешно создан"
+      update:
+        success: "Тест успешно обновлен"
+      destroy:
+        success: "Тест успешно удален"
+    questions:
+      create:
+        success: "Вопрос успешно создан"
+      update:
+        success: "Вопрос успешно обновлен"
+      destroy:
+        success: "Вопрос успешно удален"
+      show:
+        no_question: "Нет такого вопроса"
+    answers:
+      create:
+        success: "Ответ успешно создан"
+      update:
+        success: "Ответ успешно обновлен"
+      destroy:
+        success: "Ответ успешно удален"

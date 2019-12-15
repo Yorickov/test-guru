@@ -29,7 +29,6 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
-    logger.debug "before validate#{current_question.id}"
   end
 
   def correct_answer?(answer_ids)

@@ -3,13 +3,13 @@ footer.footer.fixed-bottom.mb-4
     .col-md-8.col-12.my-3
       = github_url('Yorickov',
                   'test-guru',
-                  name: 'Test Guru',
+                  name: t('.footer_title'),
                   class: 'display-4 text-secondary')
-    .col-md-8.col-12 Educational project on Ruby on Rails
+    .col-md-8.col-12 = t('.project')
     .col-md-8.col-12
-      = link_to 'on-line school Thinknetica',
+      = link_to t('.school'),
                 'http://thinknetica.ru',
                 target: '_blank'
 
   .footer-copyright.text-center.pt-4
-    | © #{current_year} Dzmitry Monich
+    | © #{current_year} #{t('.author')}

@@ -2,11 +2,12 @@ module TestPassagesHelper
   def result_message(test_passage)
     message =
       if test_passage.passed?
-        "class='text-success'>You passed!"
+        "<p class='text-success'>#{t('.passed')}</p>"
       else
-        "class='text-danger'>You screwed up."
+        "<p class='text-danger'>#{t('.failed')}</p>"
       end
 
-    "<p #{message} You result is #{test_passage.result}</p>".html_safe
+    result = "<p>#{t('.result', result: test_passage.result)}</p>"
+    "#{message} #{result}".html_safe
   end
 end
