@@ -79,8 +79,6 @@ en:
         actions: "Actions"
     questions:
       show:
-        answers: "Answers"
-        add: "Add answer"
         body: "Answer"
         actions: "Actions"
       new:
@@ -94,6 +92,8 @@ en:
         header_create: "Create new answer"
       edit:
         header_edit: "Edit answer"
+      form:
+        correctness: "Correctness"
     navi:
       title: 'Test Guru | Admin panel'
       tests: "My tests"
@@ -103,7 +103,8 @@ en:
       add_test: "Add test"
       shared:
         links:
-          add: "Add question"
+          add_question: "Add question"
+          add_answer: "Add answer"
 
   test_mailers:
     completed_test:

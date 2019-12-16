@@ -1,7 +1,7 @@
-p = @answer.body
-p
-  strong = t('.correct', correct: @answer.correct)
-
-=> link_to t('links.edit'), edit_admin_answer_path(@answer)
-'|
-=< link_to t('links.back'), admin_question_path(@answer.question)
+.row.pt-5
+  .col-12.text-center
+    h2 = @answer.body
+    p = @answer.question.body
+    p = t('.correct', correct: @answer.correct)
+  .col-6.mx-auto
+    = render 'admin/shared/links'

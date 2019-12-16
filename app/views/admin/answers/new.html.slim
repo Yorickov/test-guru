@@ -1,7 +1,4 @@
-h1 = answer_header(@answer)
+h2.text-center.pt-5 = answer_header(@answer)
+p.text-center = @question.body
 
-p = @question.body
-
-= render 'form', model: [:admin, @question, @answer]
-
-= link_to t('links.back'), admin_question_path(@question)
+= render partial: 'form', locals: { model: [:admin, @question, @answer] },  layout: 'admin/shared/card'

@@ -81,8 +81,6 @@ ru:
         actions: "Действия"
     questions:
       show:
-        answers: "Ответы"
-        add: "Добавить ответ"
         body: "Ответ"
         actions: "Действия"
       new:
@@ -96,6 +94,8 @@ ru:
         header_create: "Создать новый ответ"
       edit:
         header_edit: "Редактировать ответ"
+      form:
+        correctness: "Правильность ответа"
     navi:
       title: "Тест Гуру | Панель Администратора"
       tests: "Мои тесты"
@@ -105,7 +105,8 @@ ru:
       add_test: "Добавить тест"
     shared:
       links:
-        add: "Добавить вопрос"
+        add_question: "Добавить вопрос"
+        add_answer: "Добавить ответ"
 
   test_mailers:
     completed_test:

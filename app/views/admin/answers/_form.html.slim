@@ -1,7 +1,7 @@
 = simple_form_for model, local: true do |f|
   = f.input :body
-  = f.input :correct, as: :radio_buttons
-  = f.button :submit, class: 'btn btn-primary'
+  = f.input :correct, as: :radio_buttons, label: t('.correctness')
+  = f.button :submit, class: 'btn btn-block btn-secondary btn-lg'
 
 / For omparison:
 / = form_for @answer do |f|

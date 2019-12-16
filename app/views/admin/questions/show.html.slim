@@ -1,18 +1,15 @@
-h1 #{@question.test.title}
+.row.pt-5
+  .col-12.text-center
+    h2 = @question.body
+    p = "#{@question.test.title}(#{@question.test.level})"
 
-p = @question.body
+  .col-sm-10.mx-auto
+    table.table.table-hover.table-bordered.text-center.mt-3
+      thead
+        tr
+          th = t('.body')
+          th.text-center(colspan="3") = t('.actions')
+      tbody
+        = render @question.answers
 
-h3 = t('.answers')
-
-p = link_to t('.add'), new_admin_question_answer_path(@question)
-
-table.table.table-bordered
-  thead
-    tr
-      th = t('.body')
-      th(colspan="3") = t('.actions')
-  tbody
-    = render @question.answers
-
-p = link_to t('links.edit'), edit_admin_question_path(@question)
-p = link_to t('links.back'), admin_test_path(@question.test)
+    = render 'admin/shared/links'
