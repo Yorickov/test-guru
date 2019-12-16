@@ -1,18 +1,15 @@
-h1 = @test.title
+.row.pt-5
+  .col-12.text-center
+    h2 = @test.title
+    p = t('.level', level: @test.level)
 
-p = t('.level', level: @test.level)
+  .col-sm-10.mx-auto
+    table.table.table-hover.table-bordered.text-center.mt-3
+      thead
+        tr
+          th = t('.body')
+          th.text-center(colspan="3") = t('.actions')
+      tbody
+        = render @test.questions
 
-h3 = t('.questions')
-
-p = link_to t('.add'), new_admin_test_question_path(@test)
-
-table.table.table-bordered
-  thead
-    tr
-      th = t('.body')
-      th.text-center(colspan="3") = t('.actions')
-  tbody
-    = render @test.questions
-
-p = link_to t('links.edit'), edit_admin_test_path(@test)
-p = link_to t('links.back'), admin_tests_path
+    = render 'admin/shared/links'

@@ -1,10 +1,14 @@
-h1 = t('.header')
+.row.pt-3
+  .col-12
+    h3.pb-3.text-center = t('.header')
 
-table.table
-  thead
-    tr
-      th = t('.title')
-      th = t('.level')
-      th = t('.questions')
-  tbody
-    = render @tests
+  .col-sm-10.mx-auto
+    table.table.table-hover.table-bordered.text-center
+      thead.thead-dark
+        tr
+          th = t('.title')
+          th = t('.level')
+          th = t('.questions')
+          th = t('.actions')
+      tbody
+        = render @tests
