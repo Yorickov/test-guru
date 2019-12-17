@@ -6,8 +6,6 @@ class Admin::BaseController < ApplicationController
   private
 
   def admin_required!
-    return if current_user.admin?
-
-    redirect_to root_path, alert: t('.auth')
+    redirect_to root_path, alert: t('.auth') unless current_user.admin?
   end
 end

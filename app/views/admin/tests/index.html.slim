@@ -1,13 +1,14 @@
-h1 = t('.header')
+.row.pt-3
+  .col-12
+    h2.pb-3.text-center = t('.header')
 
-p = link_to t('.add'), new_admin_test_path
-
-table.table.table-bordered
-  thead
-    tr
-      th = t('.title')
-      th = t('.level')
-      th = t('.questions')
-      th.text-center(colspan="3") = t('.actions')
-  tbody
-    = render @tests
+  .col-sm-10.mx-auto
+    table.table.table-hover.table-bordered.text-center
+      thead
+        tr
+          th = t('.title')
+          th = t('.level')
+          th = t('.questions')
+          th.text-center(colspan="3") = t('.actions')
+      tbody
+        = render @tests

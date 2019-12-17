@@ -45,17 +45,18 @@ en:
       title: "Title"
       level: "Level"
       question: "Questions"
+      actions: "Actions"
 
   test_passages:
     result:
       header: "The %{title} test was completed!"
-      all_tests: "All tests"
+      all_tests: "Return to the tests"
       passed: "You passed!"
       failed: "You screwed up"
       result: "You result is %{result}"
     show:
-      header: "Passing the %{title} Test"
-      current_question: "Current question: %{question}"
+      # header: "Test %{title}"
+      # current_question: "Current question: %{question}"
       questions_count:
         one: "Test includes %{count} question"
         other: "Test includes %{count} questions"
@@ -64,7 +65,6 @@ en:
     tests:
       index:
         header: "Avalaible tests"
-        add: "Add test"
         title: "Title"
         level: "Level"
         questions: "Questions"
@@ -75,16 +75,14 @@ en:
         header_edit: "Edit test"
       show:
         level: "Level: %{level}"
-        questions: "Questions"
-        add: "Add question"
         body: "Question"
         actions: "Actions"
+        add_question: "Add question"
     questions:
       show:
-        answers: "Answers"
-        add: "Add answer"
         body: "Answer"
         actions: "Actions"
+        add_answer: "Add answer"
       new:
         header_create: "Create new question"
       edit:
@@ -96,11 +94,16 @@ en:
         header_create: "Create new answer"
       edit:
         header_edit: "Edit answer"
-    navi:
-      tests: "Tests"
-      title: 'Test Guru Admin Panel'
-      sign_out: "Sign Out"
-      welcome: "Welcome, %{user} Guru"
+      form:
+        correctness: "Correctness"
+    shared:
+      navi:
+        title: 'Test Guru | Admin panel'
+        tests: "My tests"
+        sign_out: "Sign Out"
+        welcome: "Welcome, %{user} Guru"
+        # admin_panel: "Admin panel"
+        add_test: "Add test"
 
   test_mailers:
     completed_test:

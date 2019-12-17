@@ -1,5 +1,3 @@
-h1 = test_header(@test)
+h2.text-center.pt-5 = test_header(@test)
 
-= render 'form'
-
-p = link_to t('links.back'), admin_tests_path
+= render partial: 'form', layout: 'admin/shared/card'

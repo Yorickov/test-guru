@@ -45,17 +45,18 @@ ru:
       title: "Название"
       level: "Уровень"
       questions: "Вопросы"
+      actions: "Действия"
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершен!"
-      all_tests: "Все тесты"
+      header: "Тест %{title} завершен!"
+      all_tests: "Вернуться к тестам"
       passed: "Вы прошли!"
       failed: "Вы облажались"
       result: "Ваш результат: %{result}"
     show:
-      header: "Прохождение теста %{title}"
-      current_question: "Текущий вопрос: %{question}"
+      # header: "Тест %{title}"
+      # current_question: "Текущий вопрос: %{question}"
       questions_count:
         one: "Тест включает %{count} вопрос"
         few: "Тест включает %{count} вопроса"
@@ -66,7 +67,6 @@ ru:
     tests:
       index:
         header: "Доступные тесты"
-        add: "Добавить тест"
         title: "Название"
         level: "Уровень"
         questions: "Вопросы"
@@ -77,16 +77,14 @@ ru:
         header_edit: "Редактировать тест"
       show:
         level: "Уровень: %{level}"
-        questions: "Вопросы"
-        add: "Добавить вопрос"
         body: "Вопрос"
         actions: "Действия"
+        add_question: "Добавить вопрос"
     questions:
       show:
-        answers: "Ответы"
-        add: "Добавить ответ"
         body: "Ответ"
         actions: "Действия"
+        add_answer: "Добавить ответ"
       new:
         header_create: "Создать новый вопрос"
       edit:
@@ -98,11 +96,16 @@ ru:
         header_create: "Создать новый ответ"
       edit:
         header_edit: "Редактировать ответ"
-    navi:
-      title: 'Тест Гуру Панель Администратора'
-      tests: "Тесты"
-      sign_out: "Выйти"
-      welcome: "Добро пожаловать, %{user} Гуру"
+      form:
+        correctness: "Правильность ответа"
+    shared:
+      navi:
+        title: "Тест Гуру | Панель Администратора"
+        tests: "Мои тесты"
+        sign_out: "Выйти"
+        welcome: "Добро пожаловать, %{user} Гуру"
+        # admin_panel: "Панель Администратора"
+        add_test: "Добавить тест"
 
   test_mailers:
     completed_test:

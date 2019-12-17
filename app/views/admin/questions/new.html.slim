@@ -1,5 +1,4 @@
-h1 = question_header(@question)
+h2.text-center.pt-5 = question_header(@question)
+p.text-center = @test.title
 
-= render 'form', model: [:admin, @test, @question]
-
-p = link_to t('links.back'), admin_test_path(@test)
+= render partial: 'form', locals: { model: [:admin, @test, @question] }, layout: 'admin/shared/card'

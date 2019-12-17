@@ -11,15 +11,12 @@ module ApplicationHelper
             **options
   end
 
-  def show_flash
-    flash.each do |type, msg|
-      if type == 'alert'
-        type = 'danger'
-      elsif type == 'notice'
-        type = 'success'
-      end
-
-      return content_tag :p, msg, class: "alert alert-#{type}", role: 'alert'
+  def calc_flash_type(type)
+    case type
+    when 'alert'
+      'danger'
+    when 'notice'
+      'success'
     end
   end
 end

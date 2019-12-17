@@ -1,5 +1,8 @@
-h1 = t('.header', title: @test_passage.test.title)
+.row.justify-content-center.my-5
+  .col-md-8
+    .card.text-center
+      .card-body
+        h2.card-title = t('.header', title: @test_passage.test.title)
+        .py-2.card-text = result_message(@test_passage)
 
-= result_message(@test_passage)
-
-p = link_to t('.all_tests'), tests_path
+        = link_to t('.all_tests'), tests_path, class: 'btn btn-primary'
