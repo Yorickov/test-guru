@@ -77,10 +77,12 @@ en:
         level: "Level: %{level}"
         body: "Question"
         actions: "Actions"
+        add_question: "Add question"
     questions:
       show:
         body: "Answer"
         actions: "Actions"
+        add_answer: "Add answer"
       new:
         header_create: "Create new question"
       edit:
@@ -94,17 +96,14 @@ en:
         header_edit: "Edit answer"
       form:
         correctness: "Correctness"
-    navi:
-      title: 'Test Guru | Admin panel'
-      tests: "My tests"
-      sign_out: "Sign Out"
-      welcome: "Welcome, %{user} Guru"
-      # admin_panel: "Admin panel"
-      add_test: "Add test"
-      shared:
-        links:
-          add_question: "Add question"
-          add_answer: "Add answer"
+    shared:
+      navi:
+        title: 'Test Guru | Admin panel'
+        tests: "My tests"
+        sign_out: "Sign Out"
+        welcome: "Welcome, %{user} Guru"
+        # admin_panel: "Admin panel"
+        add_test: "Add test"
 
   test_mailers:
     completed_test:

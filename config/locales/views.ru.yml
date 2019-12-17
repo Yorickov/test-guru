@@ -79,10 +79,12 @@ ru:
         level: "Уровень: %{level}"
         body: "Вопрос"
         actions: "Действия"
+        add_question: "Добавить вопрос"
     questions:
       show:
         body: "Ответ"
         actions: "Действия"
+        add_answer: "Добавить ответ"
       new:
         header_create: "Создать новый вопрос"
       edit:
@@ -96,17 +98,14 @@ ru:
         header_edit: "Редактировать ответ"
       form:
         correctness: "Правильность ответа"
-    navi:
-      title: "Тест Гуру | Панель Администратора"
-      tests: "Мои тесты"
-      sign_out: "Выйти"
-      welcome: "Добро пожаловать, %{user} Гуру"
-      # admin_panel: "Панель Администратора"
-      add_test: "Добавить тест"
     shared:
-      links:
-        add_question: "Добавить вопрос"
-        add_answer: "Добавить ответ"
+      navi:
+        title: "Тест Гуру | Панель Администратора"
+        tests: "Мои тесты"
+        sign_out: "Выйти"
+        welcome: "Добро пожаловать, %{user} Гуру"
+        # admin_panel: "Панель Администратора"
+        add_test: "Добавить тест"
 
   test_mailers:
     completed_test:

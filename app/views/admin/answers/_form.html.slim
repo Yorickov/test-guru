@@ -3,19 +3,10 @@
   = f.input :correct, as: :radio_buttons, label: t('.correctness')
   = f.button :submit, class: 'btn btn-block btn-secondary btn-lg'
 
-/ For omparison:
-/ = form_for @answer do |f|
-/   - if @answer.errors.any?
-/     #error_explanation
-/       h2 = "#{pluralize(@answer.errors.count, "error")} prohibited this answer from being saved:"
-/       ul
-/         - @answer.errors.full_messages.each do |message|
-/           li = message
+section.d-flex.justify-content-between.pt-4
+  - if controller_name == 'answers' && action_name == 'new'
+    = link_to t('links.back'), admin_question_path(@question), class: 'btn btn-light'
 
-/   .field
-/     = f.label :body
-/     = f.text_area :body
-/   .field
-/     = f.label :correct
-/     = f.check_box :correct
-/   .actions = f.submit
+  - if controller_name == 'answers' && action_name == 'edit'
+    = link_to t('links.back'), admin_question_path(@answer.question), class: 'btn btn-light'
+    = link_to t('links.show'), admin_answer_path(@answer), class: 'btn btn-light'

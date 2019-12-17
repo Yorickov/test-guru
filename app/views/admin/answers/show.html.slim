@@ -4,4 +4,6 @@
     p = @answer.question.body
     p = t('.correct', correct: @answer.correct)
   .col-6.mx-auto
-    = render 'admin/shared/links'
+    section.d-flex.justify-content-between.pt-4
+      = link_to t('links.back'), admin_question_path(@answer.question), class: 'btn btn-light'
+      = link_to t('links.edit'), edit_admin_answer_path(@answer), class: 'btn btn-light'

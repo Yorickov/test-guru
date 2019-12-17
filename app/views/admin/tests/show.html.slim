@@ -12,4 +12,7 @@
       tbody
         = render @test.questions
 
-    = render 'admin/shared/links'
+    section.d-flex.justify-content-between.pt-4
+      = link_to t('links.back'), admin_tests_path, class: 'btn btn-light'
+      = link_to t('.add_question'), new_admin_test_question_path(@test),  class: 'btn btn-dark'
+      = link_to t('links.edit'), edit_admin_test_path(@test), class: 'btn btn-light'
