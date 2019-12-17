@@ -4,7 +4,7 @@
   = f.association :category, prompt: true
   = f.button :submit, class: 'btn btn-block btn-secondary btn-lg'
 
-- if controller_name == 'tests' && action_name == 'edit'
+- if @test.persisted?
   section.d-flex.justify-content-between.pt-4
     = link_to t('links.back'), admin_tests_path, class: 'btn btn-light'
     = link_to t('links.show'), admin_test_path(@test), class: 'btn btn-light'

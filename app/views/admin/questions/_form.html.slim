@@ -3,9 +3,9 @@
   = f.button :submit, class: 'btn btn-block btn-secondary btn-lg'
 
 section.d-flex.justify-content-between.pt-4
-  - if controller_name == 'questions' && action_name == 'new'
+  - if @question.new_record?
     = link_to t('links.back'), admin_test_path(@test), class: 'btn btn-light'
 
-  - if controller_name == 'questions' && action_name == 'edit'
+  - if @question.persisted?
     = link_to t('links.back'), admin_test_path(@question.test), class: 'btn btn-light'
     = link_to t('links.show'), admin_question_path(@question), class: 'btn btn-light'
