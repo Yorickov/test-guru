@@ -54,6 +54,9 @@ en:
       passed: "You passed!"
       failed: "You screwed up"
       result: "You result is %{result}"
+    gist:
+      success: "Gist successfully created!"
+      failure: "An error occurred while saving gist"
     show:
       # header: "Test %{title}"
       # current_question: "Current question: %{question}"

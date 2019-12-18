@@ -21,6 +21,8 @@ module TestGuru
     config.i18n.default_locale = :ru
     # config.i18n.fallbacks = [:en]
 
+    config.autoload_paths << "#{Rails.root}/lib/clients"
+
     # remove active-storage action-mailer action-mailbox from rails routes
     initializer(
       :remove_action_mailbox_and_activestorage_routes,

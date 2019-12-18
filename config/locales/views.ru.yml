@@ -54,6 +54,9 @@ ru:
       passed: "Вы прошли!"
       failed: "Вы облажались"
       result: "Ваш результат: %{result}"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
     show:
       # header: "Тест %{title}"
       # current_question: "Текущий вопрос: %{question}"
