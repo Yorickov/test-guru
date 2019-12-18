@@ -42,8 +42,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # mailer tester
   gem 'letter_opener'
-  gem 'i18n-debug'
 end
 
 group :test do
@@ -67,6 +67,8 @@ gem "devise", "~> 4.7"
 # Localization
 gem 'rails-i18n', '~> 6.0.0'
 gem "devise-i18n", "~> 1.9"
+gem 'i18n-debug', groups: [:development]
 
-# HTTP-client
+# HTTP-clients
 gem "faraday", "~> 0.17.1"
+gem "octokit", "~> 4.0"

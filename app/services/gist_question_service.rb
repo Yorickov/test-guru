@@ -1,7 +1,7 @@
 class GistQuestionService
   # dependency injection
   # client: nil - for testing
-  def initialize(question, client: nil)
+  def initialize(question, client = nil)
     @question = question
     @test = @question.test
     @client = client || GitHubClient.new
@@ -15,7 +15,7 @@ class GistQuestionService
 
   def gist_params
     {
-      description: "Question about #{@test.title} from TestGuru",
+      description: I18n.t('.gist_question', title: @test.title),
       public: true,
       files: {
         'test-guru-question.txt' => {

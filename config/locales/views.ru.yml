@@ -1,9 +1,5 @@
 ru:
-  sign_up: "Регистрация"
-  sign_in: "Войти"
-  sign_out: "Выйти"
-  welcome: "Добро пожаловать, %{user} Гуру"
-  start: "Старт"
+  gist_question: "Вопрос теста %{title} из Тест Гуру"
 
   layouts:
     application:
@@ -35,6 +31,10 @@ ru:
       author: "Дмитрий Монич"
       footer_title: "Тест Гуру"
     navi:
+      sign_up: "Регистрация"
+      sign_in: "Войти"
+      sign_out: "Выйти"
+      welcome: "Добро пожаловать, %{user} Гуру"
       tests: "Тесты"
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
@@ -46,6 +46,8 @@ ru:
       level: "Уровень"
       questions: "Вопросы"
       actions: "Действия"
+    test:
+      start: "Старт"
 
   test_passages:
     result:
@@ -55,11 +57,11 @@ ru:
       failed: "Вы облажались"
       result: "Ваш результат: %{result}"
     gist:
-      success: "Gist успешно сохранен!"
+      success: "Gist успешно сохранен по адресу: %{url}"
       failure: "Во время сохранения gist произошла ошибка"
     show:
-      # header: "Тест %{title}"
-      # current_question: "Текущий вопрос: %{question}"
+      next: "Следующий"
+      gist_question: "Отправить вопрос в Gist"
       questions_count:
         one: "Тест включает %{count} вопрос"
         few: "Тест включает %{count} вопроса"

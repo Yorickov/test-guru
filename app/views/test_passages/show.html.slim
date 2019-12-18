@@ -14,5 +14,5 @@
               = b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input'
               = b.label class: 'form-check-label'
           .d-flex.flex-column
-            = link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post, class: 'card-link py-3'
-            = f.submit 'Next', class: 'btn btn-primary'
+            = link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class: 'card-link py-3'
+            = f.submit t('.next'), class: 'btn btn-primary'

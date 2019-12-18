@@ -17,11 +17,14 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
+    responce = GistQuestionService.new(
+      @test_passage.current_question,
+      Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
+    ).call
 
     flash_options =
-      if result.success?
-        { notice: t('.success') }
+      if !responce.files.empty?
+        { notice: t('.success', url: responce.html_url) }
       else
         { alert: t('.failure') }
       end

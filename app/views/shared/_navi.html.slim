@@ -10,8 +10,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light.bg-faded.mb-3
           li.nav-item.active = link_to t('.admin_panel'), admin_tests_path, class: 'nav-link'
     ul.navbar-nav
       - if user_signed_in?
-        li.nav-item.active = link_to t('welcome', user: current_user), edit_user_registration_path, class: 'nav-link'
-        li.nav-item.active = link_to t('sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link'
+        li.nav-item.active = link_to t('.welcome', user: current_user), edit_user_registration_path, class: 'nav-link'
+        li.nav-item.active = link_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link'
       - else
-        li.nav-item.active = link_to t('sign_in'), new_user_session_path, class: 'nav-link'
-        li.nav-item.active = link_to t('sign_up'), new_user_registration_path, class: 'nav-link'
+        li.nav-item.active = link_to t('.sign_in'), new_user_session_path, class: 'nav-link'
+        li.nav-item.active = link_to t('.sign_up'), new_user_registration_path, class: 'nav-link'
