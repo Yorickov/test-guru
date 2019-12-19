@@ -1,5 +1,6 @@
 en:
   gist_question: "Question about %{title} from TestGuru"
+  welcome: "Welcome, %{user}"
 
   layouts:
     application:

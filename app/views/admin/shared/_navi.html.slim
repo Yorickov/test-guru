@@ -9,5 +9,5 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.bg-faded.mb-3.text-light
       li.nav-item.active = link_to t('.add_test'), new_admin_test_path, class: 'nav-link'
       li.nav-item.active = link_to t('.gists'), admin_gists_path, class: 'nav-link'
     ul.navbar-nav
-      li.nav-item.active = link_to t('welcome', user: current_user), edit_user_registration_path, class: 'nav-link'
-      li.nav-item.active = link_to t('sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link'
+      li.nav-item.active = link_to t('.welcome', user: current_user), edit_user_registration_path, class: 'nav-link'
+      li.nav-item.active = link_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link'

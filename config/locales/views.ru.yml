@@ -1,5 +1,6 @@
 ru:
   gist_question: "Вопрос теста %{title} из Тест Гуру"
+  welcome: "Добро пожаловать, %{user}"
 
   layouts:
     application:
