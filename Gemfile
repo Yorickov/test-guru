@@ -70,5 +70,5 @@ gem "devise-i18n", "~> 1.9"
 gem 'i18n-debug', groups: [:development]
 
 # HTTP-clients
-gem "faraday", "~> 0.17.1"
+# gem "faraday", "~> 0.17.1"
 gem "octokit", "~> 4.0"

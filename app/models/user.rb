@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :own_tests, class_name: 'Test', inverse_of: 'author'
   has_many :test_passages
   has_many :tests, through: :test_passages
+  has_many :gists
 
   validates :email, presence: true,
                     uniqueness: true,

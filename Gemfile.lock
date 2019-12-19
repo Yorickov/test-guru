@@ -288,7 +288,6 @@ DEPENDENCIES
   devise (~> 4.7)
   devise-i18n (~> 1.9)
   dotenv-rails
-  faraday (~> 0.17.1)
   i18n-debug
   jbuilder (~> 2.7)
   letter_opener
