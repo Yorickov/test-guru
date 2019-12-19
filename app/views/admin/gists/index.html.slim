@@ -1,0 +1,13 @@
+.row.pt-3
+  .col-12
+    h2.pb-3.text-center = t('.header')
+
+  .col-sm-10.mx-auto
+    table.table.table-hover.table-bordered.text-center
+      thead
+        tr
+          th = t('.question')
+          th = t('.gist_url')
+          th = t('.user')
+      tbody
+        = render @gists

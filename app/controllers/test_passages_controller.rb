@@ -26,7 +26,9 @@ class TestPassagesController < ApplicationController
 
     flash_options =
       if client.last_response.status == 201
-        { notice: t('.success', url: response.html_url) }
+        @gist = current_user.gists.new(gist_params(response))
+
+        { notice: t('.success', url: response.html_url) } if @gist.save
       else
         { alert: t('.failure') }
       end
@@ -38,5 +40,9 @@ class TestPassagesController < ApplicationController
 
   def find_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def gist_params(response)
+    { question: @test_passage.current_question, gist_hash: response.id }
   end
 end

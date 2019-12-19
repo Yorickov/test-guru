@@ -111,7 +111,13 @@ ru:
         welcome: "Добро пожаловать, %{user} Гуру"
         # admin_panel: "Панель Администратора"
         add_test: "Добавить тест"
-
+        gists: "Gists"
+    gists:
+      index:
+        question: "Вопрос"
+        gist_url: "Ссылка на Gists"
+        user: "Пользователь"
+        header: "Gists"
   test_mailers:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'

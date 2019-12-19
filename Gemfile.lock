@@ -91,7 +91,8 @@ GEM
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
     erubi (1.9.0)
-    faraday (0.17.1)
+      multipart-post (>= 1.2, < 3)
+    faraday (0.17.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.2)
     ffi (1.11.2-java)
@@ -288,6 +289,7 @@ DEPENDENCIES
   devise (~> 4.7)
   devise-i18n (~> 1.9)
   dotenv-rails
+  faraday (= 0.17.0)
   i18n-debug
   jbuilder (~> 2.7)
   letter_opener

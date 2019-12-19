@@ -109,7 +109,13 @@ en:
         welcome: "Welcome, %{user} Guru"
         # admin_panel: "Admin panel"
         add_test: "Add test"
-
+        gists: "Gists"
+    gists:
+      index:
+        question: "Question"
+        gist_url: "Gist Url"
+        user: "User"
+        header: "Gists"
   test_mailers:
     completed_test:
       subject: 'You just completed the TestGuru test'
