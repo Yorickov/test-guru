@@ -5,6 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load
 
 module TestGuru
   class Application < Rails::Application
@@ -20,6 +21,8 @@ module TestGuru
     config.time_zone = 'Europe/Minsk'
     config.i18n.default_locale = :ru
     # config.i18n.fallbacks = [:en]
+
+    # config.autoload_paths << "#{Rails.root}/lib/clients"
 
     # remove active-storage action-mailer action-mailbox from rails routes
     initializer(

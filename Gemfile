@@ -5,6 +5,8 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
+# dotenv
+gem 'dotenv-rails', groups: [:development, :test]
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
@@ -40,8 +42,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # mailer tester
   gem 'letter_opener'
-  gem 'i18n-debug'
 end
 
 group :test do
@@ -55,12 +57,18 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Templates
 gem 'slim-rails', '~> 3.2'
-
-gem 'rails-i18n', '~> 6.0.0'
-
 gem 'simple_form'
 
+# Authorization
 gem "devise", "~> 4.7"
 
+# Localization
+gem 'rails-i18n', '~> 6.0.0'
 gem "devise-i18n", "~> 1.9"
+gem 'i18n-debug', groups: [:test]
+
+# HTTP-clients
+gem "faraday", "0.17.0"
+gem "octokit", "~> 4.0"

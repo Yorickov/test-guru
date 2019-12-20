@@ -1,9 +1,6 @@
 en:
-  sign_up: "Sign Up"
-  sign_in: "Sign In"
-  sign_out: "Sign Out"
-  welcome: "Welcome, %{user} Guru"
-  start: "Start"
+  gist_question: "Question about %{title} from TestGuru"
+  welcome: "Welcome, %{user}"
 
   layouts:
     application:
@@ -35,6 +32,10 @@ en:
       author: "Dzmitry Monich"
       footer_title: "Test Guru"
     navi:
+      sign_up: "Sign Up"
+      sign_in: "Sign In"
+      sign_out: "Sign Out"
+      welcome: "Welcome, %{user} Guru"
       tests: "Tests"
       title: "Test Guru"
       admin_panel: "Admin panel"
@@ -46,6 +47,8 @@ en:
       level: "Level"
       question: "Questions"
       actions: "Actions"
+    test:
+      start: "Start"
 
   test_passages:
     result:
@@ -54,9 +57,12 @@ en:
       passed: "You passed!"
       failed: "You screwed up"
       result: "You result is %{result}"
+    gist:
+      success: "Gist successfully created in %{url}"
+      failure: "An error occurred while saving gist"
     show:
-      # header: "Test %{title}"
-      # current_question: "Current question: %{question}"
+      next: "Next"
+      gist_question: "Gist Question"
       questions_count:
         one: "Test includes %{count} question"
         other: "Test includes %{count} questions"
@@ -104,7 +110,13 @@ en:
         welcome: "Welcome, %{user} Guru"
         # admin_panel: "Admin panel"
         add_test: "Add test"
-
+        gists: "Gists"
+    gists:
+      index:
+        question: "Question"
+        gist_url: "Gist Url"
+        user: "User"
+        header: "Gists"
   test_mailers:
     completed_test:
       subject: 'You just completed the TestGuru test'
