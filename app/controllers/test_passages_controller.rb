@@ -17,15 +17,13 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    client = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
-
-    response = GistQuestionService.new(
-      @test_passage.current_question,
-      client
-    ).call
+    gist_question_service = GistQuestionService.new(
+      @test_passage.current_question
+    )
+    response = gist_question_service.call
 
     flash_options =
-      if client.last_response.status == 201
+      if gist_question_service.success?
         @gist = current_user.gists.new(gist_params(response))
 
         { notice: t('.success', url: response.html_url) } if @gist.save

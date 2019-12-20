@@ -67,7 +67,7 @@ gem "devise", "~> 4.7"
 # Localization
 gem 'rails-i18n', '~> 6.0.0'
 gem "devise-i18n", "~> 1.9"
-gem 'i18n-debug', groups: [:development]
+gem 'i18n-debug', groups: [:test]
 
 # HTTP-clients
 gem "faraday", "0.17.0"
