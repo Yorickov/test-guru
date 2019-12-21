@@ -2,7 +2,11 @@ const validatePassword = (password, password_confirmation) => {
   const invalid = document.querySelector('.octicon-thumbsdown');
   const valid = document.querySelector('.octicon-thumbsup');
 
-  if (password.value === '' && password_confirmation.value === '') return;
+  if (password_confirmation.value === '') {
+    valid.classList.add('hide');
+    invalid.classList.add('hide');
+    return;
+  };
 
   if (password.value === password_confirmation.value) {
     valid.classList.remove('hide');
