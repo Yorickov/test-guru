@@ -18,4 +18,7 @@ require("channels")
 
 import 'bootstrap/dist/js/bootstrap';
 import '../stylesheets/application.scss';
-import '../utilities/sorting'
+
+import utilities from '../utilities';
+
+utilities();

@@ -11,7 +11,10 @@
             = f.input :first_name, autofocus: true, input_html: { autocomplete: "first_name" }
             = f.input :last_name, autofocus: true, input_html: { autocomplete: "last_name" }
             = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }
-            = f.input :password, required: true, hint: (t('users.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length), input_html: { autocomplete: "new-password" }
+            div
+              = f.input :password, required: true, hint: (t('users.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length), input_html: { autocomplete: "new-password" }
+              = octicon 'thumbsdown', class: 'text-danger hide'
+              = octicon 'thumbsup', class: 'text-success hide'
             = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }
 
           .form-actions

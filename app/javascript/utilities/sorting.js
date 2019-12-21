@@ -1,10 +1,3 @@
-document.addEventListener('turbolinks:load', () => {
-  const control = document.querySelector('.sort-by-title');
-  if (control) {
-    control.addEventListener('click', sortTableByTitle.bind(this));
-  }
-});
-
 const sortRows = (raws, direction = 'asc') => {
   const comparator = (row1, row2) => {
     const title1 = row1.querySelector('td').textContent;
@@ -51,4 +44,11 @@ const sortTableByTitle = (e) => {
   tdRows.forEach(row => sortedTable.appendChild(row));
 
   table.replaceWith(sortedTable);
+};
+
+export default () => {
+  const control = document.querySelector('.sort-by-title');
+  if (control) {
+    control.addEventListener('click', sortTableByTitle.bind(this));
+  }
 };
