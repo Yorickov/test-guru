@@ -18,3 +18,7 @@ require("channels")
 
 import 'bootstrap/dist/js/bootstrap';
 import '../stylesheets/application.scss';
+
+import utilities from '../utilities';
+
+utilities();

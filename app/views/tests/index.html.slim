@@ -6,7 +6,10 @@
     table.table.table-hover.table-bordered.text-center
       thead.thead-dark
         tr
-          th = t('.title')
+          th.sort-by-title.pointer
+            = t('.title')
+            = octicon 'arrow-up', class: 'text-success hide'
+            = octicon 'arrow-down', class: 'text-success hide'
           th = t('.level')
           th = t('.questions')
           th = t('.actions')

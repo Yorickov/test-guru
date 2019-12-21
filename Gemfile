@@ -10,7 +10,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 4.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -72,3 +72,5 @@ gem 'i18n-debug', groups: [:test]
 # HTTP-clients
 gem "faraday", "0.17.0"
 gem "octokit", "~> 4.0"
+
+gem "octicons_helper", "~> 9.3"
