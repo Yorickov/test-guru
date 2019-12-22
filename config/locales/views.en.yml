@@ -12,11 +12,6 @@ en:
     submit:
       test_passage:
         show: "Next"
-    # label:
-    #   test:
-    #     title: "Title"
-    #     level: "Level"
-    #     category_id: "Category"
 
   links:
     show: "Show"
@@ -61,7 +56,7 @@ en:
       all_tests: "Return to the tests"
       passed: "You passed!"
       failed: "You screwed up"
-      result: "You result is %{result}"
+      result: "You result is %{result}%"
     gist:
       success: "Gist successfully created in %{url}"
       failure: "An error occurred while saving gist"
