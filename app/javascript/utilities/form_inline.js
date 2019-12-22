@@ -3,14 +3,17 @@ const formInlineHandler = (testId) => {
   const testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]');
   const formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]');
 
+  const oldName = link.dataset.oldName;
+  const newName = link.dataset.newName;
+
   if (formInline.classList.contains('hide')) {
     testTitle.classList.add('hide');
     formInline.classList.remove('hide');
-    link.textContent = 'Cancel';
+    link.textContent = newName;
   } else {
     testTitle.classList.remove('hide');
     formInline.classList.add('hide');
-    link.textContent = 'Edit';
+    link.textContent = oldName;
   }
 };
 

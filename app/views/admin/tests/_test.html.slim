@@ -8,7 +8,7 @@ tr
   td.align-middle
     = link_to t('links.edit'),
               edit_admin_test_path(test),
-              data: { test_id: test.id },
+              data: { test_id: test.id, old_name: t('links.edit'), new_name: t('links.cancel') },
               class: 'form-inline-link'
   td.align-middle = link_to t('links.delete'),
                 admin_test_path(test),
