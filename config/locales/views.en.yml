@@ -24,6 +24,7 @@ en:
     delete: "Delete"
     confirm: "Are you sure?"
     back: "Back"
+    cancel: "Cancel"
 
   shared:
     footer:
@@ -39,6 +40,10 @@ en:
       tests: "Tests"
       title: "Test Guru"
       admin_panel: "Admin panel"
+    errors:
+      header:
+        one: "%{count} mistake founded"
+        other: "%{count} mistakes founded"
 
   tests:
     index:
@@ -84,6 +89,8 @@ en:
         body: "Question"
         actions: "Actions"
         add_question: "Add question"
+      form_inline:
+        submit: 'OK'
     questions:
       show:
         body: "Answer"

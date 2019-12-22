@@ -3,7 +3,8 @@
     h2.pb-3.text-center = t('.header')
 
   .col-sm-10.mx-auto
-    table.table.table-hover.table-bordered.text-center
+    p = render 'shared/errors', resource: @test
+    table.table.table-hover.table-bordered
       thead
         tr
           th.sort-by-title.pointer

@@ -24,6 +24,7 @@ ru:
     delete: "Удалить"
     confirm: "Вы уверены?"
     back: "Назад"
+    cancel: "Отменить"
 
   shared:
     footer:
@@ -39,6 +40,12 @@ ru:
       tests: "Тесты"
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
+    errors:
+      header:
+        one: "Найдена %{count} ошибка"
+        few: "Найдены %{count} ошибки"
+        many: "Найдено %{count} ошибок"
+        other: "Найдено %{count} ошибки"
 
   tests:
     index:
@@ -86,6 +93,8 @@ ru:
         body: "Вопрос"
         actions: "Действия"
         add_question: "Добавить вопрос"
+      form_inline:
+        submit: 'OK'
     questions:
       show:
         body: "Ответ"

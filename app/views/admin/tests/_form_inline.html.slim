@@ -1,0 +1,7 @@
+= simple_form_for [:admin, test],
+                  url: update_inline_admin_test_path(test),
+                  local: true,
+                  html: { class: 'form-inline hide justify-content-between' },
+                  data: { test_id: test.id } do |f|
+  = f.input :title, as: :string, label: false, class: 'form-control'
+  = f.button :submit, t('.submit'), class: 'btn-primary btn-sm'
