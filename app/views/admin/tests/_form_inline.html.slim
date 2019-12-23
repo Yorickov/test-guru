@@ -3,5 +3,7 @@
                   local: true,
                   html: { class: 'form-inline hide justify-content-between' },
                   data: { test_id: test.id } do |f|
-  = f.input :title, as: :string, label: false, class: 'form-control'
+  / replace simple_form error-control for the outer one
+  = f.input :title, as: :string, label: false, class: 'form-control', error: false
+
   = f.button :submit, t('.submit'), class: 'btn-primary btn-sm'

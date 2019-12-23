@@ -28,7 +28,7 @@ const formInlineLinkHandler = (e) => {
 
 export default () => {
   const controls = document.querySelectorAll('.form-inline-link');
-  if (controls.length) {
+  if (controls && controls.length) {
     controls.forEach(control => control.addEventListener(
       'click',
       formInlineLinkHandler.bind(this),
