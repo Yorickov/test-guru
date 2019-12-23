@@ -12,11 +12,6 @@ en:
     submit:
       test_passage:
         show: "Next"
-    # label:
-    #   test:
-    #     title: "Title"
-    #     level: "Level"
-    #     category_id: "Category"
 
   links:
     show: "Show"
@@ -24,6 +19,7 @@ en:
     delete: "Delete"
     confirm: "Are you sure?"
     back: "Back"
+    cancel: "Cancel"
 
   shared:
     footer:
@@ -39,6 +35,10 @@ en:
       tests: "Tests"
       title: "Test Guru"
       admin_panel: "Admin panel"
+    errors:
+      header:
+        one: "%{count} mistake founded"
+        other: "%{count} mistakes founded"
 
   tests:
     index:
@@ -56,7 +56,7 @@ en:
       all_tests: "Return to the tests"
       passed: "You passed!"
       failed: "You screwed up"
-      result: "You result is %{result}"
+      result: "You result is %{result}%"
     gist:
       success: "Gist successfully created in %{url}"
       failure: "An error occurred while saving gist"
@@ -84,6 +84,8 @@ en:
         body: "Question"
         actions: "Actions"
         add_question: "Add question"
+      form_inline:
+        submit: 'OK'
     questions:
       show:
         body: "Answer"
