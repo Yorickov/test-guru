@@ -25,6 +25,12 @@ class TestPassage < ApplicationRecord
     result >= CHECK_PASSED
   end
 
+  def progress
+    questions = test.questions
+    result = questions.find_index(current_question).to_f / questions.count * 100
+    result.to_i
+  end
+
   private
 
   def before_validation_set_first_question
