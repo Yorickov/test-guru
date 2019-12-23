@@ -12,11 +12,6 @@ ru:
     submit:
       test_passage:
         show: "Следующий"
-    # label:
-    #   test:
-    #     title: "Название"
-    #     level: "Уровень"
-    #     category_id: "Категория"
 
   links:
     show: "Показать"
@@ -24,6 +19,7 @@ ru:
     delete: "Удалить"
     confirm: "Вы уверены?"
     back: "Назад"
+    cancel: "Отменить"
 
   shared:
     footer:
@@ -39,6 +35,12 @@ ru:
       tests: "Тесты"
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
+    errors:
+      header:
+        one: "Найдена %{count} ошибка"
+        few: "Найдены %{count} ошибки"
+        many: "Найдено %{count} ошибок"
+        other: "Найдено %{count} ошибки"
 
   tests:
     index:
@@ -56,7 +58,7 @@ ru:
       all_tests: "Вернуться к тестам"
       passed: "Вы прошли!"
       failed: "Вы облажались"
-      result: "Ваш результат: %{result}"
+      result: "Ваш результат: %{result}%"
     gist:
       success: "Gist успешно сохранен по адресу: %{url}"
       failure: "Во время сохранения gist произошла ошибка"
@@ -86,6 +88,8 @@ ru:
         body: "Вопрос"
         actions: "Действия"
         add_question: "Добавить вопрос"
+      form_inline:
+        submit: 'OK'
     questions:
       show:
         body: "Ответ"
