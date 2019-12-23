@@ -38,7 +38,7 @@ const sortTableByTitle = (e) => {
   }
 
   const sortedTable = document.createElement('table');
-  sortedTable.classList.add('table', 'table-hover', 'table-bordered');
+  sortedTable.classList.add('table', 'table-hover', 'table-bordered', 'text-center');
 
   sortedTable.append(rows[0]);
   tdRows.forEach(row => sortedTable.appendChild(row));
