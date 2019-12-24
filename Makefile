@@ -12,3 +12,6 @@ dbs:
 
 rr:
 	rails routes
+
+psql:
+	rails dbconsole

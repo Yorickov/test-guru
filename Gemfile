@@ -7,8 +7,8 @@ ruby '2.6.3'
 gem 'rails', '~> 6.0.1'
 # dotenv
 gem 'dotenv-rails', groups: [:development, :test]
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# Postgresql adaptor
+gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 4.3.1'
 # Use SCSS for stylesheets
@@ -73,4 +73,5 @@ gem 'i18n-debug', groups: [:test]
 gem "faraday", "0.17.0"
 gem "octokit", "~> 4.0"
 
+# Github icons
 gem "octicons_helper", "~> 9.3"
