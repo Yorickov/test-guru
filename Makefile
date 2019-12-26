@@ -1,9 +1,6 @@
 install:
 	bundle install
 
-server:
-	rails s
-
 dbm:
 	rails db:migrate
 
@@ -15,3 +12,12 @@ rr:
 
 psql:
 	rails dbconsole
+
+h-dbm:
+	heroku run rake db:migrate
+
+h-dbs:
+	heroku run rake db:seed
+
+logs:
+	heroku logs --tail
