@@ -30,4 +30,6 @@ Rails.application.routes.draw do
 
     resources :gists, only: :index
   end
+
+  resource :feedback, only: %i[new create]
 end

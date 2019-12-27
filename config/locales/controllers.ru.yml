@@ -25,3 +25,12 @@ ru:
         success: "Ответ успешно обновлен"
       destroy:
         success: "Ответ успешно удален"
+  feedbacks:
+    new:
+      header: Обратная связь
+      user_name: Введите имя
+      email: Введите email
+      message: Введите сообщение
+      submit: Отправить
+    create:
+      succeess: Сообщение отправлено

@@ -1,14 +1,16 @@
 navbar.fixed-bottom.navbar-light.bg-light
   .container
-    .row.text-center.justify-content-center.py-2
-      .col-12
-        h4 = github_url('Yorickov', 'test-guru',
-                        name: t('.footer_title'),
-                        class: 'display-5 text-secondary')
-      .col-12
+    .row.justify-content-between.align-items-center.py-2
+      .col-4
         = t('.project')
-      .col-12
-        = link_to t('.school'), 'http://thinknetica.ru', target: '_blank'
+        div = link_to t('.school'), 'http://thinknetica.ru', target: '_blank'
+        .footer-copyright.mb-3
+          | © #{current_year} #{t('.author')}
+      .col-4.text-center
+        h2 = github_url('Yorickov', 'test-guru',
+                          name: t('.footer_title'),
+                          class: 'text-secondary')
 
-    .footer-copyright.text-center.mb-3
-      | © #{current_year} #{t('.author')}
+
+      .col-4.text-right
+        = link_to t('.feedback'), new_feedback_path, class: 'text-secondary'

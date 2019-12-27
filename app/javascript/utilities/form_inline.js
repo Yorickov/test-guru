@@ -36,7 +36,7 @@ export default () => {
   }
 
   const errors = document.querySelector('.resource-errors');
-  if (errors) {
+  if (errors && controls.length) {
     const resourceId = errors.dataset.resourceId;
     formInlineHandler(resourceId);
   }

@@ -27,6 +27,7 @@ ru:
       school: "он-лайн школа Thinknetica"
       author: "Yorickov"
       footer_title: "Тест Гуру"
+      feedback: "Обратная связь"
     navi:
       sign_up: "Регистрация"
       sign_in: "Войти"
@@ -123,6 +124,9 @@ ru:
         gist_url: "Ссылка на Gists"
         user: "Пользователь"
         header: "Gists"
-  test_mailers:
+  tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'
+  feedbacks_mailer:
+    feedback_message:
+      subject: "Вы получили сообщение от %{email}"

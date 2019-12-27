@@ -27,6 +27,7 @@ en:
       school: "on-line school Thinknetica"
       author: "Yorickov"
       footer_title: "Test Guru"
+      feedback: "Feedback"
     navi:
       sign_up: "Sign Up"
       sign_in: "Sign In"
@@ -119,6 +120,9 @@ en:
         gist_url: "Gist Url"
         user: "User"
         header: "Gists"
-  test_mailers:
+  tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test'
+  feedbacks_mailer:
+    feedback_message:
+      subject: "You got a message from %{email}"

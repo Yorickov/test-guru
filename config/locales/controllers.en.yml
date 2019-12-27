@@ -25,3 +25,12 @@ en:
         success: "Answer was successfully updated"
       destroy:
         success: "Answer was successfully deleted"
+  feedbacks:
+    new:
+      header: Feedback
+      user_name: Input your name
+      email: Input your email
+      message: Input your message
+      submit: Submit
+    create:
+      succeess: Message sent
