@@ -18,9 +18,9 @@ Category.destroy_all
 admin = Admin.new(
   first_name: 'John',
   last_name: 'Grut',
-  email: 'grut-66@mail.ru',
-  password: 'secret66',
-  password_confirmation: 'secret66'
+  email: 'test0guru@yandex.ru',
+  password: 'adminsecret',
+  password_confirmation: 'adminsecret'
 )
 
 admin.skip_confirmation!
