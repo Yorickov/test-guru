@@ -13,11 +13,17 @@ rr:
 psql:
 	rails dbconsole
 
-h-dbm:
+hdbm:
 	heroku run rake db:migrate
 
-h-dbs:
+hdbs:
 	heroku run rake db:seed
 
-logs:
+hc:
+	heroku run rails console
+
+hlog:
 	heroku logs --tail
+
+server:
+	rails s

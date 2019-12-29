@@ -4,8 +4,8 @@
 
   .col-sm-10.mx-auto
     p = render 'shared/errors', resource: @test
-    table.table.table-hover.table-bordered
-      thead
+    table.table.table-hover.table-bordered.table-responsive-sm
+      thead.thead-light
         tr
           th.sort-by-title.pointer
             = t('.title')

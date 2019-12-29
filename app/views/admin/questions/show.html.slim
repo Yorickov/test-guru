@@ -1,10 +1,10 @@
 .row.pt-5
   .col-12.text-center
-    h2 = @question.body
-    p = "#{@question.test.title}(#{@question.test.level})"
+    h3 = @question.body
+    p.my-3 = "#{@question.test.title} (#{@question.test.level})"
 
   .col-sm-10.mx-auto
-    table.table.table-hover.table-bordered.text-center.mt-3
+    table.table.table-hover.table-bordered.mt-3.table-responsive-sm
       thead
         tr
           th = t('.body')

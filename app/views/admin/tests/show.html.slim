@@ -1,10 +1,10 @@
 .row.pt-5
   .col-12.text-center
     h2 = @test.title
-    p = t('.level', level: @test.level)
+    p.my-3 = t('.level', level: @test.level)
 
   .col-sm-10.mx-auto
-    table.table.table-hover.table-bordered.text-center.mt-3
+    table.table.table-hover.table-bordered.mt-3.table-responsive-sm
       thead
         tr
           th = t('.body')
