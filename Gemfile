@@ -75,3 +75,6 @@ gem "octokit", "~> 4.0"
 
 # Github icons
 gem "octicons_helper", "~> 9.3"
+
+# Pagination
+gem "kaminari", "~> 1.1"

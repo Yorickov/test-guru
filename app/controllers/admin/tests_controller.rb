@@ -1,9 +1,11 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :find_tests, only: %i[index update_inline]
+  before_action :find_tests, only: %i[update_inline]
   before_action :find_test,
                 only: %i[show edit update destroy start update_inline]
 
-  def index; end
+  def index
+    @tests = Test.page(params[:page]).per(20)
+  end
 
   def new
     @test = current_user.own_tests.new
