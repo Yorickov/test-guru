@@ -1,7 +1,5 @@
 const progressBarHandler = (currentProgress) => {
-  const progress = document.querySelector('.progress-bar');
-
-  progress.setAttribute('aria-valuenow', currentProgress);
+  const progress = document.querySelector('.test-progress > .progress-bar');
   progress.setAttribute('style', 'width:' + currentProgress + '%');
 };
 

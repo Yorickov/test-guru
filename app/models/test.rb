@@ -26,4 +26,8 @@ class Test < ApplicationRecord
       by_category(category).order(title: :desc).pluck(:title)
     end
   end
+
+  def timer?
+    time_limit != 0
+  end
 end

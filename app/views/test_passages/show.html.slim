@@ -1,5 +1,5 @@
 .row.justify-content-center.my-5
-  .col-md-10
+  .col-11
     .card
       .card-header.text-center
         h2 = @test_passage.test.title
@@ -11,16 +11,22 @@
         = form_with url: test_passage_path(@test_passage),
                     local: true,
                     class: 'form-test-passage',
-                    data: { current_progress: @test_passage.progress },
+                    data: { current_progress: @test_passage.progress, url: result_test_passage_path(@test_passage), timer_step: @test_passage.timer_step },
                     method: :put do |f|
           = f.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|
             .form-check
               = b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input'
               = b.label class: 'form-check-label'
+          = hidden_field_tag(:timer, @test_passage.test_time)
           .d-flex.flex-column
             = link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class: 'card-link py-3'
             = f.submit t('.next'), class: 'btn btn-primary'
 
-  .col-md-10.mt-5
-    .progress
-      .progress-bar style='width: 0%' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100'
+  - if @test_passage.test.timer?
+    .col-1
+      = render 'timer'
+
+.row.justify-content-start.my-5
+  .col-11.mt-5
+    .progress.test-progress
+      .progress-bar style='width: 0%' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'
