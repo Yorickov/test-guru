@@ -46,46 +46,77 @@ cat_prog = categories[0]
 
 test_lang, test_gen = Test.create(
   [
-    { title: 'Языки', level: 2, category_id: cat_prog.id, user_id: admin.id },
+    {
+      title: 'Языки',
+      level: 2,
+      category_id: cat_prog.id,
+      user_id: admin.id,
+      state: 'ready',
+      time_limit: 0
+    },
     {
       title: 'Общие вопросы',
       level: 1,
       category_id: cat_prog.id,
-      user_id: admin.id
+      user_id: admin.id,
+      state: 'ready',
+      time_limit: 0
     }
   ]
 )
 
 ql1, ql2, ql3, ql4, ql5, qg1, qg2, qg3, qg4, qg5 = Question.create(
   [
-    { body: 'Кто создал руби?', test_id: test_lang.id },
+    {
+      body: 'Кто создал руби?',
+      test_id: test_lang.id,
+      state: 'ready'
+    },
     {
       body: 'Какие из перечисленных языков имеют слабую типизацию?',
-      test_id: test_lang.id
+      test_id: test_lang.id,
+      state: 'ready'
     },
     {
       body: 'Какой язык программирования создал Деннис Риччи?',
-      test_id: test_lang.id
+      test_id: test_lang.id,
+      state: 'ready'
     },
     {
       body: 'Какой язык программирования из перечисленных самый старый?',
-      test_id: test_lang.id
+      test_id: test_lang.id,
+      state: 'ready'
     },
     {
       body: 'Какой язык (из незнакомых) Вы должны изучить в следующем году?',
-      test_id: test_lang.id
+      test_id: test_lang.id,
+      state: 'ready'
     },
-    { body: 'Чистая функция – это функция, которая…', test_id: test_gen.id },
+    {
+      body: 'Чистая функция – это функция, которая…',
+      test_id: test_gen.id,
+      state: 'ready'
+    },
     {
       body: 'Способность операции получать тот же результат, что и предыдущая?',
-      test_id: test_gen.id
+      test_id: test_gen.id,
+      state: 'ready'
     },
-    { body: 'Лучший backend-фреймворк на свете - …', test_id: test_gen.id },
-    { body: 'Кто написал "Совершенный код?"', test_id: test_gen.id },
+    {
+      body: 'Лучший backend-фреймворк на свете - …',
+      test_id: test_gen.id,
+      state: 'ready'
+    },
+    {
+      body: 'Кто написал "Совершенный код?"',
+      test_id: test_gen.id,
+      state: 'ready'
+    },
     {
       body: 'Автор цитаты "Использование Кобола калечит ум. Его преподавание,' \
         ' следовательно, должно рассматриваться как уголовное преступление?"',
-      test_id: test_gen.id
+      test_id: test_gen.id,
+      state: 'ready'
     }
   ]
 )

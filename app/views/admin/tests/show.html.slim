@@ -4,15 +4,27 @@
     p.my-3 = t('.level', level: @test.level)
 
   .col-sm-10.mx-auto
-    table.table.table-hover.table-bordered.mt-3.table-responsive-sm
-      thead
+    table.table.table-borderless.mt-3.table-responsive-sm
+      thead.thead-light
         tr
           th = t('.body')
-          th.text-center(colspan="3") = t('.actions')
+          th = t('.state')
+          - if !@test.ready?
+            th.text-center(colspan="3") = t('.actions')
+          - else
+            th = t('.actions')
       tbody
         = render @test.questions
 
-    section.d-flex.justify-content-between.pt-4
+    section.d-flex.justify-content-between.py-4
       = link_to t('links.back'), admin_tests_path, class: 'btn btn-light'
-      = link_to t('.add_question'), new_admin_test_question_path(@test),  class: 'btn btn-dark'
-      = link_to t('links.edit'), edit_admin_test_path(@test), class: 'btn btn-light'
+      - if !@test.ready?
+        = link_to t('.add_question'), new_admin_test_question_path(@test),  class: 'btn btn-dark'
+        = link_to t('links.edit'), edit_admin_test_path(@test), class: 'btn btn-light'
+
+    section.d-flex.justify-content-center.py-3
+    - if @test.working?
+      = link_to t('.complete'), complete_admin_test_path, method: :patch, class: 'btn btn-success'
+
+    - if @test.ready?
+      = link_to t('.revert'), revert_admin_test_path, method: :patch, class: 'btn btn-danger'

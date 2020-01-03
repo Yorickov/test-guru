@@ -6,4 +6,5 @@
   .col-6.mx-auto
     section.d-flex.justify-content-between.pt-4
       = link_to t('links.back'), admin_question_path(@answer.question), class: 'btn btn-light'
-      = link_to t('links.edit'), edit_admin_answer_path(@answer), class: 'btn btn-light'
+      - if !@answer.question.test.ready?
+        = link_to t('links.edit'), edit_admin_answer_path(@answer), class: 'btn btn-light'

@@ -1,10 +1,15 @@
 .row.pt-3
   .col-12
-    h3.pb-3.text-center = t('.header')
+    h3.pb-3.text-center
+      - if action_name != 'ready'
+        = t('.header')
+      - else
+        = t('.header_ready')
 
-  .col-sm-10.mx-auto
+  .col-12.mx-auto
     p = render 'shared/errors', resource: @test
-    table.table.table-hover.table-bordered.table-responsive-sm
+
+    table.table.table-borderless.table-responsive-sm
       thead.thead-light
         tr
           th.sort-by-title.pointer
@@ -12,9 +17,16 @@
             = octicon 'arrow-up', class: 'text-success hide'
             = octicon 'arrow-down', class: 'text-success hide'
           th = t('.level')
+          th = t('.state')
+          th = t('.time_limit')
           th = t('.questions')
-          th.text-center(colspan="3") = t('.actions')
+          - if action_name != 'ready'
+            th.text-center(colspan="3") = t('.actions')
+          - else
+            th.text-center = t('.actions')
+
       tbody
         = render @tests
 
-    = paginate @tests
+    - if action_name == 'ready'
+      = paginate @tests

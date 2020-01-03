@@ -1,8 +1,9 @@
 tr
   td.align-middle = answer.body
-  td.align-middle = link_to t('links.show'), admin_answer_path(answer)
-  td.align-middle = link_to t('links.edit'), edit_admin_answer_path(answer)
-  td.align-middle = link_to t('links.delete'),
+  td.align-middle.text-center = link_to t('links.show'), admin_answer_path(answer)
+  - if !answer.question.test.ready?
+    td.align-middle.text-center = link_to t('links.edit'), edit_admin_answer_path(answer)
+    td.align-middle.text-center = link_to t('links.delete'),
                 admin_answer_path(answer),
                 method: :delete,
                 data: { confirm: t('links.confirm')}

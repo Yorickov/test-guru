@@ -78,3 +78,6 @@ gem "octicons_helper", "~> 9.3"
 
 # Pagination
 gem "kaminari", "~> 1.1"
+
+# State machine
+gem "aasm", "~> 5.0"

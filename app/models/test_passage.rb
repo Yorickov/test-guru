@@ -1,4 +1,6 @@
 class TestPassage < ApplicationRecord
+  include AASM
+
   CHECK_PASSED = 85
   TEST_TIME_RATE = 100
 
@@ -9,6 +11,23 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_validation :before_validation_set_test_time, on: :create
   before_update :before_update_set_next_question
+
+  aasm column: 'state' do
+    state :active, initial: true
+    state :stopped, :finished
+
+    event :stop do
+      transitions from: :active, to: :stopped
+    end
+
+    event :finish do
+      transitions from: :active, to: :finished
+    end
+
+    event :activate do
+      transitions from: :stopped, to: :active
+    end
+  end
 
   def completed?
     current_question.nil?

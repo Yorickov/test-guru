@@ -75,11 +75,15 @@ ru:
   admin:
     tests:
       index:
-        header: "Доступные тесты"
+        header: "Тесты в разработке"
+        header_ready: "Готовые тесты"
         title: "Название"
         level: "Уровень"
+        state: "Статус"
         questions: "Вопросы"
         actions: "Действия"
+        production: "Изменить"
+        time_limit: "Таймер"
       new:
         header_create: "Создать новый тест"
       edit:
@@ -87,10 +91,16 @@ ru:
       show:
         level: "Уровень: %{level}"
         body: "Вопрос"
+        state: "Статус"
         actions: "Действия"
         add_question: "Добавить вопрос"
+        complete: "В производство"
+        revert: "В разработку"
       form_inline:
-        submit: 'OK'
+        submit: "OK"
+      test:
+        complete: "В производство"
+        revert: "В разработку"
     questions:
       show:
         body: "Ответ"
@@ -111,11 +121,11 @@ ru:
         correctness: "Правильность ответа"
     shared:
       navi:
-        title: "Тест Гуру | Панель Администратора"
-        tests: "Мои тесты"
+        title: "Тест Гуру | Администратор"
+        ready_tests: "Готовые тесты"
+        tests: "Тесты в разработке"
         sign_out: "Выйти"
         welcome: "Добро пожаловать, %{user} Гуру"
-        # admin_panel: "Панель Администратора"
         add_test: "Добавить тест"
         gists: "Gists"
     gists:

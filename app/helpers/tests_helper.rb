@@ -15,4 +15,8 @@ module TestsHelper
   def test_header(test)
     test.persisted? ? t('.header_edit') : t('.header_create')
   end
+
+  def test_timer(test)
+    test.time_limit.zero? ? '---' : test.time_limit
+  end
 end

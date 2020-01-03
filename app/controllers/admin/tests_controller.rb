@@ -1,10 +1,16 @@
 class Admin::TestsController < Admin::BaseController
   before_action :find_tests, only: %i[update_inline]
-  before_action :find_test,
-                only: %i[show edit update destroy start update_inline]
+  before_action :find_test, only: %i[
+    show edit update destroy start update_inline complete revert
+  ]
 
   def index
-    @tests = Test.page(params[:page]).per(20)
+    @tests = Test.where.not(state: 'ready')
+  end
+
+  def ready
+    @tests = Test.ready.page(params[:page]).per(20)
+    render :index
   end
 
   def new
@@ -50,6 +56,16 @@ class Admin::TestsController < Admin::BaseController
     current_user.tests << @test
     # redirect to test#show
     redirect_to current_user.test_passage(@test)
+  end
+
+  def complete
+    @test.complete!
+    redirect_to admin_tests_path
+  end
+
+  def revert
+    @test.revert!
+    redirect_to admin_tests_path
   end
 
   private

@@ -1,8 +1,10 @@
 tr
   td.align-middle = question.body
+  td.align-middle = question.state
   td.align-middle = link_to t('links.show'), admin_question_path(question)
-  td.align-middle = link_to t('links.edit'), edit_admin_question_path(question)
-  td.align-middle = link_to t('links.delete'),
+  - if !question.test.ready?
+    td.align-middle = link_to t('links.edit'), edit_admin_question_path(question)
+    td.align-middle = link_to t('links.delete'),
                 admin_question_path(question),
                 method: :delete,
                 data: { confirm: t('links.confirm')}

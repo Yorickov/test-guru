@@ -1,4 +1,6 @@
 class Test < ApplicationRecord
+  include AASM
+
   belongs_to :category
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   has_many :questions, dependent: :destroy
@@ -13,6 +15,28 @@ class Test < ApplicationRecord
     only_integer: true, greater_than_or_equal_to: 0,
     message: 'should be positive integer or nil'
   }
+
+  aasm column: 'state' do
+    state :draft, initial: true
+    state :working
+    state :ready
+
+    event :add do
+      transitions from: :draft, to: :working
+    end
+
+    event :remove do
+      transitions from: :working, to: :draft
+    end
+
+    event :complete do
+      transitions from: :working, to: :ready
+    end
+
+    event :revert do
+      transitions from: :ready, to: :working
+    end
+  end
 
   scope :by_category, ->(category_title) {
     joins(:category).where(categories: { title: category_title })

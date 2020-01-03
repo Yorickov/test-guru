@@ -2,7 +2,7 @@ class TestsController < ApplicationController
   before_action :find_test, only: :start
 
   def index
-    @tests = Test.page(params[:page]).per(20)
+    @tests = Test.ready.page(params[:page]).per(20)
   end
 
   def start

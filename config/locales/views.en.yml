@@ -43,7 +43,8 @@ en:
 
   tests:
     index:
-      header: "Avalaible tests"
+      header: "Tests in development"
+      header_ready: "Ready tests"
       title: "Title"
       level: "Level"
       question: "Questions"
@@ -74,8 +75,11 @@ en:
         header: "Avalaible tests"
         title: "Title"
         level: "Level"
+        state: "Status"
         questions: "Questions"
         actions: "Actions"
+        production: "Change"
+        time_limit: "Timer"
       new:
         header_create: "Create new test"
       edit:
@@ -83,10 +87,16 @@ en:
       show:
         level: "Level: %{level}"
         body: "Question"
+        state: "Status"
         actions: "Actions"
         add_question: "Add question"
+        complete: "In production"
+        revert: "In development"
       form_inline:
         submit: 'OK'
+      test:
+        complete: "In production"
+        revert: "In development"
     questions:
       show:
         body: "Answer"
@@ -107,11 +117,11 @@ en:
         correctness: "Correctness"
     shared:
       navi:
-        title: 'Test Guru | Admin panel'
-        tests: "My tests"
+        title: 'Test Guru | Admin'
+        ready_tests: "Ready tests"
+        tests: "Tests in development"
         sign_out: "Sign Out"
         welcome: "Welcome, %{user} Guru"
-        # admin_panel: "Admin panel"
         add_test: "Add test"
         gists: "Gists"
     gists:
