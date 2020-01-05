@@ -14,18 +14,14 @@ class TestPassage < ApplicationRecord
 
   aasm column: 'state' do
     state :active, initial: true
-    state :stopped, :finished
+    state :expired, :finished
 
-    event :stop do
-      transitions from: :active, to: :stopped
+    event :time_off do
+      transitions from: :active, to: :expired
     end
 
     event :finish do
       transitions from: :active, to: :finished
-    end
-
-    event :activate do
-      transitions from: :stopped, to: :active
     end
   end
 
@@ -36,6 +32,11 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids, timer)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.test_time = timer
+
+    questions = test.questions.order(:id)
+    curr_question_index = questions.find_index(current_question)
+
+    finish if curr_question_index == questions.size - 1
     save!
   end
 
@@ -48,13 +49,17 @@ class TestPassage < ApplicationRecord
   end
 
   def progress
-    questions = test.questions
+    questions = test.questions.order(:id)
     result = questions.find_index(current_question).to_f / questions.count * 100
     result.to_i
   end
 
   def timer_step
-    (10 * test.time_limit).round(1)
+    10 * test.time_limit
+  end
+
+  def timer_time
+    test.time_limit - (test_time.to_f / 100 * test.time_limit).to_i
   end
 
   private

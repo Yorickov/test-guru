@@ -3,7 +3,13 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result; end
+  def result
+    render :result && return unless params[:value]
+
+    @test_passage.test_time = params[:value]
+    @test_passage.time_off
+    @test_passage.save
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids], params[:timer])

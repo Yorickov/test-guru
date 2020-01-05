@@ -1,11 +1,11 @@
 module TestsHelper
   TEST_LEVEL = {
-    0 => :elementary,
-    1 => :basic,
-    2 => :intermediate,
-    3 => :advanced,
-    4 => :hero,
-    5 => :impossible
+    0 => I18n.t('test_level.elementary'),
+    1 => I18n.t('test_level.basic'),
+    2 => I18n.t('test_level.intermediate'),
+    3 => I18n.t('test_level.advanced'),
+    4 => I18n.t('test_level.hero'),
+    5 => I18n.t('test_level.impossible')
   }.freeze
 
   def test_level(test)

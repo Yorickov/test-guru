@@ -21,6 +21,17 @@ ru:
     back: "Назад"
     cancel: "Отменить"
 
+  errors:
+    answers_count: "не более четырех ответов в вопросе"
+
+  test_level:
+    elementary: "элементарный"
+    basic: "базовый"
+    intermediate: "средний"
+    advanced: "продвинутый"
+    hero: "герой"
+    impossible: "невозможный"
+
   shared:
     footer:
       project: "Образовательный проект на Runy on Rails"
@@ -36,6 +47,7 @@ ru:
       tests: "Тесты"
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
+      settings: 'Настройки'
     errors:
       header:
         one: "Найдена %{count} ошибка"
@@ -59,7 +71,13 @@ ru:
       all_tests: "Вернуться к тестам"
       passed: "Вы прошли!"
       failed: "Вы облажались"
+      failed_time: "Вы превысили лимит времени"
       result: "Ваш результат: %{result}%"
+      timer_count:
+        one: "Время прохождения теста: %{count} секунду"
+        few: "Время прохождения теста: %{count} секунды"
+        many: "Время прохождения теста: %{count} секунд"
+        other: "Время прохождения теста: %{count} секунды"
     gist:
       success: "Gist успешно сохранен по адресу: %{url}"
       failure: "Во время сохранения gist произошла ошибка"
@@ -128,6 +146,7 @@ ru:
         welcome: "Добро пожаловать, %{user} Гуру"
         add_test: "Добавить тест"
         gists: "Gists"
+        settings: 'Настройки'
     gists:
       index:
         question: "Вопрос"

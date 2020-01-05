@@ -11,13 +11,15 @@ const timerHandler = (url, timerStep, timer, progress) => {
 
   const timeId = setInterval(() => {
     time_left -= 1;
-    progress.setAttribute('style', 'height:' + time_left + '%');
-    timer.setAttribute('value', time_left);
 
     if (time_left <= 0) {
       clearInterval(timeId);
-      location.href = url;
+      location.href = url + '?value=' + time_left;
     }
+
+    progress.setAttribute('style', 'height:' + time_left + '%');
+    timer.setAttribute('value', time_left);
+
   }, timerStep);
 };
 

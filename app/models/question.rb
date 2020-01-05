@@ -47,7 +47,9 @@ class Question < ApplicationRecord
   end
 
   def after_destroy_check_state
-    test.add! if draft? && test.questions.draft.empty?
-    test.remove! if working? && test.questions.empty?
+    if draft? && test.questions.draft.empty? && test.questions.working.any?
+      test.add!
+    end
+    test.remove! if working? && test.questions.working.empty?
   end
 end

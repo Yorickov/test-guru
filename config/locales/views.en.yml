@@ -21,6 +21,17 @@ en:
     back: "Back"
     cancel: "Cancel"
 
+  errors:
+    answers_count: "no more then four answers in question"
+
+  test_level:
+    elementary: "elementary"
+    basic: "basic"
+    intermediate: "intermediate"
+    advanced: "advanced"
+    hero: "hero"
+    impossible: "impossible"
+
   shared:
     footer:
       project: "Educational project on Ruby on Rails"
@@ -36,6 +47,7 @@ en:
       tests: "Tests"
       title: "Test Guru"
       admin_panel: "Admin panel"
+      settings: "Settings"
     errors:
       header:
         one: "%{count} mistake founded"
@@ -58,7 +70,11 @@ en:
       all_tests: "Return to the tests"
       passed: "You passed!"
       failed: "You screwed up"
+      failed_time: "Your time is over"
       result: "You result is %{result}%"
+      timer_count:
+        one: "You passed the test for %{count} seconds"
+        other: "You passed the test for %{count} seconds"
     gist:
       success: "Gist successfully created in %{url}"
       failure: "An error occurred while saving gist"
@@ -124,6 +140,7 @@ en:
         welcome: "Welcome, %{user} Guru"
         add_test: "Add test"
         gists: "Gists"
+        settings: "Settings"
     gists:
       index:
         question: "Question"

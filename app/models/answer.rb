@@ -12,7 +12,7 @@ class Answer < ApplicationRecord
   private
 
   def validate_max_count
-    errors.add(:question, 'no more 4 answers') if question.answers.length > 4
+    errors.add(:body, I18n.t('errors.answers_count')) if question.answers.length > 4
   end
 
   def after_create_check_state
