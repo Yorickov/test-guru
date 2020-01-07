@@ -16,27 +16,27 @@ class Test < ApplicationRecord
     message: 'should be positive integer or nil'
   }
 
-  aasm column: 'state' do
-    state :draft, initial: true
-    state :working
-    state :ready
+  # aasm column: 'state' do
+  #   state :draft, initial: true
+  #   state :working
+  #   state :ready
 
-    event :add do
-      transitions from: :draft, to: :working
-    end
+  #   event :add do
+  #     transitions from: :draft, to: :working
+  #   end
 
-    event :remove do
-      transitions from: :working, to: :draft
-    end
+  #   event :remove do
+  #     transitions from: :working, to: :draft
+  #   end
 
-    event :complete do
-      transitions from: :working, to: :ready
-    end
+  #   event :complete do
+  #     transitions from: :working, to: :ready
+  #   end
 
-    event :revert do
-      transitions from: :ready, to: :working
-    end
-  end
+  #   event :revert do
+  #     transitions from: :ready, to: :working
+  #   end
+  # end
 
   scope :by_category, ->(category_title) {
     joins(:category).where(categories: { title: category_title })

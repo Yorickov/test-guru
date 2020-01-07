@@ -12,18 +12,18 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_test_time, on: :create
   before_update :before_update_set_next_question
 
-  aasm column: 'state' do
-    state :active, initial: true
-    state :expired, :finished
+  # aasm column: 'state' do
+  #   state :active, initial: true
+  #   state :expired, :finished
 
-    event :time_off do
-      transitions from: :active, to: :expired
-    end
+  #   event :time_off do
+  #     transitions from: :active, to: :expired
+  #   end
 
-    event :finish do
-      transitions from: :active, to: :finished
-    end
-  end
+  #   event :finish do
+  #     transitions from: :active, to: :finished
+  #   end
+  # end
 
   def completed?
     current_question.nil?
