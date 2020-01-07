@@ -6,8 +6,8 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
 
-  # after_create :after_create_check_state
-  # after_destroy :after_destroy_check_state
+  after_create :after_create_check_state
+  after_destroy :after_destroy_check_state
 
   private
 
@@ -15,17 +15,17 @@ class Answer < ApplicationRecord
     errors.add(:body, I18n.t('errors.answers_count')) if question.answers.length > 4
   end
 
-  # def after_create_check_state
-  #   answers = question.answers
+  def after_create_check_state
+    answers = question.answers
 
-  #   question.add! if answers.size == 1
-  #   question.complete! if answers.size == 4
-  # end
+    question.add! if answers.size == 1
+    question.complete! if answers.size == 4
+  end
 
-  # def after_destroy_check_state
-  #   answers = question.answers
+  def after_destroy_check_state
+    answers = question.answers
 
-  #   question.remove! if answers.empty?
-  #   question.revert! if answers.size == 3
-  # end
+    question.remove! if answers.empty?
+    question.revert! if answers.size == 3
+  end
 end

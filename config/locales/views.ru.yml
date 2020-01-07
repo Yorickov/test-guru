@@ -47,7 +47,7 @@ ru:
       tests: "Тесты"
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
-      settings: 'Настройки'
+      account: 'Профиль'
     errors:
       header:
         one: "Найдена %{count} ошибка"
@@ -112,13 +112,13 @@ ru:
         state: "Статус"
         actions: "Действия"
         add_question: "Добавить вопрос"
-        complete: "В производство"
-        revert: "В разработку"
+        complete: "Готово"
+        revert: "Править"
       form_inline:
         submit: "OK"
       test:
-        complete: "В производство"
-        revert: "В разработку"
+        complete: "Готово"
+        revert: "Править"
     questions:
       show:
         body: "Ответ"
@@ -146,7 +146,7 @@ ru:
         welcome: "Добро пожаловать, %{user} Гуру"
         add_test: "Добавить тест"
         gists: "Gists"
-        settings: 'Настройки'
+        account: 'Профиль'
     gists:
       index:
         question: "Вопрос"

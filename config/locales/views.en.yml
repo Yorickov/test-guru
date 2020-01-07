@@ -47,7 +47,7 @@ en:
       tests: "Tests"
       title: "Test Guru"
       admin_panel: "Admin panel"
-      settings: "Settings"
+      account: "Account"
     errors:
       header:
         one: "%{count} mistake founded"
@@ -106,13 +106,13 @@ en:
         state: "Status"
         actions: "Actions"
         add_question: "Add question"
-        complete: "In production"
-        revert: "In development"
+        complete: "Done"
+        revert: "Change"
       form_inline:
         submit: 'OK'
       test:
-        complete: "In production"
-        revert: "In development"
+        complete: "Done"
+        revert: "Change"
     questions:
       show:
         body: "Answer"
@@ -140,7 +140,7 @@ en:
         welcome: "Welcome, %{user} Guru"
         add_test: "Add test"
         gists: "Gists"
-        settings: "Settings"
+        account: "Account"
     gists:
       index:
         question: "Question"
