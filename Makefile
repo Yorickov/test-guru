@@ -27,3 +27,6 @@ hlog:
 
 server:
 	rails s
+
+deploy:
+	git push heroku $(B):master

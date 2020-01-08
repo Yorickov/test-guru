@@ -47,7 +47,7 @@ ru:
       tests: "Тесты"
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
-      account: 'Профиль'
+      settings: 'Настройки'
     errors:
       header:
         one: "Найдена %{count} ошибка"
@@ -146,7 +146,7 @@ ru:
         welcome: "Добро пожаловать, %{user} Гуру"
         add_test: "Добавить тест"
         gists: "Gists"
-        account: 'Профиль'
+        settings: 'Настройки'
     gists:
       index:
         question: "Вопрос"

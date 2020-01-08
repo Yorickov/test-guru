@@ -47,7 +47,7 @@ en:
       tests: "Tests"
       title: "Test Guru"
       admin_panel: "Admin panel"
-      account: "Account"
+      settings: "Settings"
     errors:
       header:
         one: "%{count} mistake founded"
@@ -140,7 +140,7 @@ en:
         welcome: "Welcome, %{user} Guru"
         add_test: "Add test"
         gists: "Gists"
-        account: "Account"
+        settings: "Settings"
     gists:
       index:
         question: "Question"
