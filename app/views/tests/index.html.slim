@@ -1,10 +1,10 @@
-.row.pt-3
+.row.pt-1
   .col-12
     h3.pb-3.text-center = t('.header')
 
   .col-sm-10.mx-auto
-    table.table.table-hover.table-bordered
-      thead.thead-dark
+    table.table.table-hover.table-bordered.table-responsive-sm
+      thead.thead-light
         tr
           th.sort-by-title.pointer
             = t('.title')
@@ -12,6 +12,8 @@
             = octicon 'arrow-down', class: 'text-success hide'
           th = t('.level')
           th = t('.questions')
-          th = t('.actions')
+          th.text-center = t('.actions')
       tbody
         = render @tests
+
+    = paginate @tests

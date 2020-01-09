@@ -7,7 +7,7 @@
 # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # Character.create(name: 'Luke', movie: movies.first)
 
-Gists.destroy_all
+Gist.destroy_all
 TestPassage.destroy_all
 Answer.destroy_all
 Question.destroy_all
@@ -17,10 +17,10 @@ Category.destroy_all
 
 admin = Admin.new(
   first_name: 'John',
-  last_name: 'Doe',
-  email: 'doe@foobar.com',
-  password: 'secret1',
-  password_confirmation: 'secret1'
+  last_name: 'Grut',
+  email: 'test0guru@yandex.ru',
+  password: 'adminsecret',
+  password_confirmation: 'adminsecret'
 )
 
 admin.skip_confirmation!
@@ -38,39 +38,133 @@ user.skip_confirmation!
 user.save!
 
 categories = []
-%w[math english biology].each { |c| categories << Category.create(title: c) }
-cat_mat, cat_en, cat_bio = categories
+['Программирование', 'Операционные системы', 'Сетевые протоколы',
+ 'Базы данных', 'Алгоритмы']
+  .each { |c| categories << Category.create(title: c) }
 
-test_syn, test_pun, test_add = Test.create(
+cat_prog = categories[0]
+
+test_lang, test_gen = Test.create(
   [
-    { title: 'syntax', level: 1, category_id: cat_en.id, user_id: admin.id },
-    { title: 'punctuation', level: 2, category_id: cat_en.id, user_id: admin.id },
-    { title: 'addition', category_id: cat_mat.id, user_id: admin.id }
+    {
+      title: 'Языки',
+      level: 2,
+      category_id: cat_prog.id,
+      user_id: admin.id,
+      state: 'ready',
+      time_limit: 0
+    },
+    {
+      title: 'Общие вопросы',
+      level: 1,
+      category_id: cat_prog.id,
+      user_id: admin.id,
+      state: 'ready',
+      time_limit: 0
+    }
   ]
 )
 
-qs1, qs2, qp1, qp2, qa1, qa2 = Question.create(
+ql1, ql2, ql3, ql4, ql5, qg1, qg2, qg3, qg4, qg5 = Question.create(
   [
-    { body: 'question 1', test_id: test_syn.id },
-    { body: 'question 2', test_id: test_syn.id },
-    { body: 'question 1', test_id: test_pun.id },
-    { body: 'question 2', test_id: test_pun.id },
-    { body: 'question 1', test_id: test_add.id },
-    { body: 'question 2', test_id: test_add.id }
+    {
+      body: 'Кто создал руби?',
+      test_id: test_lang.id,
+      state: 'ready'
+    },
+    {
+      body: 'Какие из перечисленных языков имеют слабую типизацию?',
+      test_id: test_lang.id,
+      state: 'ready'
+    },
+    {
+      body: 'Какой язык программирования создал Деннис Риччи?',
+      test_id: test_lang.id,
+      state: 'ready'
+    },
+    {
+      body: 'Какой язык программирования из перечисленных самый старый?',
+      test_id: test_lang.id,
+      state: 'ready'
+    },
+    {
+      body: 'Какой язык (из незнакомых) Вы должны изучить в следующем году?',
+      test_id: test_lang.id,
+      state: 'ready'
+    },
+    {
+      body: 'Чистая функция – это функция, которая…',
+      test_id: test_gen.id,
+      state: 'ready'
+    },
+    {
+      body: 'Способность операции получать тот же результат, что и предыдущая?',
+      test_id: test_gen.id,
+      state: 'ready'
+    },
+    {
+      body: 'Лучший backend-фреймворк на свете - …',
+      test_id: test_gen.id,
+      state: 'ready'
+    },
+    {
+      body: 'Кто написал "Совершенный код?"',
+      test_id: test_gen.id,
+      state: 'ready'
+    },
+    {
+      body: 'Автор цитаты "Использование Кобола калечит ум. Его преподавание,' \
+        ' следовательно, должно рассматриваться как уголовное преступление?"',
+      test_id: test_gen.id,
+      state: 'ready'
+    }
   ]
 )
 
 Answer.create(
   [
-    { body: 'answer 1', question_id: qs1.id, correct: true },
-    { body: 'answer 2', question_id: qs1.id },
-    { body: 'answer 1', question_id: qs2.id },
-    { body: 'answer 2', question_id: qs2.id, correct: true },
-    { body: 'answer 1', question_id: qp1.id },
-    { body: 'answer 2', question_id: qp1.id, correct: true },
-    { body: 'answer 1', question_id: qp2.id },
-    { body: 'answer 2', question_id: qp2.id },
-    { body: 'answer 1', question_id: qa1.id, correct: true },
-    { body: 'answer 2', question_id: qa2.id }
+    { body: 'Фитц', question_id: ql1.id },
+    { body: 'Матц', question_id: ql1.id, correct: true },
+    { body: 'Поц', question_id: ql1.id },
+    { body: 'Буч', question_id: ql1.id },
+    { body: 'PHP', question_id: ql2.id, correct: true },
+    { body: 'Ruby', question_id: ql2.id },
+    { body: 'Javascript', question_id: ql2.id, correct: true },
+    { body: 'Phyton', question_id: ql2.id },
+    { body: 'Objective-С', question_id: ql3.id },
+    { body: 'C++', question_id: ql3.id },
+    { body: 'С#', question_id: ql3.id },
+    { body: 'C$', question_id: ql3.id },
+    { body: 'Cobol', question_id: ql4.id },
+    { body: 'Pascal', question_id: ql4.id },
+    { body: 'Fortran', question_id: ql4.id, correct: true },
+    { body: 'C', question_id: ql4.id },
+    { body: 'Go', question_id: ql5.id },
+    { body: 'Elixir', question_id: ql5.id },
+    { body: 'Lisp', question_id: ql5.id, correct: true },
+    { body: 'Java', question_id: ql5.id },
+    { body: 'не имеет побочных эффектов', question_id: qg1.id, correct: true },
+    { body: 'может быть вызвана только один раз', question_id: qg1.id },
+    {
+      body: 'для одного набора аргументов возвращает одинаковый результат',
+      question_id: qg1.id, correct: true
+    },
+    { body: 'ничего не возвращает', question_id: qg1.id },
+    { body: 'персистентность', question_id: qg2.id },
+    { body: 'конгруэнтность', question_id: qg2.id },
+    { body: 'идемпотентность', question_id: qg2.id, correct: true },
+    { body: 'мемоизация', question_id: qg2.id },
+    { body: 'Django', question_id: qg3.id },
+    { body: 'Lavarel', question_id: qg3.id },
+    { body: 'Ruby on Rails', question_id: qg3.id, correct: true },
+    { body: 'Phoenix', question_id: qg3.id },
+    { body: 'Маклауд', question_id: qg4.id },
+    { body: 'МакКоннелл', question_id: qg4.id, correct: true },
+    { body: 'МакФлай', question_id: qg4.id },
+    { body: 'МакДак', question_id: qg4.id },
+    { body: 'Андерс Хейлсберг', question_id: qg5.id },
+    { body: 'Бьерн Страуструп', question_id: qg5.id },
+    { body: 'Линус Торвальдс', question_id: qg5.id },
+    { body: 'Эдсгер Дейкстра', question_id: qg5.id, correct: true }
   ]
 )

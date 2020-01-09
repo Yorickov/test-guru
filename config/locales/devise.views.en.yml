@@ -31,7 +31,7 @@ en:
       user:
         one: User
         other: Users
-        users:
+  users:
     confirmations:
       confirmed: Your email address has been successfully confirmed.
       new:

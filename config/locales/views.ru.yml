@@ -21,12 +21,24 @@ ru:
     back: "Назад"
     cancel: "Отменить"
 
+  errors:
+    answers_count: "не более четырех ответов в вопросе"
+
+  test_level:
+    elementary: "элементарный"
+    basic: "базовый"
+    intermediate: "средний"
+    advanced: "продвинутый"
+    hero: "герой"
+    impossible: "невозможный"
+
   shared:
     footer:
       project: "Образовательный проект на Runy on Rails"
-      school: "он-лайн школа Thinknetica"
-      author: "Дмитрий Монич"
+      school: "Он-лайн школа Thinknetica"
+      author: "Yorickov"
       footer_title: "Тест Гуру"
+      feedback: "Обратная связь"
     navi:
       sign_up: "Регистрация"
       sign_in: "Войти"
@@ -35,6 +47,7 @@ ru:
       tests: "Тесты"
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
+      settings: 'Настройки'
     errors:
       header:
         one: "Найдена %{count} ошибка"
@@ -58,7 +71,13 @@ ru:
       all_tests: "Вернуться к тестам"
       passed: "Вы прошли!"
       failed: "Вы облажались"
+      failed_time: "Вы превысили лимит времени"
       result: "Ваш результат: %{result}%"
+      timer_count:
+        one: "Время прохождения теста: %{count} секунду"
+        few: "Время прохождения теста: %{count} секунды"
+        many: "Время прохождения теста: %{count} секунд"
+        other: "Время прохождения теста: %{count} секунды"
     gist:
       success: "Gist успешно сохранен по адресу: %{url}"
       failure: "Во время сохранения gist произошла ошибка"
@@ -74,11 +93,15 @@ ru:
   admin:
     tests:
       index:
-        header: "Доступные тесты"
+        header: "Тесты в разработке"
+        header_ready: "Готовые тесты"
         title: "Название"
         level: "Уровень"
+        state: "Статус"
         questions: "Вопросы"
         actions: "Действия"
+        production: "Изменить"
+        time_limit: "Таймер"
       new:
         header_create: "Создать новый тест"
       edit:
@@ -86,10 +109,16 @@ ru:
       show:
         level: "Уровень: %{level}"
         body: "Вопрос"
+        state: "Статус"
         actions: "Действия"
         add_question: "Добавить вопрос"
+        complete: "Готово"
+        revert: "Править"
       form_inline:
-        submit: 'OK'
+        submit: "OK"
+      test:
+        complete: "Готово"
+        revert: "Править"
     questions:
       show:
         body: "Ответ"
@@ -110,19 +139,23 @@ ru:
         correctness: "Правильность ответа"
     shared:
       navi:
-        title: "Тест Гуру | Панель Администратора"
-        tests: "Мои тесты"
+        title: "Тест Гуру | Администратор"
+        ready_tests: "Готовые тесты"
+        tests: "Тесты в разработке"
         sign_out: "Выйти"
         welcome: "Добро пожаловать, %{user} Гуру"
-        # admin_panel: "Панель Администратора"
         add_test: "Добавить тест"
         gists: "Gists"
+        settings: 'Настройки'
     gists:
       index:
         question: "Вопрос"
         gist_url: "Ссылка на Gists"
         user: "Пользователь"
         header: "Gists"
-  test_mailers:
+  tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'
+  feedbacks_mailer:
+    feedback_message:
+      subject: "Вы получили сообщение от %{email}"

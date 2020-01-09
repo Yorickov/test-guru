@@ -3,14 +3,22 @@ tr
     = content_tag :span, test.title, class: 'test-title', data: { test_id: test.id }
     = render 'form_inline', test: test == @test ? @test : test
   td.align-middle = test_level(test)
+  td.align-middle = test.state
+  td.align-middle = test_timer(test)
   td.align-middle = test.questions.count
-  td.align-middle = link_to t('links.show'), admin_test_path(test)
-  td.align-middle
-    = link_to t('links.edit'),
-              edit_admin_test_path(test),
-              data: { test_id: test.id, old_name: t('links.edit'), new_name: t('links.cancel') },
-              class: 'form-inline-link'
-  td.align-middle = link_to t('links.delete'),
-                admin_test_path(test),
-                method: :delete,
-                data: { confirm: t('links.confirm') }
+  td.align-middle.text-center = link_to t('links.show'), admin_test_path(test)
+  - if action_name != 'ready'
+    td.align-middle
+      = link_to t('links.edit'),
+                edit_admin_test_path(test),
+                data: { test_id: test.id, old_name: t('links.edit'), new_name: t('links.cancel') },
+                class: 'form-inline-link'
+    td.align-middle = link_to t('links.delete'),
+                  admin_test_path(test),
+                  method: :delete,
+                  data: { confirm: t('links.confirm') }
+
+  - if test.working?
+    td.align-middle.text-center = link_to t('.complete'), complete_admin_test_path(test), method: :patch, class: 'btn btn-success'
+  - if test.ready?
+    td.align-middle.text-center = link_to t('.revert'), revert_admin_test_path(test), method: :patch, class: 'btn btn-danger'

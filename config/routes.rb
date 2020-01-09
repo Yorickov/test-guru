@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   get :home, to: 'welcome#home'
 
   resources :tests, only: :index do
-    member do
-      post :start
-    end
+    post :start, on: :member
   end
 
   # GET /test_passages/101/result
@@ -21,7 +19,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :tests do
-      patch :update_inline, on: :member
+      get :ready, on: :collection
+      member do
+        patch :update_inline
+        patch :complete
+        patch :revert
+      end
 
       resources :questions, except: :index, shallow: true do
         resources :answers, except: :index, shallow: true
@@ -30,4 +33,6 @@ Rails.application.routes.draw do
 
     resources :gists, only: :index
   end
+
+  resource :feedback, only: %i[new create]
 end

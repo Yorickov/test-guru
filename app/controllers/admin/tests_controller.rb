@@ -1,9 +1,17 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :find_tests, only: %i[index update_inline]
-  before_action :find_test,
-                only: %i[show edit update destroy start update_inline]
+  before_action :find_tests, only: %i[update_inline]
+  before_action :find_test, only: %i[
+    show edit update destroy start update_inline complete revert
+  ]
 
-  def index; end
+  def index
+    @tests = Test.where.not(state: 'ready')
+  end
+
+  def ready
+    @tests = Test.ready.page(params[:page]).per(20)
+    render :index
+  end
 
   def new
     @test = current_user.own_tests.new
@@ -50,6 +58,16 @@ class Admin::TestsController < Admin::BaseController
     redirect_to current_user.test_passage(@test)
   end
 
+  def complete
+    @test.complete!
+    redirect_to admin_tests_path
+  end
+
+  def revert
+    @test.revert!
+    redirect_to admin_tests_path
+  end
+
   private
 
   def find_test
@@ -61,6 +79,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :time_limit)
   end
 end

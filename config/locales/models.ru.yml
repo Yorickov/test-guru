@@ -15,6 +15,7 @@ ru:
         category: "Категория"
         user_id: "Автор"
         author: "Автор"
+        time_limit: "Время выполнения"
       question:
         body: "Тело вопроса"
         test_id: "Тест"
@@ -34,6 +35,7 @@ ru:
         correct_questions: "Верно отвеченные вопросы"
         current_question_id: "Текущий вопрос"
         current_question: "Текущий вопрос"
+        test_time: "Осталось времени"
     errors:
       models:
         test:

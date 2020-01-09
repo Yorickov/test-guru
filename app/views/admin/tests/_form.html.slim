@@ -2,6 +2,7 @@
   = f.input :title, as: :string
   = f.input :level, as: :string
   = f.association :category, prompt: true
+  = f.input :time_limit, as: :string
   = f.button :submit, class: 'btn btn-block btn-secondary btn-lg'
 
 - if @test.persisted?

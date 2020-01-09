@@ -1,4 +1,4 @@
-h2.text-center.pt-5 = answer_header(@answer)
+h2.text-center.pt-3 = answer_header(@answer)
 p.text-center = @answer.question.body
 
 = render partial: 'form', locals: { model: [:admin, @answer] },  layout: 'admin/shared/card'
