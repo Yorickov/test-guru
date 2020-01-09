@@ -61,6 +61,7 @@ en:
       level: "Level"
       question: "Questions"
       actions: "Actions"
+      category: "Category"
     test:
       start: "Start"
 
@@ -96,6 +97,7 @@ en:
         actions: "Actions"
         production: "Change"
         time_limit: "Timer"
+        category: "Category"
       new:
         header_create: "Create new test"
       edit:
