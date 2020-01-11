@@ -48,6 +48,7 @@ en:
       title: "Test Guru"
       admin_panel: "Admin panel"
       settings: "Settings"
+      badges: "Badges"
     errors:
       header:
         one: "%{count} mistake founded"
@@ -157,6 +158,7 @@ en:
         description: "Description"
         rule_name: "Rule"
         add_badge: "Add badge"
+        image: "Image"
       level:
         test_level: "Test level"
       category:

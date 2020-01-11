@@ -7,6 +7,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light.bg-faded.mb-3
       - if user_signed_in?
         li.nav-item.active
           = link_to t('.tests'), tests_path, class: 'nav-link'
+        li.nav-item.active
+          = link_to t('.badges'), badges_path, class: 'nav-link'
         - if current_user.admin?
           li.nav-item.active
             = link_to t('.admin_panel'), admin_tests_path, class: 'nav-link'

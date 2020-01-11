@@ -48,6 +48,7 @@ ru:
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
       settings: 'Настройки'
+      badges: "Бэйджи"
     errors:
       header:
         one: "Найдена %{count} ошибка"
@@ -90,6 +91,12 @@ ru:
         few: "Тест включает %{count} вопроса"
         many: "Тест включает %{count} вопросов"
         other: "Тест включает %{count} вопроса"
+
+  badges:
+    index:
+      name: "Название"
+      description: "Описание"
+      image: "Изображение"
 
   admin:
     tests:
@@ -163,6 +170,7 @@ ru:
         description: "Описание"
         rule_name: "Правило"
         add_badge: "Добавить бэйдж"
+        image: "Изображение"
       level:
         test_level: "Уровень теста"
       category:

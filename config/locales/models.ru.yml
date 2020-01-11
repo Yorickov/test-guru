@@ -41,6 +41,7 @@ ru:
         name: "Имя"
         description: "Описание"
         filename: "Имя файла"
+        rule_name: "Правило"
         rule_param: "Параметр"
 
     errors:
@@ -48,7 +49,7 @@ ru:
         test:
           attributes:
             level:
-              greater_than_or_equal_to: "должен быть целым числом и больше нуля"
-              not_an_integer: "должен быть целым числом и больше нуля"
+              greater_than_or_equal_to: "должен быть целым числом и больше либо равно нуля"
+              not_an_integer: "должен быть целым числом и больше либо равно нуля"
             title:
               taken: "уже имеет такое сочетание: название - уровень"

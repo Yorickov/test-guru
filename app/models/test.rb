@@ -7,13 +7,9 @@ class Test < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
-  validates :title, presence: true, uniqueness: {
-    scope: :level,
-    message: 'has already such combination title - level'
-  }
+  validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: {
-    only_integer: true, greater_than_or_equal_to: 0,
-    message: 'should be positive integer or nil'
+    only_integer: true, greater_than_or_equal_to: 0
   }
 
   aasm column: 'state' do
