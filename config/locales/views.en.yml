@@ -143,12 +143,35 @@ en:
         add_test: "Add test"
         gists: "Gists"
         settings: "Settings"
+        badges: "Badges"
     gists:
       index:
         question: "Question"
         gist_url: "Gist Url"
         user: "User"
         header: "Gists"
+    badges:
+      index:
+        header: "Badges"
+        name: "Name"
+        description: "Description"
+        rule_name: "Rule"
+        add_badge: "Add badge"
+      level:
+        test_level: "Test level"
+      category:
+        test_category: "Test category"
+      new:
+        choose_type: "Choose badge rule"
+        level: "Test of a certain level"
+        category: "Test of a certain category"
+        all: "All tests"
+        first: "Test on the first try"
+      form:
+        test_level: "Test level"
+        test_category: "Test category"
+        rule_name: "Rule"
+
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test'

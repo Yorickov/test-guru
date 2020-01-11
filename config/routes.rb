@@ -32,6 +32,13 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+
+    resources :badges do
+      get :level, on: :new
+      get :category, on: :new
+      get :all, on: :new
+      get :first, on: :new
+    end
   end
 
   resource :feedback, only: %i[new create]

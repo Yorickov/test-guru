@@ -149,12 +149,35 @@ ru:
         add_test: "Добавить тест"
         gists: "Gists"
         settings: 'Настройки'
+        badges: "Бэйджи"
     gists:
       index:
         question: "Вопрос"
         gist_url: "Ссылка на Gists"
         user: "Пользователь"
         header: "Gists"
+    badges:
+      index:
+        header: "Бэйджи"
+        name: "Имя"
+        description: "Описание"
+        rule_name: "Правило"
+        add_badge: "Добавить бэйдж"
+      level:
+        test_level: "Уровень теста"
+      category:
+        test_category: "Категория теста"
+      new:
+        choose_type: "Выбрать правило получения бэйджа"
+        level: "Тесты определенного уровня"
+        category: "Тесты определенной категории"
+        all: "Все тесты"
+        first: "Тест с первой попытки"
+      form:
+        test_level: "Уровень теста"
+        test_category: "Категория теста"
+        rule_name: "Правило"
+
   tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'

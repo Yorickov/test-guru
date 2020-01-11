@@ -1,7 +1,7 @@
 module TestPassagesHelper
   def result_message(test_passage)
     message =
-      if test_passage.passed?
+      if test_passage.success?
         "<p class='text-success'>#{t('.passed')}</p>"
       elsif test_passage.expired?
         "<p class='text-danger'>#{t('.failed_time')}</p>"
@@ -12,7 +12,7 @@ module TestPassagesHelper
     result = "<p>#{t('.result', result: test_passage.result)}</p>"
 
     timer_value =
-      if test_passage.passed? && test_passage.test.timer?
+      if test_passage.success? && test_passage.test.timer?
         "<p>#{t('.timer_count', count: test_passage.timer_time)}<\p>"
       else
         ''

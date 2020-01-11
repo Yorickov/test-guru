@@ -1,0 +1,15 @@
+.row.pt-3
+  .col-12
+    h2.pb-3.text-center = t('.header')
+    = link_to t('.add_badge'), new_admin_badge_path, class: 'btn btn-dark'
+
+  .col-sm-12.mx-auto.mt-3
+    table.table.table-hover.table-responsive-sm
+      thead
+        tr
+          th = t('.name')
+          th = t('.description')
+          th = t('.rule_name')
+          th = t('.rule_param')
+      tbody
+        = render @badges

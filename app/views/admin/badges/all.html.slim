@@ -1,0 +1,11 @@
+.row.justify-content-center.my-4
+  .col-sm-8.lg-6
+    .card.border-secondary.p-1.mb-3
+      .card-body
+        = simple_form_for [:admin, @badge], local: true do |f|
+          = f.input :name
+          = f.input :description
+          = f.input :filename
+          = f.input :rule_name, as: :hidden, input_html: { value: 'all' }
+
+          = f.button :submit, class: 'btn btn-dark'

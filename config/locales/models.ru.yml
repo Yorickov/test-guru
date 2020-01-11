@@ -6,6 +6,7 @@ ru:
       answer: "Ответ"
       category: "Категория"
       test_passage: "Прохождение теста"
+      badge: "Бэйдж"
 
     attributes:
       test:
@@ -36,6 +37,12 @@ ru:
         current_question_id: "Текущий вопрос"
         current_question: "Текущий вопрос"
         test_time: "Осталось времени"
+      badge:
+        name: "Имя"
+        description: "Описание"
+        filename: "Имя файла"
+        rule_param: "Параметр"
+
     errors:
       models:
         test:

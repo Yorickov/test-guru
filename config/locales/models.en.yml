@@ -6,6 +6,7 @@ en:
       answer: "Answer"
       category: "Category"
       test_passage: "Test passage"
+      badge: "Badge"
 
     attributes:
       test:
@@ -36,6 +37,14 @@ en:
         current_question_id: "Current question"
         current_question: "Current question"
         test_time: "Time left"
+      badge:
+        name: "Name"
+        description: "Description"
+      badge:
+        name: "Name"
+        description: "Description"
+        filename: "Filename"
+        rule_param: "Parameter"
     errors:
       messages:
         taken: "has already such combination title - level"
