@@ -48,7 +48,8 @@ ru:
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
       settings: 'Настройки'
-      badges: "Бэйджи"
+      all_badges: "Бэйджи"
+      my_badges: "Мои бэйджи"
     errors:
       header:
         one: "Найдена %{count} ошибка"
@@ -97,6 +98,7 @@ ru:
       title: "Название"
       description: "Описание"
       image: "Изображение"
+      header: "Бэйджи"
 
   admin:
     tests:

@@ -69,6 +69,23 @@ class TestPassage < ApplicationRecord
     test.time_limit - (test_time.to_f / 100 * test.time_limit).to_i
   end
 
+  def handle_badges
+    Badge.all.each do |b|
+      rule_name = b.rule_name.to_sym
+      rule = Badge.rules[rule_name]
+
+      opts = b.rule_param ? { rule_name => b.rule_param } : ''
+
+      check = rule.call(user, b, opts)
+      if check
+        logger.debug 'true'
+        user.badges << b
+      else
+        logger.debug 'false'
+      end
+    end
+  end
+
   private
 
   def before_validation_set_first_question

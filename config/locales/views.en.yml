@@ -48,7 +48,8 @@ en:
       title: "Test Guru"
       admin_panel: "Admin panel"
       settings: "Settings"
-      badges: "Badges"
+      all_badges: "Badges"
+      my_badges: "My badges"
     errors:
       header:
         one: "%{count} mistake founded"
@@ -92,6 +93,7 @@ en:
       title: "Title"
       description: "Description"
       image: "Image"
+      header: "Badges"
   admin:
     tests:
       index:
