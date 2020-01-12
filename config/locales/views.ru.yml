@@ -94,7 +94,7 @@ ru:
 
   badges:
     index:
-      name: "Название"
+      title: "Название"
       description: "Описание"
       image: "Изображение"
 
@@ -166,7 +166,7 @@ ru:
     badges:
       index:
         header: "Бэйджи"
-        name: "Имя"
+        title: "Название"
         description: "Описание"
         rule_name: "Правило"
         add_badge: "Добавить бэйдж"

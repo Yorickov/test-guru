@@ -38,10 +38,7 @@ en:
         current_question: "Current question"
         test_time: "Time left"
       badge:
-        name: "Name"
-        description: "Description"
-      badge:
-        name: "Name"
+        title: "Title"
         description: "Description"
         filename: "Filename"
         rule_name: "Rule"

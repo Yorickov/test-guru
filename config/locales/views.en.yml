@@ -87,6 +87,11 @@ en:
         one: "Test includes %{count} question"
         other: "Test includes %{count} questions"
 
+  badges:
+    index:
+      title: "Title"
+      description: "Description"
+      image: "Image"
   admin:
     tests:
       index:
@@ -154,7 +159,7 @@ en:
     badges:
       index:
         header: "Badges"
-        name: "Name"
+        title: "Title"
         description: "Description"
         rule_name: "Rule"
         add_badge: "Add badge"

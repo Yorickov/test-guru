@@ -38,7 +38,7 @@ ru:
         current_question: "Текущий вопрос"
         test_time: "Осталось времени"
       badge:
-        name: "Имя"
+        title: "Название"
         description: "Описание"
         filename: "Имя файла"
         rule_name: "Правило"

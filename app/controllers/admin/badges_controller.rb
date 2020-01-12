@@ -24,11 +24,6 @@ class Admin::BadgesController < Admin::BaseController
     else
       rule_name = params[:badge][:rule_name]
       render rule_name
-      # case rule_name
-      # when 'level' then render :level #rule_name
-      # when 'category' then render :category
-      # else render :base
-      # end
     end
   end
 
@@ -53,7 +48,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def badge_params
     params.require(:badge).permit(
-      :name, :description, :filename, :rule_name, :rule_param
+      :title, :description, :filename, :rule_name, :rule_param
     )
   end
 

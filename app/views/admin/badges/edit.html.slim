@@ -3,7 +3,7 @@
     .card.border-secondary.p-1.mb-3
       .card-body
         = simple_form_for [:admin, @badge], local: true do |f|
-          = f.input :name
+          = f.input :title
           = f.input :description
           = f.input :filename
 
