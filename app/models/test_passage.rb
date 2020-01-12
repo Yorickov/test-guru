@@ -72,17 +72,13 @@ class TestPassage < ApplicationRecord
   def handle_badges
     Badge.all.each do |b|
       rule_name = b.rule_name.to_sym
-      rule = Badge.rules[rule_name]
+      rule_param = b.rule_param || ''
 
-      opts = b.rule_param ? { rule_name => b.rule_param } : ''
+      rule = Badge.rules[rule_name]
+      opts = { rule_name => rule_param }
 
       check = rule.call(user, b, opts)
-      if check
-        logger.debug 'true'
-        user.badges << b
-      else
-        logger.debug 'false'
-      end
+      user.badges << b if check
     end
   end
 

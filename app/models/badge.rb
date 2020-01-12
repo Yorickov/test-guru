@@ -13,16 +13,18 @@ class Badge < ApplicationRecord
         level: proc { |*args| rule_with_param(*args) },
         category: proc { |*args| rule_with_param(*args) },
         all: proc { |*args| all_tests(*args) },
-        first: ->(user, _badge, _value) {
-          user.tests.where(id: user.tests.last.id).count == 1
+        first: ->(user, _badge, _opts) {
+          user.test_passages
+              .where(test_id: user.test_passages.last.test_id).count == 1
         }
       }
     end
 
-    def all_tests(user, badge, _value)
+    def all_tests(user, badge, _opts)
       count = user.test_passages.success
                   .distinct.select(:test_id)
                   .count
+
       logger.debug "count #{count}"
       count == Test.ready.count && clause_one_badge?(user, badge)
     end
