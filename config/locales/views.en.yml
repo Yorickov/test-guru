@@ -74,6 +74,7 @@ en:
       passed: "You passed!"
       failed: "You screwed up"
       failed_time: "Your time is over"
+      cheater_time: "You are cheater"
       result: "You result is %{result}%"
       timer_count:
         one: "You passed the test for %{count} seconds"

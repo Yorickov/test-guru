@@ -5,6 +5,8 @@ module TestPassagesHelper
         "<p class='text-success'>#{t('.passed')}</p>"
       elsif test_passage.expired?
         "<p class='text-danger'>#{t('.failed_time')}</p>"
+      elsif test_passage.failed? && test_passage.test_time.positive?
+        "<p class='text-danger'>#{t('.cheater_time')}</p>"
       else
         "<p class='text-danger'>#{t('.failed')}</p>"
       end

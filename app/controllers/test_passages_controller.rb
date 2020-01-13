@@ -4,9 +4,12 @@ class TestPassagesController < ApplicationController
   def show; end
 
   def result
-    if params[:value]
-      @test_passage.test_time = params[:value]
-      @test_passage.time_off
+    time_left = params[:value]
+
+    if time_left
+      @test_passage.test_time = time_left
+      @test_passage.time_off if time_left.to_i <= 0
+      @test_passage.lose if time_left.to_i.positive?
       @test_passage.save
     end
 

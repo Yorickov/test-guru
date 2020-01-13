@@ -1,7 +1,10 @@
-const changeHistoryHandler = (time) => {
-  history.pushState({ timer: time }, '', '/tests');
+const changeHistoryHandler = (time, initUrl) => {
+  const urlVsBackAndReload = initUrl + '?value=' + time;
+
+  history.pushState({ timer: time }, '', urlVsBackAndReload);
+
   window.addEventListener('popstate', () => {
-    location.href = '/tests';
+    location.href = urlVsBackAndReload;
   });
 };
 
@@ -32,7 +35,7 @@ export default () => {
     const timerStep = form.dataset.timerStep;
     const timer = form.elements.timer;
 
-    changeHistoryHandler(timer.value);
+    changeHistoryHandler(timer.value, url);
     timerHandler(url, timerStep, timer, progress);
   }
 };
