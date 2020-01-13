@@ -10,7 +10,7 @@ class TestPassagesController < ApplicationController
       @test_passage.save
     end
 
-    @test_passage.handle_badges if @test_passage.success?
+    BadgeService.new(@test_passage).call if @test_passage.success?
 
     render :result
   end
