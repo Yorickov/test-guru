@@ -7,6 +7,7 @@
 # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # Character.create(name: 'Luke', movie: movies.first)
 
+Badge.destroy_all
 Gist.destroy_all
 TestPassage.destroy_all
 Answer.destroy_all

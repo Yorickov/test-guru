@@ -48,6 +48,8 @@ ru:
       title: "Тест Гуру"
       admin_panel: "Панель Администратора"
       settings: 'Настройки'
+      all_badges: "Бэйджи"
+      my_badges: "Мои бэйджи"
     errors:
       header:
         one: "Найдена %{count} ошибка"
@@ -62,6 +64,7 @@ ru:
       level: "Уровень"
       questions: "Вопросы"
       actions: "Действия"
+      category: "Категория"
     test:
       start: "Старт"
 
@@ -90,6 +93,13 @@ ru:
         many: "Тест включает %{count} вопросов"
         other: "Тест включает %{count} вопроса"
 
+  badges:
+    index:
+      title: "Название"
+      description: "Описание"
+      image: "Изображение"
+      header: "Бэйджи"
+
   admin:
     tests:
       index:
@@ -102,6 +112,7 @@ ru:
         actions: "Действия"
         production: "Изменить"
         time_limit: "Таймер"
+        category: "Категория"
       new:
         header_create: "Создать новый тест"
       edit:
@@ -147,12 +158,36 @@ ru:
         add_test: "Добавить тест"
         gists: "Gists"
         settings: 'Настройки'
+        badges: "Бэйджи"
     gists:
       index:
         question: "Вопрос"
         gist_url: "Ссылка на Gists"
         user: "Пользователь"
         header: "Gists"
+    badges:
+      index:
+        header: "Бэйджи"
+        title: "Название"
+        description: "Описание"
+        rule_name: "Правило"
+        add_badge: "Добавить бэйдж"
+        image: "Изображение"
+      level:
+        test_level: "Уровень теста"
+      category:
+        test_category: "Категория теста"
+      new:
+        choose_type: "Выбрать правило получения бэйджа"
+        level: "Тесты определенного уровня"
+        category: "Тесты определенной категории"
+        all: "Все тесты"
+        first: "Тест с первой попытки"
+      form:
+        test_level: "Уровень теста"
+        test_category: "Категория теста"
+        rule_name: "Правило"
+
   tests_mailer:
     completed_test:
       subject: 'Вы успешно завершили тест на TestGuru!'

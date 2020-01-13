@@ -1,0 +1,23 @@
+.row.justify-content-center.my-4
+  .col-sm-8.lg-6
+    .card.border-secondary.p-1.mb-3
+      .row.no-gutters
+        .col-md-4.d-flex.justify-content-center.align-items-center
+          = image_tag "/images/badges/#{@badge.filename}", size: '150x150', title: @badge.filename, class: 'card-img'
+
+        .col-md-8
+          .card-body
+            h5.card-title = @badge.title
+            h6.card-subtitle.mb-2.text-muted = "#{@badge.rule_name} #{@badge.rule_param}"
+            p.pt-2.card-text = @badge.description
+
+            section.d-flex.justify-content-between.pt-4
+              = link_to t('links.edit'),
+                        edit_admin_badge_path(@badge),
+                        class: 'btn btn-light'
+
+              = link_to t('links.delete'),
+                        admin_badge_path(@badge),
+                        method: 'delete',
+                        data: { confirm: t('links.confirm') },
+                        class: 'btn btn-light'

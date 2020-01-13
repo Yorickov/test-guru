@@ -1,0 +1,10 @@
+.row.justify-content-center.my-5
+  .col-6
+    h4.card-title = t('.choose_type')
+    ul
+    - Badge.rules.keys.each do |k|
+      li.
+        = link_to t(".#{k}"), url_for(controller: 'badges', action: k)
+
+    section.pt-3
+      = link_to t('links.back'), admin_badges_path, class: 'btn btn-light'

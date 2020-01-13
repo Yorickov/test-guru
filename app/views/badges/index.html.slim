@@ -1,0 +1,12 @@
+.row.pt-1
+  .col-sm-12.mx-auto
+    h2.pb-2.text-center = t('.header')
+    table.table.table-hover.table-responsive-sm
+      thead
+        tr
+          th = t('.title')
+          th = t('.description')
+          th = t('.image')
+
+      tbody
+        = render @badges

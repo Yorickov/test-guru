@@ -25,6 +25,13 @@ ru:
         success: "Ответ успешно обновлен"
       destroy:
         success: "Ответ успешно удален"
+    badges:
+      create:
+        success: "Бэйдж успешно создан"
+      update:
+        success: "Бэйдж успешно обновлен"
+      destroy:
+        success: "Бэйдж успешно удален"
   feedbacks:
     new:
       header: Обратная связь

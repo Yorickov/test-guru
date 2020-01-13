@@ -6,6 +6,7 @@ ru:
       answer: "Ответ"
       category: "Категория"
       test_passage: "Прохождение теста"
+      badge: "Бэйдж"
 
     attributes:
       test:
@@ -36,12 +37,19 @@ ru:
         current_question_id: "Текущий вопрос"
         current_question: "Текущий вопрос"
         test_time: "Осталось времени"
+      badge:
+        title: "Название"
+        description: "Описание"
+        filename: "Имя файла"
+        rule_name: "Правило"
+        rule_param: "Параметр"
+
     errors:
       models:
         test:
           attributes:
             level:
-              greater_than_or_equal_to: "должен быть целым числом и больше нуля"
-              not_an_integer: "должен быть целым числом и больше нуля"
+              greater_than_or_equal_to: "должен быть целым числом и больше либо равно нуля"
+              not_an_integer: "должен быть целым числом и больше либо равно нуля"
             title:
               taken: "уже имеет такое сочетание: название - уровень"

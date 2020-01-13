@@ -14,14 +14,18 @@ class TestPassage < ApplicationRecord
 
   aasm column: 'state' do
     state :active, initial: true
-    state :expired, :finished
+    state :expired, :failed, :success
 
     event :time_off do
       transitions from: :active, to: :expired
     end
 
-    event :finish do
-      transitions from: :active, to: :finished
+    event :lose do
+      transitions from: :active, to: :failed
+    end
+
+    event :win do
+      transitions from: :active, to: :success
     end
   end
 
@@ -36,7 +40,10 @@ class TestPassage < ApplicationRecord
     questions = test.questions.order(:id)
     curr_question_index = questions.find_index(current_question)
 
-    finish if curr_question_index == questions.size - 1
+    if curr_question_index == questions.size - 1
+      passed? ? win : lose
+    end
+
     save!
   end
 

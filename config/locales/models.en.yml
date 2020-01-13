@@ -6,6 +6,7 @@ en:
       answer: "Answer"
       category: "Category"
       test_passage: "Test passage"
+      badge: "Badge"
 
     attributes:
       test:
@@ -36,8 +37,23 @@ en:
         current_question_id: "Current question"
         current_question: "Current question"
         test_time: "Time left"
+      badge:
+        title: "Title"
+        description: "Description"
+        filename: "Filename"
+        rule_name: "Rule"
+        rule_param: "Parameter"
     errors:
-      messages:
-        taken: "has already such combination title - level"
-        not_an_integer: "should be positive integer or nil"
-        greater_than_or_equal_to: "should be positive integer or nil"
+      models:
+        test:
+          attributes:
+            level:
+              greater_than_or_equal_to: "should be positive integer or nil"
+              not_an_integer: "should be positive integer or nil"
+            title:
+              taken: "has already such combination title - level"
+    # errors:
+    #   messages:
+    #     taken: "has already such combination title - level"
+    #     not_an_integer: "should be positive integer or nil"
+    #     greater_than_or_equal_to: "should be positive integer or nil"

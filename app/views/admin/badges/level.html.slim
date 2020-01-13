@@ -1,0 +1,15 @@
+.row.justify-content-center.my-4
+  .col-sm-8.lg-6
+    .card.border-secondary
+      .card-header
+        h3.text-center = t('admin.badges.new.level')
+      .card-body
+        = simple_form_for [:admin, @badge], local: true do |f|
+          = f.input :title
+          = f.input :description
+          = f.input :filename
+          = f.input :rule_name, as: :hidden, input_html: { value: 'level' }
+
+          = f.input :rule_param, label: t('.test_level'), collection: 0..5
+
+          = f.button :submit, class: 'btn btn-dark'

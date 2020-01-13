@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_01_195621) do
+ActiveRecord::Schema.define(version: 2020_01_12_145627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 2020_01_01_195621) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "filename"
+    t.string "rule_name"
+    t.string "rule_param"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rule_name", "rule_param"], name: "index_badges_on_rule_name_and_rule_param"
+  end
+
+  create_table "badges_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "badge_id", null: false
+    t.index ["user_id", "badge_id"], name: "index_badges_users_on_user_id_and_badge_id"
   end
 
   create_table "categories", force: :cascade do |t|

@@ -11,7 +11,7 @@
           - if !@question.test.ready?
             th.text-center(colspan="3") = t('.actions')
           - else
-            th = t('.actions')
+            th.text-center = t('.actions')
       tbody
         = render @question.answers
 

@@ -48,6 +48,8 @@ en:
       title: "Test Guru"
       admin_panel: "Admin panel"
       settings: "Settings"
+      all_badges: "Badges"
+      my_badges: "My badges"
     errors:
       header:
         one: "%{count} mistake founded"
@@ -61,6 +63,7 @@ en:
       level: "Level"
       question: "Questions"
       actions: "Actions"
+      category: "Category"
     test:
       start: "Start"
 
@@ -85,6 +88,12 @@ en:
         one: "Test includes %{count} question"
         other: "Test includes %{count} questions"
 
+  badges:
+    index:
+      title: "Title"
+      description: "Description"
+      image: "Image"
+      header: "Badges"
   admin:
     tests:
       index:
@@ -96,6 +105,7 @@ en:
         actions: "Actions"
         production: "Change"
         time_limit: "Timer"
+        category: "Category"
       new:
         header_create: "Create new test"
       edit:
@@ -141,12 +151,36 @@ en:
         add_test: "Add test"
         gists: "Gists"
         settings: "Settings"
+        badges: "Badges"
     gists:
       index:
         question: "Question"
         gist_url: "Gist Url"
         user: "User"
         header: "Gists"
+    badges:
+      index:
+        header: "Badges"
+        title: "Title"
+        description: "Description"
+        rule_name: "Rule"
+        add_badge: "Add badge"
+        image: "Image"
+      level:
+        test_level: "Test level"
+      category:
+        test_category: "Test category"
+      new:
+        choose_type: "Choose badge rule"
+        level: "Test of a certain level"
+        category: "Test of a certain category"
+        all: "All tests"
+        first: "Test on the first try"
+      form:
+        test_level: "Test level"
+        test_category: "Test category"
+        rule_name: "Rule"
+
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test'
