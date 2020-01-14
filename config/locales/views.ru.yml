@@ -75,7 +75,6 @@ ru:
       passed: "Вы прошли!"
       failed: "Вы облажались"
       failed_time: "Вы превысили лимит времени"
-      cheater_time: "Вы читер"
       result: "Ваш результат: %{result}%"
       timer_count:
         one: "Время прохождения теста: %{count} секунду"

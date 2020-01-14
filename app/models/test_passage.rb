@@ -65,8 +65,16 @@ class TestPassage < ApplicationRecord
     10 * test.time_limit
   end
 
-  def timer_time
+  def rate_to_time
     test.time_limit - (test_time.to_f / 100 * test.time_limit).to_i
+  end
+
+  def timer_end
+    created_at.to_i + test.time_limit
+  end
+
+  def timer_off?
+    test.timer? && (timer_end - Time.now.to_i <= 0)
   end
 
   private
@@ -91,6 +99,6 @@ class TestPassage < ApplicationRecord
   end
 
   def before_validation_set_test_time
-    self.test_time = TEST_TIME_RATE
+    self.test_time = TEST_TIME_RATE if test.timer?
   end
 end

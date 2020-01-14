@@ -39,3 +39,6 @@ Style/Lambda:
 
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Style/AndOr:
+  Enabled: false

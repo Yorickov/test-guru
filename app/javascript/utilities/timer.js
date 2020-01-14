@@ -1,28 +1,17 @@
-const changeHistoryHandler = (time, initUrl) => {
-  const urlVsBackAndReload = initUrl + '?value=' + time;
-
-  history.pushState({ timer: time }, '', urlVsBackAndReload);
-
-  window.addEventListener('popstate', () => {
-    location.href = urlVsBackAndReload;
-  });
-};
-
-const timerHandler = (url, timerStep, timer, progress) => {
-  console.log(history.state);
-  let time_left = history.state.timer || timer.value;
+const timerHandler = (url, timerStep, timerEnd, timeLimit, progress, timer) => {
+  const timeLeft = timerEnd - Math.round(Date.now() / 1000);
+  let rateLeft = timeLeft / timeLimit * 100;
 
   const timeId = setInterval(() => {
-    time_left -= 1;
-
-    if (time_left <= 0) {
+    if (rateLeft <= 0) {
       clearInterval(timeId);
-      location.href = url + '?value=' + time_left;
+      location.href = url + '?timeoff=true';
     }
 
-    progress.setAttribute('style', 'height:' + time_left + '%');
-    timer.setAttribute('value', time_left);
+    progress.setAttribute('style', 'height:' + rateLeft + '%');
+    timer.setAttribute('value', rateLeft);
 
+    rateLeft -= 1;
   }, timerStep);
 };
 
@@ -33,9 +22,10 @@ export default () => {
   if (form && progress) {
     const url = form.dataset.url;
     const timerStep = form.dataset.timerStep;
+    const timerEnd = form.dataset.timerEnd;
+    const timeLimit = form.dataset.timeLimit;
     const timer = form.elements.timer;
 
-    changeHistoryHandler(timer.value, url);
-    timerHandler(url, timerStep, timer, progress);
+    timerHandler(url, timerStep, timerEnd, timeLimit, progress, timer);
   }
 };

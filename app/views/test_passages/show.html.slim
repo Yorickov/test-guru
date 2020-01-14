@@ -11,7 +11,7 @@
         = form_with url: test_passage_path(@test_passage),
                     local: true,
                     class: 'form-test-passage',
-                    data: { current_progress: @test_passage.progress, url: result_test_passage_path(@test_passage), timer_step: @test_passage.timer_step },
+                    data: { current_progress: @test_passage.progress, url: result_test_passage_path(@test_passage), timer_step: @test_passage.timer_step, timer_end: @test_passage.timer_end, time_limit: @test_passage.test.time_limit },
                     method: :put do |f|
           = f.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|
             .form-check
