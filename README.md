@@ -1,9 +1,8 @@
 # TEST GURU
 
 Website - all about tests (questionnaires):
-- creation
-- managing
-- passing the test
+- creation and managing tests (admin)
+- passing the test (user)
 
 ## Description
 
@@ -15,6 +14,7 @@ Website - all about tests (questionnaires):
 - Category
 - TestPassage
 - Gist
+- Badge
 
 ### Versions
 - Ruby 2.6.3

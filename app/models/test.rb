@@ -11,6 +11,7 @@ class Test < ApplicationRecord
   validates :level, numericality: {
     only_integer: true, greater_than_or_equal_to: 0
   }
+  validates :time_limit, numericality: { only_integer: true }
 
   aasm column: 'state' do
     state :draft, initial: true

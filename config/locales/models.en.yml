@@ -16,7 +16,7 @@ en:
         category: "Category"
         user_id: "Author"
         author: "Author"
-        time_limit: "Time limit"
+        time_limit: "Time limit (in seconds)"
       question:
         body: "Question body"
         test_id: "Test"

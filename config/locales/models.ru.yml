@@ -16,7 +16,7 @@ ru:
         category: "Категория"
         user_id: "Автор"
         author: "Автор"
-        time_limit: "Время выполнения"
+        time_limit: "Время выполнения (в секундах)"
       question:
         body: "Тело вопроса"
         test_id: "Тест"

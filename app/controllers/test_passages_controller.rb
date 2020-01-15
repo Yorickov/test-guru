@@ -4,25 +4,26 @@ class TestPassagesController < ApplicationController
   def show; end
 
   def result
-    if params[:value]
-      @test_passage.test_time = params[:value]
+    if @test_passage.timer_off?
+      @test_passage.test_time = 0
       @test_passage.time_off
       @test_passage.save
     end
 
     BadgeService.new(@test_passage).call if @test_passage.success?
-
-    render :result
   end
 
   def update
+    if @test_passage.timer_off?
+      redirect_to result_test_passage_path(@test_passage) and return # not &&!
+    end
+
     @test_passage.accept!(params[:answer_ids], params[:timer])
 
     if @test_passage.completed?
       # TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
-      logger.debug params[:time_left]
       render :show
     end
   end

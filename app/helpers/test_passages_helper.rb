@@ -13,7 +13,7 @@ module TestPassagesHelper
 
     timer_value =
       if test_passage.success? && test_passage.test.timer?
-        "<p>#{t('.timer_count', count: test_passage.timer_time)}<\p>"
+        "<p>#{t('.timer_count', count: test_passage.rate_to_time)}<\p>"
       else
         ''
       end
