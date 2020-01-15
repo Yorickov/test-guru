@@ -5,7 +5,7 @@ const timerHandler = (url, timerStep, timerEnd, timeLimit, progress, timer) => {
   const timeId = setInterval(() => {
     if (rateLeft <= 0) {
       clearInterval(timeId);
-      location.href = url + '?timeoff=true';
+      location.href = url;
     }
 
     progress.setAttribute('style', 'height:' + rateLeft + '%');

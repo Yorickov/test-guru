@@ -4,7 +4,7 @@ class TestPassagesController < ApplicationController
   def show; end
 
   def result
-    if params[:timeoff]
+    if @test_passage.timer_off?
       @test_passage.test_time = 0
       @test_passage.time_off
       @test_passage.save
