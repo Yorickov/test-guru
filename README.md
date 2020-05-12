@@ -1,7 +1,9 @@
 # TEST GURU
 
-Website - all about tests (questionnaires):
-- creation and managing tests (admin)
+*Educational project thinknetica.com, course 2 Ruby on Rails basics*
+
+Website on RoR: tests (questionnaires) management:
+- creating, editing and deleting tests (admin)
 - passing the test (user)
 
 ## Description
@@ -20,15 +22,18 @@ Website - all about tests (questionnaires):
 - Ruby 2.6.3
 - Ruby on Rails 6.0
 
-## Technologies
+### Features
+- authentication (devise)
+- state machine (aasm)
+- pagination (kaminari)
+- localization (rails-i18n)
+- services (octokit)
 
-### Backend
-- Ruby on Rails
+### Technologies
 - PosrgreSQL
-
-### Frontend
 - Bootstrap 4
+- Webpack
 - DOM: vanilla js
 
-### Deploy
+## Deploy
 [Heroku](https://test-sensei.herokuapp.com/)
