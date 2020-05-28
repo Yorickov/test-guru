@@ -77,7 +77,7 @@ gem "octokit", "~> 4.0"
 gem "octicons_helper", "~> 9.3"
 
 # Pagination
-gem "kaminari", "~> 1.1"
+gem "kaminari", "~> 1.2"
 
 # State machine
 gem "aasm", "~> 5.0"
